@@ -1,0 +1,10 @@
+sbt
+run
+sbt
+exit
+run
+h2-browser
+sbt
+exit
+run
+h2-browser
