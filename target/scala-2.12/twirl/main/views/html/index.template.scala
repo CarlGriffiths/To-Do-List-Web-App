@@ -52,42 +52,61 @@ Seq[Any](format.raw/*3.1*/("""
         <div class="row">
                 <div class="col-12 center-block">
                     <center>
-                            """),_display_(/*25.30*/form(action=routes.HomeController.submit(), 'class -> "form-hotizontal", 'role -> "form")/*25.119*/ {_display_(Seq[Any](format.raw/*25.121*/("""
-                                """),_display_(/*26.34*/CSRF/*26.38*/.formField),format.raw/*26.48*/("""
-                                """),format.raw/*27.33*/("""<form class="form-inline" action=routes.HomeController.submit()>
+                            <br>
+                            """),_display_(/*26.30*/form(action=routes.HomeController.submit(), 'class -> "form-hotizontal", 'role -> "form")/*26.119*/ {_display_(Seq[Any](format.raw/*26.121*/("""
+                                """),_display_(/*27.34*/CSRF/*27.38*/.formField),format.raw/*27.48*/("""
+                                """),format.raw/*28.33*/("""<form class="form-inline" action=routes.HomeController.submit()>
                                         <div class="form-group">
                                
-                                """),_display_(/*30.34*/inputText(itemForm("message"),'_label -> "Add new item", 'size -> 40)),format.raw/*30.103*/("""
+                                """),_display_(/*31.34*/inputText(itemForm("message"),'_label -> "Add new item", 'size -> 40)),format.raw/*31.103*/("""
                     
-                                """),format.raw/*32.33*/("""<input type="submit" value="Add" class="btn btn-secondary">
+                                """),format.raw/*33.33*/("""<input type="submit" value="Add" class="btn btn-secondary">
                     
                                  
                                 </div>
                                 </form>                
                             <h1>To-Do</h1>
 
-        """),_display_(/*39.10*/for(a <- items) yield /*39.25*/{_display_(Seq[Any](format.raw/*39.26*/("""
+        """),_display_(/*40.10*/for(a <- items) yield /*40.25*/{_display_(Seq[Any](format.raw/*40.26*/("""
             
-            """),format.raw/*41.13*/("""<div class="card border-primary mb-3" style="max-width: 30rem;">
-                    <div class="card-header align="right"">Mark as done</div>  
-                    <div class="card-body">
-                      <h5 class="card-title text-dark">"""),_display_(/*44.57*/a/*44.58*/.getMessage()),format.raw/*44.71*/("""</h5>
-                      
-                    </div>
-                  </div>
+            
+                            """),_display_(/*43.30*/defining(true)/*43.44*/ { compare =>_display_(Seq[Any](format.raw/*43.57*/("""  
+                                """),_display_(/*44.34*/if(a.getCompleted()== compare)/*44.64*/ {_display_(Seq[Any](format.raw/*44.66*/("""
+                                    """),format.raw/*45.37*/("""<div class="card border-primary mb-3" style="max-width: 30rem;">
+                                            <div class="card-header"><a href=""""),_display_(/*46.80*/routes/*46.86*/.HomeController.changeStatus(a.getId())),format.raw/*46.125*/("""">Mark as uncompleted</a></div>  
+                                            <div class="card-body">
+                      <h5 class="card-title text-dark"><strike>"""),_display_(/*48.65*/a/*48.66*/.getMessage()),format.raw/*48.79*/("""</strike></h5>
+                      </div>
+                      </div>
+                    
+                    """)))}),format.raw/*52.22*/("""
+                """)))}),format.raw/*53.18*/("""   
+                            """),_display_(/*54.30*/defining(false)/*54.45*/ { compare =>_display_(Seq[Any](format.raw/*54.58*/("""  
+                                 """),_display_(/*55.35*/if(a.getCompleted()== compare)/*55.65*/ {_display_(Seq[Any](format.raw/*55.67*/("""
+                                    """),format.raw/*56.37*/("""<div class="card border-primary mb-3" style="max-width: 30rem;">
+                                            <div class="card-header"><a href=""""),_display_(/*57.80*/routes/*57.86*/.HomeController.changeStatus(a.getId())),format.raw/*57.125*/("""">Mark as completed</a></div>  
+                                            <div class="card-body">
+                                            <h5 class="card-title text-dark">"""),_display_(/*59.79*/a/*59.80*/.getMessage()),format.raw/*59.93*/("""</h5>
+                                        </div>
+                                    </div>
+
+                                 """)))}),format.raw/*63.35*/("""
+                                """)))}),format.raw/*64.34*/("""
+                    
+                    
         
                   
 
-        """)))}),format.raw/*51.10*/("""
-    """),format.raw/*52.5*/("""</center>
+        """)))}),format.raw/*70.10*/("""
+    """),format.raw/*71.5*/("""</center>
 </div>
 
           
         
                
-            """)))}),format.raw/*58.14*/("""
+            """)))}),format.raw/*77.14*/("""
 
-    """),format.raw/*60.5*/("""</body>
+    """),format.raw/*79.5*/("""</body>
 </html>
 """))
       }
@@ -105,11 +124,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Jul 13 18:54:44 IST 2018
+                  DATE: Fri Jul 13 20:27:41 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/index.scala.html
-                  HASH: 34ca00b86d7a09d7296edaab3db4615d1cfe27a8
-                  MATRIX: 963->2|1077->46|1121->44|1148->62|1175->63|1342->203|1357->209|1420->250|1508->311|1523->317|1584->356|2092->837|2107->843|2169->884|2399->1087|2498->1176|2539->1178|2600->1212|2613->1216|2644->1226|2705->1259|2927->1454|3018->1523|3100->1577|3390->1840|3421->1855|3460->1856|3514->1882|3786->2127|3796->2128|3830->2141|3980->2260|4012->2265|4110->2332|4143->2338
-                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|55->25|55->25|55->25|56->26|56->26|56->26|57->27|60->30|60->30|62->32|69->39|69->39|69->39|71->41|74->44|74->44|74->44|81->51|82->52|88->58|90->60
+                  HASH: 72eb386296d63e41e72bd0084418323dd63c98ee
+                  MATRIX: 963->2|1077->46|1121->44|1148->62|1175->63|1342->203|1357->209|1420->250|1508->311|1523->317|1584->356|2092->837|2107->843|2169->884|2432->1120|2531->1209|2572->1211|2633->1245|2646->1249|2677->1259|2738->1292|2960->1487|3051->1556|3133->1610|3423->1873|3454->1888|3493->1889|3576->1945|3599->1959|3650->1972|3713->2008|3752->2038|3792->2040|3857->2077|4028->2221|4043->2227|4104->2266|4297->2432|4307->2433|4341->2446|4487->2561|4536->2579|4596->2612|4620->2627|4671->2640|4735->2677|4774->2707|4814->2709|4879->2746|5050->2890|5065->2896|5126->2935|5331->3113|5341->3114|5375->3127|5537->3258|5602->3292|5714->3373|5746->3378|5844->3445|5877->3451
+                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|56->26|56->26|56->26|57->27|57->27|57->27|58->28|61->31|61->31|63->33|70->40|70->40|70->40|73->43|73->43|73->43|74->44|74->44|74->44|75->45|76->46|76->46|76->46|78->48|78->48|78->48|82->52|83->53|84->54|84->54|84->54|85->55|85->55|85->55|86->56|87->57|87->57|87->57|89->59|89->59|89->59|93->63|94->64|100->70|101->71|107->77|109->79
                   -- GENERATED --
               */
           

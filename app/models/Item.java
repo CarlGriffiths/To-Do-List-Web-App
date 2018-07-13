@@ -13,6 +13,7 @@ public class Item extends Model {
     @Id
     public int Id;
     public String message;
+    public Boolean completed;
 
     public Item(){
 
@@ -21,6 +22,7 @@ public class Item extends Model {
     public Item(int id, String message){
         this.Id = id;
         this.message = message;
+        
 
     }
 
@@ -39,11 +41,24 @@ public class Item extends Model {
         return message;
     }
 
+    public Boolean getCompleted(){
+        return completed;
+    }
+
     public void setId(int id){
         this.Id = id;
     }
 
     public void setMessage(String message){
+        setCompletedFalse();
         this.message = message;
+    }
+
+    public void setCompletedTrue(){
+        this.completed = true;
+    }
+
+    public void setCompletedFalse(){
+        this.completed = false;
     }
 }

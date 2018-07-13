@@ -51,6 +51,23 @@ public class HomeController extends Controller {
         return redirect(routes.HomeController.index());
     }
 
+    public Result changeStatus(int id){
+        Item itemToChange = Item.find.byId(id);
+
+        if(itemToChange.getCompleted() == false){
+            itemToChange.setCompletedTrue();
+
+        }
+
+        else if (itemToChange.getCompleted() == true){
+            itemToChange.setCompletedFalse();
+        }
+
+        
+        itemToChange.update();
+        return redirect(routes.HomeController.index());
+    }
+
     public int getNum(){
         List <Item> itemList = Item.findAll();
         int highest = 0;

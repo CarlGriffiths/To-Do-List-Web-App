@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/Desktop/TodoList/conf/routes
-// @DATE:Fri Jul 13 14:45:43 IST 2018
+// @DATE:Fri Jul 13 20:21:25 IST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -11,7 +11,7 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers.javascript {
 
-  // @LINE:11
+  // @LINE:12
   class ReverseAsyncController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -19,7 +19,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:11
+    // @LINE:12
     def message: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AsyncController.message",
       """
@@ -38,6 +38,16 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:8
+    def changeStatus: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.changeStatus",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "completed" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Integer]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
   
     // @LINE:6
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
@@ -61,7 +71,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:14
+  // @LINE:15
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -69,7 +79,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:14
+    // @LINE:15
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -81,7 +91,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:9
+  // @LINE:10
   class ReverseCountController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -89,7 +99,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:9
+    // @LINE:10
     def count: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CountController.count",
       """
