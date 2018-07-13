@@ -8,3 +8,20 @@ sbt
 exit
 run
 h2-browser
+sbt
+exi
+exit
+run
+exit
+sbt run
+run
+exit
+h2-browser
+exit
+h2-browser
+run
+h2-browser
+run
+h2-browser
+exit
+h2-browser

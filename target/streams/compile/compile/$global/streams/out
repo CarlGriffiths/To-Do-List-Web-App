@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/models/Item.java:27:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   class Integar[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class models.Item[0m
+[0m[[0m[31merror[0m] [0m[0m    public static final Finder<Integar, Item> find = new Finder<>(Item.class);[0m

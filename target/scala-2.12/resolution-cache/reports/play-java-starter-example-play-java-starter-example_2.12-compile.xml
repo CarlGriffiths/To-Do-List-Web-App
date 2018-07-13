@@ -7,7 +7,7 @@
 		revision="1.0-SNAPSHOT"
 		conf="compile"
 		confs="compile, runtime, test, provided, optional, universal, universal-docs, universal-src, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, docs"
-		date="20180712221837"/>
+		date="20180713022238"/>
 	<dependencies>
 		<module organisation="com.h2database" name="h2">
 			<revision name="1.4.197" status="release" pubdate="20180318202844" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.h2database.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master, runtime(*), master(compile), compile(*)" position="85">
@@ -35,13 +35,13 @@
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play-jdbc-evolutions_2.12">
-			<revision name="2.6.15" status="release" pubdate="20180525024923" resolver="public" artresolver="public" homepage="https://playframework.com" extra-info.apiURL="https://www.playframework.com/documentation/2.6.15/api/scala/index.html" downloaded="true" searched="true" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="74">
+			<revision name="2.6.15" status="release" pubdate="20180525024923" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" extra-info.apiURL="https://www.playframework.com/documentation/2.6.15/api/scala/index.html" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="74">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="2713" time="127" location="/home/wdd/.ivy2/cache/com.typesafe.play/play-jdbc-evolutions_2.12/ivy-2.6.15.xml" searched="true" original-local-location="/home/wdd/.ivy2/cache/com.typesafe.play/play-jdbc-evolutions_2.12/ivy-2.6.15.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-jdbc-evolutions_2.12/2.6.15/play-jdbc-evolutions_2.12-2.6.15.pom"/>
+				<metadata-artifact status="no" details="" size="3570" time="0" location="/home/wdd/.ivy2/cache/com.typesafe.play/play-jdbc-evolutions_2.12/ivy-2.6.15.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-jdbc-evolutions_2.12/2.6.15/play-jdbc-evolutions_2.12-2.6.15.pom"/>
 				<caller organisation="play-java-starter-example" name="play-java-starter-example_2.12" conf="compile" rev="2.6.15" rev-constraint-default="2.6.15" rev-constraint-dynamic="2.6.15" callerrev="1.0-SNAPSHOT"/>
 				<caller organisation="com.typesafe.play" name="play-ebean_2.12" conf="default, compile, runtime, master" rev="2.6.6" rev-constraint-default="2.6.6" rev-constraint-dynamic="2.6.6" callerrev="4.0.6"/>
 				<artifacts>
-					<artifact name="play-jdbc-evolutions_2.12" type="jar" ext="jar" status="successful" details="" size="120433" time="535" location="/home/wdd/.ivy2/cache/com.typesafe.play/play-jdbc-evolutions_2.12/jars/play-jdbc-evolutions_2.12-2.6.15.jar">
+					<artifact name="play-jdbc-evolutions_2.12" type="jar" ext="jar" status="no" details="" size="120433" time="0" location="/home/wdd/.ivy2/cache/com.typesafe.play/play-jdbc-evolutions_2.12/jars/play-jdbc-evolutions_2.12-2.6.15.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/play-jdbc-evolutions_2.12/2.6.15/play-jdbc-evolutions_2.12-2.6.15.jar"/>
 					</artifact>
 				</artifacts>
@@ -54,13 +54,13 @@
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play-jdbc_2.12">
-			<revision name="2.6.15" status="release" pubdate="20180525024841" resolver="public" artresolver="public" homepage="https://playframework.com" extra-info.apiURL="https://www.playframework.com/documentation/2.6.15/api/scala/index.html" downloaded="true" searched="true" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="76">
+			<revision name="2.6.15" status="release" pubdate="20180525024841" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" extra-info.apiURL="https://www.playframework.com/documentation/2.6.15/api/scala/index.html" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="76">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="3965" time="179" location="/home/wdd/.ivy2/cache/com.typesafe.play/play-jdbc_2.12/ivy-2.6.15.xml" searched="true" original-local-location="/home/wdd/.ivy2/cache/com.typesafe.play/play-jdbc_2.12/ivy-2.6.15.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-jdbc_2.12/2.6.15/play-jdbc_2.12-2.6.15.pom"/>
+				<metadata-artifact status="no" details="" size="4440" time="0" location="/home/wdd/.ivy2/cache/com.typesafe.play/play-jdbc_2.12/ivy-2.6.15.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-jdbc_2.12/2.6.15/play-jdbc_2.12-2.6.15.pom"/>
 				<caller organisation="play-java-starter-example" name="play-java-starter-example_2.12" conf="compile" rev="2.6.15" rev-constraint-default="2.6.15" rev-constraint-dynamic="2.6.15" callerrev="1.0-SNAPSHOT"/>
 				<caller organisation="com.typesafe.play" name="play-java-jdbc_2.12" conf="compile, runtime" rev="2.6.6" rev-constraint-default="2.6.6" rev-constraint-dynamic="2.6.6" callerrev="2.6.6"/>
 				<artifacts>
-					<artifact name="play-jdbc_2.12" type="jar" ext="jar" status="successful" details="" size="66441" time="189" location="/home/wdd/.ivy2/cache/com.typesafe.play/play-jdbc_2.12/jars/play-jdbc_2.12-2.6.15.jar">
+					<artifact name="play-jdbc_2.12" type="jar" ext="jar" status="no" details="" size="66441" time="0" location="/home/wdd/.ivy2/cache/com.typesafe.play/play-jdbc_2.12/jars/play-jdbc_2.12-2.6.15.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/play-jdbc_2.12/2.6.15/play-jdbc_2.12-2.6.15.jar"/>
 					</artifact>
 				</artifacts>
@@ -96,12 +96,12 @@
 			</revision>
 		</module>
 		<module organisation="com.zaxxer" name="HikariCP">
-			<revision name="2.7.9" status="release" pubdate="20180405183157" resolver="public" artresolver="public" homepage="https://github.com/brettwooldridge/HikariCP" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="78">
+			<revision name="2.7.9" status="release" pubdate="20180405183157" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/brettwooldridge/HikariCP" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="78">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="19159" time="161" location="/home/wdd/.ivy2/cache/com.zaxxer/HikariCP/ivy-2.7.9.xml" searched="true" original-local-location="/home/wdd/.ivy2/cache/com.zaxxer/HikariCP/ivy-2.7.9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/zaxxer/HikariCP/2.7.9/HikariCP-2.7.9.pom"/>
+				<metadata-artifact status="no" details="" size="8024" time="0" location="/home/wdd/.ivy2/cache/com.zaxxer/HikariCP/ivy-2.7.9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/zaxxer/HikariCP/2.7.9/HikariCP-2.7.9.pom"/>
 				<caller organisation="com.typesafe.play" name="play-jdbc_2.12" conf="default, compile, runtime, master" rev="2.7.9" rev-constraint-default="2.7.9" rev-constraint-dynamic="2.7.9" callerrev="2.6.15"/>
 				<artifacts>
-					<artifact name="HikariCP" type="bundle" ext="jar" status="successful" details="" size="143471" time="237" location="/home/wdd/.ivy2/cache/com.zaxxer/HikariCP/bundles/HikariCP-2.7.9.jar">
+					<artifact name="HikariCP" type="bundle" ext="jar" status="no" details="" size="143471" time="0" location="/home/wdd/.ivy2/cache/com.zaxxer/HikariCP/bundles/HikariCP-2.7.9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/zaxxer/HikariCP/2.7.9/HikariCP-2.7.9.jar"/>
 					</artifact>
 				</artifacts>
@@ -120,13 +120,13 @@
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play-jdbc-api_2.12">
-			<revision name="2.6.15" status="release" pubdate="20180525024741" resolver="public" artresolver="public" homepage="https://playframework.com" extra-info.apiURL="https://www.playframework.com/documentation/2.6.15/api/scala/index.html" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="75">
+			<revision name="2.6.15" status="release" pubdate="20180525024741" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" extra-info.apiURL="https://www.playframework.com/documentation/2.6.15/api/scala/index.html" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="75">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="1827" time="120" location="/home/wdd/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.12/ivy-2.6.15.xml" searched="true" original-local-location="/home/wdd/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.12/ivy-2.6.15.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-jdbc-api_2.12/2.6.15/play-jdbc-api_2.12-2.6.15.pom"/>
+				<metadata-artifact status="no" details="" size="3028" time="0" location="/home/wdd/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.12/ivy-2.6.15.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-jdbc-api_2.12/2.6.15/play-jdbc-api_2.12-2.6.15.pom"/>
 				<caller organisation="com.typesafe.play" name="play-jdbc-evolutions_2.12" conf="default, compile, runtime, master" rev="2.6.15" rev-constraint-default="2.6.15" rev-constraint-dynamic="2.6.15" callerrev="2.6.15"/>
 				<caller organisation="com.typesafe.play" name="play-jdbc_2.12" conf="default, compile, runtime, master" rev="2.6.15" rev-constraint-default="2.6.15" rev-constraint-dynamic="2.6.15" callerrev="2.6.15"/>
 				<artifacts>
-					<artifact name="play-jdbc-api_2.12" type="jar" ext="jar" status="successful" details="" size="6589" time="226" location="/home/wdd/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.12/jars/play-jdbc-api_2.12-2.6.15.jar">
+					<artifact name="play-jdbc-api_2.12" type="jar" ext="jar" status="no" details="" size="6589" time="0" location="/home/wdd/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.12/jars/play-jdbc-api_2.12-2.6.15.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/play-jdbc-api_2.12/2.6.15/play-jdbc-api_2.12-2.6.15.jar"/>
 					</artifact>
 				</artifacts>
