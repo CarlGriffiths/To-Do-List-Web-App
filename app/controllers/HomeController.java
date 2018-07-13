@@ -36,8 +36,10 @@ public class HomeController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
+        List <Item> itemList = Item.findAll();
         Form<Item> itemForm = formFactory.form(Item.class);
-        return ok(index.render(itemForm));
+
+        return ok(index.render(itemList, itemForm));
     }
 
     public Result submit() {
@@ -64,7 +66,7 @@ public class HomeController extends Controller {
             
         }
 
-        return highest;
+                return highest;
             
 
     }
