@@ -32,3 +32,5 @@ run
 EXIT
 exit
 run
+sbt
+run

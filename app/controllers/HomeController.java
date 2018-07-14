@@ -36,7 +36,7 @@ public class HomeController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-        List <Item> itemList = Item.findAll();
+        List <Item> itemList = Item.find.query().where().orderBy("Id desc").findList();
         Form<Item> itemForm = formFactory.form(Item.class);
 
         return ok(index.render(itemList, itemForm));
@@ -48,6 +48,14 @@ public class HomeController extends Controller {
         Item newItem = itemForm.get();
         newItem.setId(getNum() + 1);
         newItem.save();
+        return redirect(routes.HomeController.index());
+    }
+
+    public Result delete(int id) {
+        
+        Item itemToChange = Item.find.byId(id);
+        itemToChange.delete();
+       
         return redirect(routes.HomeController.index());
     }
 

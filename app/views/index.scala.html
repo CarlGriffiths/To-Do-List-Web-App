@@ -12,11 +12,11 @@
         <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
          <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
         <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>
     </head>
-    <body>
+    <body></body>
 
          
         <div class="row">
@@ -43,7 +43,8 @@
                             @defining(true) { compare =>  
                                 @if(a.getCompleted()== compare) {
                                     <div class="card border-primary mb-3" style="max-width: 30rem;">
-                                            <div class="card-header"><a href="@routes.HomeController.changeStatus(a.getId())">Mark as uncompleted</a></div>  
+                                            <div class="card-header"><a href="@routes.HomeController.changeStatus(a.getId())">Mark as uncompleted</a> | <a href="@routes.HomeController.delete(a.getId())">Delete</a></div>  
+                                              
                                             <div class="card-body">
                       <h5 class="card-title text-dark"><strike>@a.getMessage()</strike></h5>
                       </div>
@@ -54,7 +55,8 @@
                             @defining(false) { compare =>  
                                  @if(a.getCompleted()== compare) {
                                     <div class="card border-primary mb-3" style="max-width: 30rem;">
-                                            <div class="card-header"><a href="@routes.HomeController.changeStatus(a.getId())">Mark as completed</a></div>  
+                                            <div class="card-header"><a href="@routes.HomeController.changeStatus(a.getId())">Mark as completed</a> | <a href="@routes.HomeController.delete(a.getId())">Delete</a></div>  
+                                            
                                             <div class="card-body">
                                             <h5 class="card-title text-dark">@a.getMessage()</h5>
                                         </div>

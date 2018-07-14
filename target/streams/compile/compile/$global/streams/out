@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:62:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   variable getCompleted[0m
-[0m[[0m[31merror[0m] [0m[0m  location: variable itemToChange of type models.Item[0m
-[0m[[0m[31merror[0m] [0m[0m        else if (itemToChange.getCompleted == false){[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:39:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   method findAll()[0m
+[0m[[0m[31merror[0m] [0m[0m  location: interface io.ebean.Query<models.Item>[0m
+[0m[[0m[31merror[0m] [0m[0m        List <Item> itemList = Item.find.query().where().orderBy("Id desc").findAll();[0m
