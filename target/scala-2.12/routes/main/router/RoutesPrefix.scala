@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/Desktop/TodoList/conf/routes
-// @DATE:Sat Jul 14 12:14:20 IST 2018
+// @DATE:Sat Jul 14 12:45:29 IST 2018
 
 
 package router {
