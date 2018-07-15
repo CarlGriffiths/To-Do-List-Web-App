@@ -13,6 +13,7 @@ public class Item extends Model {
     @Id
     public int Id;
     public String message;
+    public Date date;
     public Boolean completed;
 
     public Item(){
@@ -60,5 +61,8 @@ public class Item extends Model {
 
     public void setCompletedFalse(){
         this.completed = false;
+    }
+    public void setDate(Date d){
+        this.date = d;
     }
 }

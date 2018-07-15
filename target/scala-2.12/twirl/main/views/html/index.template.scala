@@ -59,56 +59,57 @@ Seq[Any](format.raw/*3.1*/("""
                                         <div class="form-group">
                                
                                 """),_display_(/*31.34*/inputText(itemForm("message"),'_label -> "Add new item", 'size -> 40)),format.raw/*31.103*/("""
+                                """),_display_(/*32.34*/inputDate(itemForm("date"),'_label -> "Add new item", 'size -> 40)),format.raw/*32.100*/("""
                     
-                                """),format.raw/*33.33*/("""<input type="submit" value="Add" class="btn btn-secondary">
+                                """),format.raw/*34.33*/("""<input type="submit" value="Add" class="btn btn-secondary">
                     
                                  
                                 </div>
                                 </form>                
                             <h1>To-Do</h1>
 
-        """),_display_(/*40.10*/for(a <- items) yield /*40.25*/{_display_(Seq[Any](format.raw/*40.26*/("""
+        """),_display_(/*41.10*/for(a <- items) yield /*41.25*/{_display_(Seq[Any](format.raw/*41.26*/("""
             
             
-                            """),_display_(/*43.30*/defining(true)/*43.44*/ { compare =>_display_(Seq[Any](format.raw/*43.57*/("""  
-                                """),_display_(/*44.34*/if(a.getCompleted()== compare)/*44.64*/ {_display_(Seq[Any](format.raw/*44.66*/("""
-                                    """),format.raw/*45.37*/("""<div class="card border-primary mb-3" style="max-width: 30rem;">
-                                            <div class="card-header"><a href=""""),_display_(/*46.80*/routes/*46.86*/.HomeController.changeStatus(a.getId())),format.raw/*46.125*/("""">Mark as uncompleted</a> | <a href=""""),_display_(/*46.163*/routes/*46.169*/.HomeController.delete(a.getId())),format.raw/*46.202*/("""">Delete</a></div>  
+                            """),_display_(/*44.30*/defining(true)/*44.44*/ { compare =>_display_(Seq[Any](format.raw/*44.57*/("""  
+                                """),_display_(/*45.34*/if(a.getCompleted()== compare)/*45.64*/ {_display_(Seq[Any](format.raw/*45.66*/("""
+                                    """),format.raw/*46.37*/("""<div class="card border-primary mb-3" style="max-width: 30rem;">
+                                            <div class="card-header"><a href=""""),_display_(/*47.80*/routes/*47.86*/.HomeController.changeStatus(a.getId())),format.raw/*47.125*/("""">Mark as uncompleted</a> | <a href=""""),_display_(/*47.163*/routes/*47.169*/.HomeController.delete(a.getId())),format.raw/*47.202*/("""">Delete</a></div>  
                                               
                                             <div class="card-body">
-                      <h5 class="card-title text-dark"><strike>"""),_display_(/*49.65*/a/*49.66*/.getMessage()),format.raw/*49.79*/("""</strike></h5>
+                      <h5 class="card-title text-dark"><strike>"""),_display_(/*50.65*/a/*50.66*/.getMessage()),format.raw/*50.79*/("""</strike></h5>
                       </div>
                       </div>
                     
-                    """)))}),format.raw/*53.22*/("""
-                """)))}),format.raw/*54.18*/("""   
-                            """),_display_(/*55.30*/defining(false)/*55.45*/ { compare =>_display_(Seq[Any](format.raw/*55.58*/("""  
-                                 """),_display_(/*56.35*/if(a.getCompleted()== compare)/*56.65*/ {_display_(Seq[Any](format.raw/*56.67*/("""
-                                    """),format.raw/*57.37*/("""<div class="card border-primary mb-3" style="max-width: 30rem;">
-                                            <div class="card-header"><a href=""""),_display_(/*58.80*/routes/*58.86*/.HomeController.changeStatus(a.getId())),format.raw/*58.125*/("""">Mark as completed</a> | <a href=""""),_display_(/*58.161*/routes/*58.167*/.HomeController.delete(a.getId())),format.raw/*58.200*/("""">Delete</a></div>  
+                    """)))}),format.raw/*54.22*/("""
+                """)))}),format.raw/*55.18*/("""   
+                            """),_display_(/*56.30*/defining(false)/*56.45*/ { compare =>_display_(Seq[Any](format.raw/*56.58*/("""  
+                                 """),_display_(/*57.35*/if(a.getCompleted()== compare)/*57.65*/ {_display_(Seq[Any](format.raw/*57.67*/("""
+                                    """),format.raw/*58.37*/("""<div class="card border-primary mb-3" style="max-width: 30rem;">
+                                            <div class="card-header"><a href=""""),_display_(/*59.80*/routes/*59.86*/.HomeController.changeStatus(a.getId())),format.raw/*59.125*/("""">Mark as completed</a> | <a href=""""),_display_(/*59.161*/routes/*59.167*/.HomeController.delete(a.getId())),format.raw/*59.200*/("""">Delete</a></div>  
                                             
                                             <div class="card-body">
-                                            <h5 class="card-title text-dark">"""),_display_(/*61.79*/a/*61.80*/.getMessage()),format.raw/*61.93*/("""</h5>
+                                            <h5 class="card-title text-dark">"""),_display_(/*62.79*/a/*62.80*/.getMessage()),format.raw/*62.93*/("""</h5>
                                         </div>
                                     </div>
 
-                                 """)))}),format.raw/*65.35*/("""
-                                """)))}),format.raw/*66.34*/("""
+                                 """)))}),format.raw/*66.35*/("""
+                                """)))}),format.raw/*67.34*/("""
                     
                     
         
                   
 
-        """)))}),format.raw/*72.10*/("""
-    """),format.raw/*73.5*/("""</center>
+        """)))}),format.raw/*73.10*/("""
+    """),format.raw/*74.5*/("""</center>
 </div>
 
           
         
                
-            """)))}),format.raw/*79.14*/("""
+            """)))}),format.raw/*80.14*/("""
 
-    """),format.raw/*81.5*/("""</body>
+    """),format.raw/*82.5*/("""</body>
 </html>
 """))
       }
@@ -126,11 +127,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sat Jul 14 12:18:35 IST 2018
+                  DATE: Sun Jul 15 23:47:26 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/index.scala.html
-                  HASH: 63a98fe963f7b0b5530eae029e6c81b43542cb3c
-                  MATRIX: 963->2|1077->46|1121->44|1148->62|1175->63|1342->203|1357->209|1420->250|1508->311|1523->317|1584->356|2092->837|2107->843|2169->884|2439->1127|2538->1216|2579->1218|2640->1252|2653->1256|2684->1266|2745->1299|2967->1494|3058->1563|3140->1617|3430->1880|3461->1895|3500->1896|3583->1952|3606->1966|3657->1979|3720->2015|3759->2045|3799->2047|3864->2084|4035->2228|4050->2234|4111->2273|4177->2311|4193->2317|4248->2350|4475->2550|4485->2551|4519->2564|4665->2679|4714->2697|4774->2730|4798->2745|4849->2758|4913->2795|4952->2825|4992->2827|5057->2864|5228->3008|5243->3014|5304->3053|5368->3089|5384->3095|5439->3128|5678->3340|5688->3341|5722->3354|5884->3485|5949->3519|6061->3600|6093->3605|6191->3672|6224->3678
-                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|56->26|56->26|56->26|57->27|57->27|57->27|58->28|61->31|61->31|63->33|70->40|70->40|70->40|73->43|73->43|73->43|74->44|74->44|74->44|75->45|76->46|76->46|76->46|76->46|76->46|76->46|79->49|79->49|79->49|83->53|84->54|85->55|85->55|85->55|86->56|86->56|86->56|87->57|88->58|88->58|88->58|88->58|88->58|88->58|91->61|91->61|91->61|95->65|96->66|102->72|103->73|109->79|111->81
+                  HASH: 96379392c68cc02e565bd1c2455571dd70aca3fd
+                  MATRIX: 963->2|1077->46|1121->44|1148->62|1175->63|1342->203|1357->209|1420->250|1508->311|1523->317|1584->356|2092->837|2107->843|2169->884|2439->1127|2538->1216|2579->1218|2640->1252|2653->1256|2684->1266|2745->1299|2967->1494|3058->1563|3119->1597|3207->1663|3289->1717|3579->1980|3610->1995|3649->1996|3732->2052|3755->2066|3806->2079|3869->2115|3908->2145|3948->2147|4013->2184|4184->2328|4199->2334|4260->2373|4326->2411|4342->2417|4397->2450|4624->2650|4634->2651|4668->2664|4814->2779|4863->2797|4923->2830|4947->2845|4998->2858|5062->2895|5101->2925|5141->2927|5206->2964|5377->3108|5392->3114|5453->3153|5517->3189|5533->3195|5588->3228|5827->3440|5837->3441|5871->3454|6033->3585|6098->3619|6210->3700|6242->3705|6340->3772|6373->3778
+                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|56->26|56->26|56->26|57->27|57->27|57->27|58->28|61->31|61->31|62->32|62->32|64->34|71->41|71->41|71->41|74->44|74->44|74->44|75->45|75->45|75->45|76->46|77->47|77->47|77->47|77->47|77->47|77->47|80->50|80->50|80->50|84->54|85->55|86->56|86->56|86->56|87->57|87->57|87->57|88->58|89->59|89->59|89->59|89->59|89->59|89->59|92->62|92->62|92->62|96->66|97->67|103->73|104->74|110->80|112->82
                   -- GENERATED --
               */
           
