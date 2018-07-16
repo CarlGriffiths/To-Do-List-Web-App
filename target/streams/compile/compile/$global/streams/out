@@ -1,2 +1,13 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/models/Item.java:77:1: ')' expected[0m
-[0m[[0m[31merror[0m] [0m[0m        if(String.format("%1$td%1$tB%1$tY", date).equals(String.format("%1$td%1$tB%1$tY", new Date())){[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/views/index.scala.html:94:115: not found: value a[0m
+[0m[[0m[31merror[0m] [0m[0m                                            <div class="card-header"><a href="@routes.HomeController.changeStatus(a.getId())">Mark as uncompleted</a> | <a href="@routes.HomeController.delete(a.getId())">Delete</a></div>  [0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/views/index.scala.html:94:192: not found: value a[0m
+[0m[[0m[31merror[0m] [0m[0m                                            <div class="card-header"><a href="@routes.HomeController.changeStatus(a.getId())">Mark as uncompleted</a> | <a href="@routes.HomeController.delete(a.getId())">Delete</a></div>  [0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                                                                                               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/views/index.scala.html:107:115: not found: value a[0m
+[0m[[0m[31merror[0m] [0m[0m                                            <div class="card-header"><a href="@routes.HomeController.changeStatus(a.getId())">Mark as completed</a> | <a href="@routes.HomeController.delete(a.getId())">Delete</a></div>  [0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/views/index.scala.html:107:190: not found: value a[0m
+[0m[[0m[31merror[0m] [0m[0m                                            <div class="card-header"><a href="@routes.HomeController.changeStatus(a.getId())">Mark as completed</a> | <a href="@routes.HomeController.delete(a.getId())">Delete</a></div>  [0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                                                                                                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0mfour errors found[0m

@@ -36,11 +36,15 @@
                                  
                                 </div>
                                 </form>                
-                            <h1>To-Do</h1>
+                            
+                             <h3>Due today</h3>
 
                      @for(a <- items){
-            
+
                        
+                       @if(a.isToday() == true){
+
+                           
                             @defining(true) { compare =>  
                                 @if(a.getCompleted()== compare) {
                                     <div class="card border-primary mb-3" style="max-width: 30rem;">
@@ -48,7 +52,7 @@
                                               
                                             <div class="card-body">
                                     <h5 class="card-title text-dark"><strike>@a.getMessage()</strike></h5>
-                                     <h5 class="card-title text-dark"><strike>@a.isToday()</strike></h5>
+                                     
                                     </div>
                                     </div>
                     
@@ -72,6 +76,52 @@
                   
 
         }
+
+                     }
+
+                     <h3>Due in future</h3>
+
+
+                      @for(f <- items){
+
+                       
+                       @if(f.isToday() == false){
+
+                           
+                            @defining(true) { compare =>  
+                                @if(f.getCompleted()== compare) {
+                                    <div class="card border-primary mb-3" style="max-width: 30rem;">
+                                            <div class="card-header"><a href="@routes.HomeController.changeStatus(f.getId())">Mark as uncompleted</a> | <a href="@routes.HomeController.delete(f.getId())">Delete</a></div>  
+                                              
+                                            <div class="card-body">
+                                    <h5 class="card-title text-dark"><strike>@f.getMessage()</strike></h5>
+                                     
+                                    </div>
+                                    </div>
+                    
+                    }
+                }   
+                            @defining(false) { compare =>  
+                                 @if(f.getCompleted()== compare) {
+                                    <div class="card border-primary mb-3" style="max-width: 30rem;">
+                                            <div class="card-header"><a href="@routes.HomeController.changeStatus(f.getId())">Mark as completed</a> | <a href="@routes.HomeController.delete(f.getId())">Delete</a></div>  
+                                            
+                                            <div class="card-body">
+                                            <h5 class="card-title text-dark">@f.getMessage()</h5>
+                                        </div>
+                                    </div>
+
+                                 }
+                                }
+                    
+                    
+        
+                  
+
+        }
+
+                     }
+
     </center>
 </div>
 
