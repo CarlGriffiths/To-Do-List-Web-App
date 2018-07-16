@@ -1,4 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/views/adddate.scala.html:26:75: no arguments allowed for nullary method submitDate: ()play.api.mvc.Call[0m
-[0m[[0m[31merror[0m] [0m[0m                            @form(action=routes.HomeController.submitDate(id), 'class -> "form-hotizontal", 'role -> "form") {[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                          ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/models/Item.java:77:1: ')' expected[0m
+[0m[[0m[31merror[0m] [0m[0m        if(String.format("%1$td%1$tB%1$tY", date).equals(String.format("%1$td%1$tB%1$tY", new Date())){[0m

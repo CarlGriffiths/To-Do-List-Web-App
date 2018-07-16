@@ -69,4 +69,26 @@ public class Item extends Model {
     public void setDate(Date d){
         this.date = d;
     }
+
+    public String dateToString(){
+
+        return String.format("%1$td%1$tB%1$tY", date);
+
+    }
+
+    public String todaysDateToString(){
+
+        return String.format("%1$td%1$tB%1$tY", new Date());
+
+    }
+
+    public Boolean isToday(){
+        Boolean returnValue = false;
+
+    
+        if(dateToString().equals(todaysDateToString())){
+            returnValue = true;
+        }
+        return returnValue;
+    }
 }

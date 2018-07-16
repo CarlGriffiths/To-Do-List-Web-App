@@ -38,18 +38,19 @@
                                 </form>                
                             <h1>To-Do</h1>
 
-        @for(a <- items){
+                     @for(a <- items){
             
-            
+                       
                             @defining(true) { compare =>  
                                 @if(a.getCompleted()== compare) {
                                     <div class="card border-primary mb-3" style="max-width: 30rem;">
                                             <div class="card-header"><a href="@routes.HomeController.changeStatus(a.getId())">Mark as uncompleted</a> | <a href="@routes.HomeController.delete(a.getId())">Delete</a></div>  
                                               
                                             <div class="card-body">
-                      <h5 class="card-title text-dark"><strike>@a.getMessage()</strike></h5>
-                      </div>
-                      </div>
+                                    <h5 class="card-title text-dark"><strike>@a.getMessage()</strike></h5>
+                                     <h5 class="card-title text-dark"><strike>@a.isToday()</strike></h5>
+                                    </div>
+                                    </div>
                     
                     }
                 }   
