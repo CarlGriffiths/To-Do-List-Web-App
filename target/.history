@@ -35,3 +35,13 @@ run
 sbt
 run
 h2-browser
+run
+RUN
+run
+h2-browser
+run
+h2-browser
+run
+h2-browser
+exit
+run

@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:39:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   method findAll()[0m
-[0m[[0m[31merror[0m] [0m[0m  location: interface io.ebean.Query<models.Item>[0m
-[0m[[0m[31merror[0m] [0m[0m        List <Item> itemList = Item.find.query().where().orderBy("Id desc").findAll();[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/views/adddate.scala.html:26:75: no arguments allowed for nullary method submitDate: ()play.api.mvc.Call[0m
+[0m[[0m[31merror[0m] [0m[0m                            @form(action=routes.HomeController.submitDate(id), 'class -> "form-hotizontal", 'role -> "form") {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

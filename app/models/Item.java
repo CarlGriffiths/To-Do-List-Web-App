@@ -46,6 +46,10 @@ public class Item extends Model {
         return completed;
     }
 
+    public Date getDate(){
+        return date;
+    }
+
     public void setId(int id){
         this.Id = id;
     }

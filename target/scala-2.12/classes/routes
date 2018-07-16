@@ -5,6 +5,8 @@
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
 POST     /submit                           controllers.HomeController.submit
+GET     /adddate                         controllers.HomeController.addDate(id: Integer)
+POST     /submitdate                           controllers.HomeController.submitDate(id: Integer)
 GET /completed:id                     controllers.HomeController.changeStatus(id: Integer)
 GET /delete/:id                     controllers.HomeController.delete(id: Integer)
 

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/Desktop/TodoList/conf/routes
-// @DATE:Sat Jul 14 12:45:29 IST 2018
+// @DATE:Mon Jul 16 06:13:44 IST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -19,7 +19,17 @@ package controllers.javascript {
     }
 
   
-    // @LINE:8
+    // @LINE:7
+    def submit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.submit",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "submit"})
+        }
+      """
+    )
+  
+    // @LINE:10
     def changeStatus: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.changeStatus",
       """
@@ -29,12 +39,22 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:9
+    // @LINE:11
     def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.delete",
       """
         function(id0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "delete/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Integer]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:9
+    def submitDate: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.submitDate",
+      """
+        function(id0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "submitdate" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[Integer]].javascriptUnbind + """)("id", id0)])})
         }
       """
     )
@@ -49,19 +69,19 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:7
-    def submit: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.submit",
+    // @LINE:8
+    def addDate: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.addDate",
       """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "submit"})
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "adddate" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[Integer]].javascriptUnbind + """)("id", id0)])})
         }
       """
     )
   
   }
 
-  // @LINE:13
+  // @LINE:15
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -69,7 +89,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:13
+    // @LINE:15
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

@@ -1,0 +1,40 @@
+
+@(itemForm: Form[Item], id: Integer)
+
+@import helper._
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+            
+        <title>title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+         <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>
+    </head>
+    <body></body>
+
+         
+        <div class="row">
+                <div class="col-12 center-block">
+                    <center>
+                            <br>
+                            @form(action=routes.HomeController.submitDate(id), 'class -> "form-hotizontal", 'role -> "form") {
+                                @CSRF.formField
+                                <form class="form-inline" action=routes.HomeController.submit()>
+                                        <div class="form-group">
+                               
+                               @inputText(itemForm("message"),'_label -> "Is this correct?", 'size -> 40)
+                                @inputDate(itemForm("date"),'_label -> "Enter date", 'size -> 90)
+                    
+                                <input type="submit" value="Add" class="btn btn-secondary">
+
+                            }
+                    
+                           
+    </body>
+</html>
