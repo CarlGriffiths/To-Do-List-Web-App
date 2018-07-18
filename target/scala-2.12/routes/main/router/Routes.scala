@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/Desktop/TodoList/conf/routes
-// @DATE:Mon Jul 16 06:13:44 IST 2018
+// @DATE:Tue Jul 17 00:18:06 IST 2018
 
 package router
 
@@ -41,7 +41,7 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """submit""", """controllers.HomeController.submit"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """adddate""", """controllers.HomeController.addDate(id:Integer)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """task""", """controllers.HomeController.addDate(id:Integer)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """submitdate""", """controllers.HomeController.submitDate(id:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """completed""" + "$" + """id<[^/]+>""", """controllers.HomeController.changeStatus(id:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """delete/""" + "$" + """id<[^/]+>""", """controllers.HomeController.delete(id:Integer)"""),
@@ -91,7 +91,7 @@ class Routes(
 
   // @LINE:8
   private[this] lazy val controllers_HomeController_addDate2_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("adddate")))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("task")))
   )
   private[this] lazy val controllers_HomeController_addDate2_invoker = createInvoker(
     HomeController_0.addDate(fakeValue[Integer]),
@@ -101,7 +101,7 @@ class Routes(
       "addDate",
       Seq(classOf[Integer]),
       "GET",
-      this.prefix + """adddate""",
+      this.prefix + """task""",
       """""",
       Seq()
     )

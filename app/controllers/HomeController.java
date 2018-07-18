@@ -120,6 +120,8 @@ public class HomeController extends Controller {
             
     }
 
+    
+
     public int getNum(){
         List <Item> itemList = Item.findAll();
         int highest = 0;

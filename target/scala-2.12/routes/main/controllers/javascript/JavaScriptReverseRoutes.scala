@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/Desktop/TodoList/conf/routes
-// @DATE:Mon Jul 16 06:13:44 IST 2018
+// @DATE:Tue Jul 17 00:18:06 IST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -74,7 +74,7 @@ package controllers.javascript {
       "controllers.HomeController.addDate",
       """
         function(id0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "adddate" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[Integer]].javascriptUnbind + """)("id", id0)])})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "task" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[Integer]].javascriptUnbind + """)("id", id0)])})
         }
       """
     )

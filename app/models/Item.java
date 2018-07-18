@@ -15,6 +15,10 @@ public class Item extends Model {
     public String message;
     public Date date;
     public Boolean completed;
+    //public static int dueToday;
+   
+    @ManyToOne
+    public Category category;
 
     public Item(){
 
@@ -91,4 +95,7 @@ public class Item extends Model {
         }
         return returnValue;
     }
+
+
+    
 }
