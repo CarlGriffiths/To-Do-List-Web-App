@@ -43,35 +43,11 @@
                 <div class="col-12 center-block">
                     <center>
                            
-                            
-                    <h3>Due today</h3>
-                             
-
-                     @for(a <- items){
-
-                       
-                       @if(a.isToday() == true){
-
-                           @defining(true) { compare =>  
-                                 @if(a.getCompleted()== compare) {
-                                    <div class="card border-primary mb-3" style="max-width: 25rem;">
-                                            <div class="card-header"><a href="@routes.HomeController.changeStatus(a.getId())">Mark as completed</a> | <a href="@routes.HomeController.delete(a.getId())">Delete</a></div>  
-                                            
-                                            <div class="card-body">
-                                            <h5 class="card-title text-dark">@a.getMessage()</h5>
-                                        </div>
-                                    </div>
-                                 }
-                           }
-                           
-                  
-
-                        }
-
-                     }
+                    <h2>Completed</h2>     
+                   
 
                      <hr>
-                     <h3>Due in future</h3>
+                     
 
 
                       @for(f <- items){
@@ -80,8 +56,7 @@
                         @if(f.isToday() == false){
 
                            
-                            @defining(true) { compare =>  
-                                 @if(f.getCompleted()== compare) {
+                           
                                     <div class="card border-primary mb-3" style="max-width: 25rem;">
                                             <div class="card-header"><a href="@routes.HomeController.changeStatus(f.getId())">Mark as completed</a> | <a href="@routes.HomeController.delete(f.getId())">Delete</a></div>  
                                             
@@ -90,12 +65,10 @@
                                         </div>
                                     </div>
 
-                                 }
-                          
-                            }
+                              
                         }
 
-                      }
+                    }
 
                      
 
