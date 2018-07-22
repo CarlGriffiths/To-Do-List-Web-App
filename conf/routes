@@ -9,6 +9,7 @@ GET     /task                         controllers.HomeController.addDate(id: Int
 POST     /submitdate                           controllers.HomeController.submitDate(id: Integer)
 GET /completed:id                     controllers.HomeController.changeStatus(id: Integer)
 GET /delete/:id                     controllers.HomeController.delete(id: Integer)
+GET /completed                     controllers.HomeController.completed
 
 
 # Map static resources from the /public folder to the /assets URL path

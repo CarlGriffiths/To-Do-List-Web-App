@@ -1,2 +1,3 @@
-[0m[[0m[31merror[0m] [0m[0m[Error] /home/wdd/Desktop/TodoList/app/views/index.scala.html:84[0m
-[0m[[0m[31merror[0m] [0m[0m</html>: Expected '}' but found 'EOF'[0m
+[0m[[0m[31merror[0m] [0m[0m[Error] /home/wdd/Desktop/TodoList/app/views/completed.scala.html:100[0m
+[0m[[0m[31merror[0m] [0m[0m            }: Not parsed?[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mtwirlCompileTemplates[0m) Twirl compilation failed[0m

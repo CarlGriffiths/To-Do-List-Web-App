@@ -14,8 +14,8 @@ public class Category extends Model {
     public int Id;
     public String name;
     
-    @OneToMany
-    List<Item> items;
+    //@OneToMany
+    //List<Item> items;
 
     public Category(){
 

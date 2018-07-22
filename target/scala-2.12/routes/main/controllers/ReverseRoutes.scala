@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/Desktop/TodoList/conf/routes
-// @DATE:Tue Jul 17 00:18:06 IST 2018
+// @DATE:Sun Jul 22 21:40:41 IST 2018
 
 import play.api.mvc.Call
 
@@ -17,6 +17,12 @@ package controllers {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:12
+    def completed(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "completed")
+    }
   
     // @LINE:7
     def submit(): Call = {
@@ -56,14 +62,14 @@ package controllers {
   
   }
 
-  // @LINE:15
+  // @LINE:16
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:15
+    // @LINE:16
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))

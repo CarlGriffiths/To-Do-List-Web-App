@@ -46,125 +46,115 @@ Seq[Any](format.raw/*3.1*/("""
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
         <script src=""""),_display_(/*17.23*/routes/*17.29*/.Assets.versioned("javascripts/hello.js")),format.raw/*17.70*/("""" type="text/javascript"></script>
     </head>
-    <body></body>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Navbar</a>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      
+      <li class="nav-item">
+        <a class="nav-link" href=".">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="/completed">completed</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
+
+
 
          
         <div class="row">
                 <div class="col-12 center-block">
                     <center>
                             <br>
-                            """),_display_(/*26.30*/form(action=routes.HomeController.submit(), 'class -> "form-hotizontal", 'role -> "form")/*26.119*/ {_display_(Seq[Any](format.raw/*26.121*/("""
-                                """),_display_(/*27.34*/CSRF/*27.38*/.formField),format.raw/*27.48*/("""
-                                """),format.raw/*28.33*/("""<form class="form-inline" action=routes.HomeController.submit()>
+                            """),_display_(/*48.30*/form(action=routes.HomeController.submit(), 'class -> "form-hotizontal", 'role -> "form")/*48.119*/ {_display_(Seq[Any](format.raw/*48.121*/("""
+                                """),_display_(/*49.34*/CSRF/*49.38*/.formField),format.raw/*49.48*/("""
+                                """),format.raw/*50.33*/("""<form class="form-inline" action=routes.HomeController.submit()>
                                      <div class="form-group">
                                
-                                """),_display_(/*31.34*/inputText(itemForm("message"),'_label -> "Add new item", 'size -> 40)),format.raw/*31.103*/("""
+                                """),_display_(/*53.34*/inputText(itemForm("message"),'_label -> "Add new item", 'size -> 40)),format.raw/*53.103*/("""
                                 
                     
-                                """),format.raw/*34.33*/("""<input type="submit" value="Add task" class="btn btn-secondary">
+                                """),format.raw/*56.33*/("""<input type="submit" value="Add task" class="btn btn-secondary">
                     
                                  
                                  </div>
                                 </form>                
                             
+                            """)))}),format.raw/*62.30*/("""
                             
-                             <h3>Due today</h3>
+                    """),format.raw/*64.21*/("""<h3>Due today</h3>
                              
 
-                     """),_display_(/*44.23*/for(a <- items) yield /*44.38*/{_display_(Seq[Any](format.raw/*44.39*/("""
+                     """),_display_(/*67.23*/for(a <- items) yield /*67.38*/{_display_(Seq[Any](format.raw/*67.39*/("""
 
                        
-                       """),_display_(/*47.25*/if(a.isToday() == true)/*47.48*/{_display_(Seq[Any](format.raw/*47.49*/("""
+                       """),_display_(/*70.25*/if(a.isToday() == true)/*70.48*/{_display_(Seq[Any](format.raw/*70.49*/("""
 
-                           
-                            """),_display_(/*50.30*/defining(true)/*50.44*/ { compare =>_display_(Seq[Any](format.raw/*50.57*/("""  
-                                """),_display_(/*51.34*/if(a.getCompleted()== compare)/*51.64*/ {_display_(Seq[Any](format.raw/*51.66*/("""
-                                    """),format.raw/*52.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
-                                            <div class="card-header"><a href=""""),_display_(/*53.80*/routes/*53.86*/.HomeController.changeStatus(a.getId())),format.raw/*53.125*/("""">Mark as uncompleted</a> | <a href=""""),_display_(/*53.163*/routes/*53.169*/.HomeController.delete(a.getId())),format.raw/*53.202*/("""">Delete</a><a href=""""),_display_(/*53.224*/routes/*53.230*/.HomeController.addDate(a.getId())),format.raw/*53.264*/("""">Edit</a><</div>  
-                                              
-                                            <div class="card-body">
-                                            <a href=""""),_display_(/*56.55*/routes/*56.61*/.HomeController.changeStatus(a.getId())),format.raw/*56.100*/("""">
-                                            <h5 class="card-title text-dark"><strike>"""),_display_(/*57.87*/a/*57.88*/.getMessage()),format.raw/*57.101*/("""</strike></h5>
-                                     
-                                    </div>
-                                    </div>
-                    
-                                """)))}),format.raw/*62.34*/("""
-                                        """)))}),format.raw/*63.42*/("""   
-                            """),_display_(/*64.30*/defining(false)/*64.45*/ { compare =>_display_(Seq[Any](format.raw/*64.58*/("""  
-                                 """),_display_(/*65.35*/if(a.getCompleted()== compare)/*65.65*/ {_display_(Seq[Any](format.raw/*65.67*/("""
-                                    """),format.raw/*66.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
-                                            <div class="card-header"><a href=""""),_display_(/*67.80*/routes/*67.86*/.HomeController.changeStatus(a.getId())),format.raw/*67.125*/("""">Mark as completed</a> | <a href=""""),_display_(/*67.161*/routes/*67.167*/.HomeController.delete(a.getId())),format.raw/*67.200*/("""">Delete</a></div>  
+                           """),_display_(/*72.29*/defining(false)/*72.44*/ { compare =>_display_(Seq[Any](format.raw/*72.57*/("""  
+                                 """),_display_(/*73.35*/if(a.getCompleted()== compare)/*73.65*/ {_display_(Seq[Any](format.raw/*73.67*/("""
+                                    """),format.raw/*74.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
+                                            <div class="card-header"><a href=""""),_display_(/*75.80*/routes/*75.86*/.HomeController.changeStatus(a.getId())),format.raw/*75.125*/("""">Mark as completed</a> | <a href=""""),_display_(/*75.161*/routes/*75.167*/.HomeController.delete(a.getId())),format.raw/*75.200*/("""">Delete</a></div>  
                                             
                                             <div class="card-body">
-                                            <h5 class="card-title text-dark">"""),_display_(/*70.79*/a/*70.80*/.getMessage()),format.raw/*70.93*/("""</h5>
+                                            <h5 class="card-title text-dark">"""),_display_(/*78.79*/a/*78.80*/.getMessage()),format.raw/*78.93*/("""</h5>
                                         </div>
                                     </div>
-
-                                 """)))}),format.raw/*74.35*/("""
-                            """)))}),format.raw/*75.30*/("""
-                    
-                    
-        
+                                 """)))}),format.raw/*81.35*/("""
+                           """)))}),format.raw/*82.29*/("""
+                           
                   
 
-                        """)))}),format.raw/*81.26*/("""
+                        """)))}),format.raw/*86.26*/("""
 
-                     """)))}),format.raw/*83.23*/("""
+                     """)))}),format.raw/*88.23*/("""
 
-                    """),format.raw/*85.21*/("""<hr>
+                     """),format.raw/*90.22*/("""<hr>
                      <h3>Due in future</h3>
 
 
-                      """),_display_(/*89.24*/for(f <- items) yield /*89.39*/{_display_(Seq[Any](format.raw/*89.40*/("""
+                      """),_display_(/*94.24*/for(f <- items) yield /*94.39*/{_display_(Seq[Any](format.raw/*94.40*/("""
 
                        
-                       """),_display_(/*92.25*/if(f.isToday() == false)/*92.49*/{_display_(Seq[Any](format.raw/*92.50*/("""
+                        """),_display_(/*97.26*/if(f.isToday() == false)/*97.50*/{_display_(Seq[Any](format.raw/*97.51*/("""
 
                            
-                            """),_display_(/*95.30*/defining(true)/*95.44*/ { compare =>_display_(Seq[Any](format.raw/*95.57*/("""  
-                                """),_display_(/*96.34*/if(f.getCompleted()== compare)/*96.64*/ {_display_(Seq[Any](format.raw/*96.66*/("""
-                                    """),format.raw/*97.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
-                                            <div class="card-header"><a href=""""),_display_(/*98.80*/routes/*98.86*/.HomeController.changeStatus(f.getId())),format.raw/*98.125*/("""">Mark as uncompleted</a> | <a href=""""),_display_(/*98.163*/routes/*98.169*/.HomeController.delete(f.getId())),format.raw/*98.202*/("""">Delete</a></div>  
-                                              
-                                            <div class="card-body">
-                                    <h5 class="card-title text-dark"><strike>"""),_display_(/*101.79*/f/*101.80*/.getMessage()),format.raw/*101.93*/("""</strike></h5>
-                                     
-                                    </div>
-                                    </div>
-                    
-                    """)))}),format.raw/*106.22*/("""
-                """)))}),format.raw/*107.18*/("""   
-                            """),_display_(/*108.30*/defining(false)/*108.45*/ { compare =>_display_(Seq[Any](format.raw/*108.58*/("""  
-                                 """),_display_(/*109.35*/if(f.getCompleted()== compare)/*109.65*/ {_display_(Seq[Any](format.raw/*109.67*/("""
-                                    """),format.raw/*110.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
-                                            <div class="card-header"><a href=""""),_display_(/*111.80*/routes/*111.86*/.HomeController.changeStatus(f.getId())),format.raw/*111.125*/("""">Mark as completed</a> | <a href=""""),_display_(/*111.161*/routes/*111.167*/.HomeController.delete(f.getId())),format.raw/*111.200*/("""">Delete</a></div>  
+                            """),_display_(/*100.30*/defining(false)/*100.45*/ { compare =>_display_(Seq[Any](format.raw/*100.58*/("""  
+                                 """),_display_(/*101.35*/if(f.getCompleted()== compare)/*101.65*/ {_display_(Seq[Any](format.raw/*101.67*/("""
+                                    """),format.raw/*102.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
+                                            <div class="card-header"><a href=""""),_display_(/*103.80*/routes/*103.86*/.HomeController.changeStatus(f.getId())),format.raw/*103.125*/("""">Mark as completed</a> | <a href=""""),_display_(/*103.161*/routes/*103.167*/.HomeController.delete(f.getId())),format.raw/*103.200*/("""">Delete</a></div>  
                                             
                                             <div class="card-body">
-                                            <h5 class="card-title text-dark">"""),_display_(/*114.79*/f/*114.80*/.getMessage()),format.raw/*114.93*/("""</h5>
+                                            <h5 class="card-title text-dark">"""),_display_(/*106.79*/f/*106.80*/.getMessage()),format.raw/*106.93*/("""</h5>
                                         </div>
                                     </div>
 
-                                 """)))}),format.raw/*118.35*/("""
-                                """)))}),format.raw/*119.34*/("""
-                    
-                    
-        
-                  
+                                 """)))}),format.raw/*110.35*/("""
+                          
+                            """)))}),format.raw/*112.30*/("""
+                        """)))}),format.raw/*113.26*/("""
 
-        """)))}),format.raw/*125.10*/("""
+                      """)))}),format.raw/*115.24*/("""
 
-                     """)))}),format.raw/*127.23*/("""
+                     
 
-    """),format.raw/*129.5*/("""</center>
-</div>
+                            """),format.raw/*119.29*/("""</center>
+                            </div>
 
           
         
                
-            """)))}),format.raw/*135.14*/("""
+           
 
-    """),format.raw/*137.5*/("""</body>
+    </body>
 </html>
 """))
       }
@@ -182,11 +172,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Jul 17 14:44:45 IST 2018
+                  DATE: Sun Jul 22 22:17:28 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/index.scala.html
-                  HASH: fb709756dc426eea3c354bf39d2374e1c3a66c97
-                  MATRIX: 963->2|1077->46|1121->44|1148->62|1175->63|1342->203|1357->209|1420->250|1508->311|1523->317|1584->356|2092->837|2107->843|2169->884|2439->1127|2538->1216|2579->1218|2640->1252|2653->1256|2684->1266|2745->1299|2964->1491|3055->1560|3170->1647|3572->2022|3603->2037|3642->2038|3719->2088|3751->2111|3790->2112|3876->2171|3899->2185|3950->2198|4013->2234|4052->2264|4092->2266|4157->2303|4328->2447|4343->2453|4404->2492|4470->2530|4486->2536|4541->2569|4591->2591|4607->2597|4663->2631|4879->2820|4894->2826|4955->2865|5071->2954|5081->2955|5116->2968|5340->3161|5413->3203|5473->3236|5497->3251|5548->3264|5612->3301|5651->3331|5691->3333|5756->3370|5927->3514|5942->3520|6003->3559|6067->3595|6083->3601|6138->3634|6377->3846|6387->3847|6421->3860|6583->3991|6644->4021|6772->4118|6827->4142|6877->4164|6978->4238|7009->4253|7048->4254|7125->4304|7158->4328|7197->4329|7283->4388|7306->4402|7357->4415|7420->4451|7459->4481|7499->4483|7564->4520|7735->4664|7750->4670|7811->4709|7877->4747|7893->4753|7948->4786|8190->5000|8201->5001|8236->5014|8449->5195|8499->5213|8560->5246|8585->5261|8637->5274|8702->5311|8742->5341|8783->5343|8849->5380|9021->5524|9037->5530|9099->5569|9164->5605|9181->5611|9237->5644|9477->5856|9488->5857|9523->5870|9686->6001|9752->6035|9865->6116|9921->6140|9955->6146|10054->6213|10088->6219
-                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|56->26|56->26|56->26|57->27|57->27|57->27|58->28|61->31|61->31|64->34|74->44|74->44|74->44|77->47|77->47|77->47|80->50|80->50|80->50|81->51|81->51|81->51|82->52|83->53|83->53|83->53|83->53|83->53|83->53|83->53|83->53|83->53|86->56|86->56|86->56|87->57|87->57|87->57|92->62|93->63|94->64|94->64|94->64|95->65|95->65|95->65|96->66|97->67|97->67|97->67|97->67|97->67|97->67|100->70|100->70|100->70|104->74|105->75|111->81|113->83|115->85|119->89|119->89|119->89|122->92|122->92|122->92|125->95|125->95|125->95|126->96|126->96|126->96|127->97|128->98|128->98|128->98|128->98|128->98|128->98|131->101|131->101|131->101|136->106|137->107|138->108|138->108|138->108|139->109|139->109|139->109|140->110|141->111|141->111|141->111|141->111|141->111|141->111|144->114|144->114|144->114|148->118|149->119|155->125|157->127|159->129|165->135|167->137
+                  HASH: 2d4e5b5b6d2c9557fe14092f55914379204ae056
+                  MATRIX: 963->2|1077->46|1121->44|1148->62|1175->63|1342->203|1357->209|1420->250|1508->311|1523->317|1584->356|2092->837|2107->843|2169->884|3151->1839|3250->1928|3291->1930|3352->1964|3365->1968|3396->1978|3457->2011|3676->2203|3767->2272|3882->2359|4187->2633|4265->2683|4364->2755|4395->2770|4434->2771|4511->2821|4543->2844|4582->2845|4639->2875|4663->2890|4714->2903|4778->2940|4817->2970|4857->2972|4922->3009|5093->3153|5108->3159|5169->3198|5233->3234|5249->3240|5304->3273|5543->3485|5553->3486|5587->3499|5748->3629|5808->3658|5913->3732|5968->3756|6019->3779|6120->3853|6151->3868|6190->3869|6268->3920|6301->3944|6340->3945|6427->4004|6452->4019|6504->4032|6569->4069|6609->4099|6650->4101|6716->4138|6888->4282|6904->4288|6966->4327|7031->4363|7048->4369|7104->4402|7344->4614|7355->4615|7390->4628|7553->4759|7642->4816|7700->4842|7757->4867|7839->4920
+                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|78->48|78->48|78->48|79->49|79->49|79->49|80->50|83->53|83->53|86->56|92->62|94->64|97->67|97->67|97->67|100->70|100->70|100->70|102->72|102->72|102->72|103->73|103->73|103->73|104->74|105->75|105->75|105->75|105->75|105->75|105->75|108->78|108->78|108->78|111->81|112->82|116->86|118->88|120->90|124->94|124->94|124->94|127->97|127->97|127->97|130->100|130->100|130->100|131->101|131->101|131->101|132->102|133->103|133->103|133->103|133->103|133->103|133->103|136->106|136->106|136->106|140->110|142->112|143->113|145->115|149->119
                   -- GENERATED --
               */
           

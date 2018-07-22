@@ -17,8 +17,8 @@ public class Item extends Model {
     public Boolean completed;
     //public static int dueToday;
    
-    @ManyToOne
-    public Category category;
+    //@ManyToOne
+    //public Category category;
 
     public Item(){
 

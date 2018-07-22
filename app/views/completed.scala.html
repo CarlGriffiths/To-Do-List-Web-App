@@ -1,5 +1,5 @@
 
-@(items: List[Item], itemForm: Form[Item])
+@(items: List[Item])
 
 @import helper._
 
@@ -18,7 +18,8 @@
     </head>
     <body>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -37,29 +38,11 @@
     
   </div>
 </nav>
-
-
-
          
         <div class="row">
                 <div class="col-12 center-block">
                     <center>
-                            <br>
-                            @form(action=routes.HomeController.submit(), 'class -> "form-hotizontal", 'role -> "form") {
-                                @CSRF.formField
-                                <form class="form-inline" action=routes.HomeController.submit()>
-                                     <div class="form-group">
-                               
-                                @inputText(itemForm("message"),'_label -> "Add new item", 'size -> 40)
-                                
-                    
-                                <input type="submit" value="Add task" class="btn btn-secondary">
-                    
-                                 
-                                 </div>
-                                </form>                
-                            
-                            }
+                           
                             
                     <h3>Due today</h3>
                              
@@ -69,7 +52,7 @@
                        
                        @if(a.isToday() == true){
 
-                           @defining(false) { compare =>  
+                           @defining(true) { compare =>  
                                  @if(a.getCompleted()== compare) {
                                     <div class="card border-primary mb-3" style="max-width: 25rem;">
                                             <div class="card-header"><a href="@routes.HomeController.changeStatus(a.getId())">Mark as completed</a> | <a href="@routes.HomeController.delete(a.getId())">Delete</a></div>  
@@ -97,7 +80,7 @@
                         @if(f.isToday() == false){
 
                            
-                            @defining(false) { compare =>  
+                            @defining(true) { compare =>  
                                  @if(f.getCompleted()== compare) {
                                     <div class="card border-primary mb-3" style="max-width: 25rem;">
                                             <div class="card-header"><a href="@routes.HomeController.changeStatus(f.getId())">Mark as completed</a> | <a href="@routes.HomeController.delete(f.getId())">Delete</a></div>  
