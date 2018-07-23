@@ -71,12 +71,12 @@
 
                            @defining(false) { compare =>  
                                  @if(a.getCompleted()== compare) {
-                                    <div class="card border-primary mb-3" style="max-width: 30rem;">
+                                    <div class="card border-primary mb-3" style="max-width: 25rem;">
                                            
                                             
                                             <div class="card-body">
                                             
-                                            <h2 class="card-title text-dark">@a.getMessage()</h2>
+                                            <h5 class="card-title text-dark">@a.getMessage()</h5>
 
                                             
                                                 <a href="@routes.HomeController.delete(a.getId())" class="btn btn-outline-secondary btn-sm">
