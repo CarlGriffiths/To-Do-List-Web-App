@@ -106,7 +106,10 @@ public class HomeController extends Controller {
         }
 
         else if (itemToChange.getCompleted() == true){
+
             itemToChange.setCompletedFalse();
+             itemToChange.update();
+            return redirect(routes.HomeController.completed());
         }
 
         
