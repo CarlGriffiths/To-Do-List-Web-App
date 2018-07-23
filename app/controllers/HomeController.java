@@ -52,12 +52,18 @@ public class HomeController extends Controller {
         //gets the total num of items and add 1 for new id
         int createNewId = getNum() + 1;
 
+        if(newItem.getMessage().isEmpty()){
+            return redirect(routes.HomeController.index()); 
+        }
+        else {
+
         newItem.setId(createNewId);
 
         //the date is set on the adddate page, so instead of gettting a null value I initially set it to todays date
         newItem.setDate(date);
         newItem.save();
         return redirect(routes.HomeController.addDate(createNewId));
+        }
     }
 
     public Result addDate(int id) {
