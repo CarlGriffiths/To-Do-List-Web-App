@@ -92,9 +92,20 @@ public class HomeController extends Controller {
     public Result delete(int id) {
         
         Item itemToChange = Item.find.byId(id);
-        itemToChange.delete();
+
        
-        return redirect(routes.HomeController.index());
+        if (itemToChange.getCompleted() == true){
+
+            itemToChange.delete();
+            return redirect(routes.HomeController.completed());
+        }
+        else {
+            itemToChange.delete();
+            return redirect(routes.HomeController.index());
+
+        }
+       
+        
     }
 
     public Result changeStatus(int id){

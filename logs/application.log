@@ -234,3 +234,15 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[not found: value
     filters.ExampleFilter
 
 2018-07-23 21:12:36,403 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-110 - Application started (Dev)
+2018-07-23 21:27:25,858 [INFO] from application in application-akka.actor.default-dispatcher-22 - Shutting down connection pool.
+2018-07-23 21:27:26,182 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-134 - Creating Pool for datasource 'default'
+2018-07-23 21:27:26,218 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-134 - Database [default] connected at jdbc:h2:file:./data/toDoApp
+2018-07-23 21:27:26,451 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-134 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-07-23 21:27:26,597 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-134 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    filters.ExampleFilter
+
+2018-07-23 21:27:26,598 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-134 - Application started (Dev)
