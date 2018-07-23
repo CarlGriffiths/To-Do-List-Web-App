@@ -1,6 +1,11 @@
 ##### This is a CRUD To-Do list web application which I have created using Play framework. The reason for this project is to help me get a better understanding of Play Framework and MVC architecture in general
 
-![alt text](https://i.imgur.com/Ycc3zbO.png)
+### Index page
+![alt text](https://i.imgur.com/2EWAe0J.png)
+
+### Completed Page
+![alt text](https://i.imgur.com/LA9H3pq.png)
+
 
 Current features:
 * To-do list items can be created
