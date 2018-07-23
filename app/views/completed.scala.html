@@ -53,22 +53,32 @@
                       @for(f <- items){
 
                        
-                        @if(f.isToday() == false){
-
-                           
+                        
+                             @defining(true) { compare =>  
+                                 @if(f.getCompleted()== compare) {
                            
                                     <div class="card border-primary mb-3" style="max-width: 25rem;">
-                                            <div class="card-header"><a href="@routes.HomeController.changeStatus(f.getId())">Mark as completed</a> | <a href="@routes.HomeController.delete(f.getId())">Delete</a></div>  
+                                            
                                             
                                             <div class="card-body">
                                             <h5 class="card-title text-dark">@f.getMessage()</h5>
+                                            <a href="@routes.HomeController.delete(f.getId())" class="btn btn-outline-secondary btn-sm">
+                                                <i class="far  fa-trash-alt"></i></a>
+                                                </a>
+
+                                                 <a href="@routes.HomeController.changeStatus(f.getId())" class="btn btn-secondary btn-sm">
+                                                <i class="fas fa-check"></i></a>
                                         </div>
                                     </div>
+
+                                 
+                                }
+                            }
 
                               
                         }
 
-                    }
+                    
 
                      
 

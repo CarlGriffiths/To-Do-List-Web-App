@@ -73,33 +73,46 @@ Seq[Any](format.raw/*3.1*/("""
                 <div class="col-12 center-block">
                     <center>
                            
-                    <h2>Completed</h2> 
+                    <h2>Completed</h2>     
+                   
+
+                     <hr>
                      
 
 
-                      """),_display_(/*50.24*/for(f <- items) yield /*50.39*/{_display_(Seq[Any](format.raw/*50.40*/("""
+                      """),_display_(/*53.24*/for(f <- items) yield /*53.39*/{_display_(Seq[Any](format.raw/*53.40*/("""
 
                        
-                        """),_display_(/*53.26*/if(f.isToday() == false)/*53.50*/{_display_(Seq[Any](format.raw/*53.51*/("""
-
+                        
+                             """),_display_(/*57.31*/defining(true)/*57.45*/ { compare =>_display_(Seq[Any](format.raw/*57.58*/("""  
+                                 """),_display_(/*58.35*/if(f.getCompleted()== compare)/*58.65*/ {_display_(Seq[Any](format.raw/*58.67*/("""
                            
-                           
-                                    """),format.raw/*57.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
-                                            <div class="card-header"><a href=""""),_display_(/*58.80*/routes/*58.86*/.HomeController.changeStatus(f.getId())),format.raw/*58.125*/("""">Mark as completed</a> | <a href=""""),_display_(/*58.161*/routes/*58.167*/.HomeController.delete(f.getId())),format.raw/*58.200*/("""">Delete</a></div>  
+                                    """),format.raw/*60.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
+                                            
                                             
                                             <div class="card-body">
-                                            <h5 class="card-title text-dark">"""),_display_(/*61.79*/f/*61.80*/.getMessage()),format.raw/*61.93*/("""</h5>
+                                            <h5 class="card-title text-dark">"""),_display_(/*64.79*/f/*64.80*/.getMessage()),format.raw/*64.93*/("""</h5>
+                                            <a href=""""),_display_(/*65.55*/routes/*65.61*/.HomeController.delete(f.getId())),format.raw/*65.94*/("""" class="btn btn-outline-secondary btn-sm">
+                                                <i class="far  fa-trash-alt"></i></a>
+                                                </a>
+
+                                                 <a href=""""),_display_(/*69.60*/routes/*69.66*/.HomeController.changeStatus(f.getId())),format.raw/*69.105*/("""" class="btn btn-secondary btn-sm">
+                                                <i class="fas fa-check"></i></a>
                                         </div>
                                     </div>
 
-                              
-                        """)))}),format.raw/*66.26*/("""
+                                 
+                                """)))}),format.raw/*75.34*/("""
+                            """)))}),format.raw/*76.30*/("""
 
-                    """)))}),format.raw/*68.22*/("""
+                              
+                        """)))}),format.raw/*79.26*/("""
+
+                    
 
                      
 
-                            """),format.raw/*72.29*/("""</center>
+                            """),format.raw/*85.29*/("""</center>
                             </div>
 
           
@@ -125,11 +138,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Jul 22 22:27:52 IST 2018
+                  DATE: Mon Jul 23 01:45:32 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/completed.scala.html
-                  HASH: 25af96c932d4ef2a1b3eb1a4b31c7b2bcab3acc7
-                  MATRIX: 956->2|1048->24|1092->22|1119->40|1146->41|1313->181|1328->187|1391->228|1479->289|1494->295|1555->334|2063->815|2078->821|2140->862|3175->1870|3206->1885|3245->1886|3323->1937|3356->1961|3395->1962|3517->2056|3688->2200|3703->2206|3764->2245|3828->2281|3844->2287|3899->2320|4138->2532|4148->2533|4182->2546|4366->2699|4420->2722|4501->2775
-                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|80->50|80->50|80->50|83->53|83->53|83->53|87->57|88->58|88->58|88->58|88->58|88->58|88->58|91->61|91->61|91->61|96->66|98->68|102->72
+                  HASH: 7eb39a48b824b23f83e35b7f75179e800dc3a293
+                  MATRIX: 956->2|1048->24|1092->22|1119->40|1146->41|1313->181|1328->187|1391->228|1479->289|1494->295|1555->334|2063->815|2078->821|2140->862|3226->1921|3257->1936|3296->1937|3404->2018|3427->2032|3478->2045|3542->2082|3581->2112|3621->2114|3714->2179|4042->2480|4052->2481|4086->2494|4173->2554|4188->2560|4242->2593|4512->2836|4527->2842|4588->2881|4894->3156|4955->3186|5044->3244|5147->3319
+                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|83->53|83->53|83->53|87->57|87->57|87->57|88->58|88->58|88->58|90->60|94->64|94->64|94->64|95->65|95->65|95->65|99->69|99->69|99->69|105->75|106->76|109->79|115->85
                   -- GENERATED --
               */
           
