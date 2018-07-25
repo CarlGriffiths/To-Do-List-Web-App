@@ -1,5 +1,5 @@
 
-@(items: List[Item], itemForm: Form[Item])
+@(items: List[Item], itemForm: Form[Item], cat: List[Category])
 
 @import helper._
 
@@ -48,9 +48,12 @@
     
   </div>
 </nav>
+            @for(c <- cat){
+                <a href="@routes.HomeController.index(c.getId())">@c.getName()</a>
 
+            }
 
-              <a href="@routes.HomeController.index(1)">Hard coding value for testing</a>
+              
 
 
          

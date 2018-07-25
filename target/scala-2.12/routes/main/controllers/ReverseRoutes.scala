@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/Desktop/TodoList/conf/routes
-// @DATE:Wed Jul 25 23:01:31 IST 2018
+// @DATE:Thu Jul 26 00:30:35 IST 2018
 
 import play.api.mvc.Call
 

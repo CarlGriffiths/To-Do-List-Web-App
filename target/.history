@@ -89,3 +89,12 @@ h2-browser
 run
 git add *
 run
+sbt
+exit
+clean
+run
+exit
+run
+exit
+clean
+run

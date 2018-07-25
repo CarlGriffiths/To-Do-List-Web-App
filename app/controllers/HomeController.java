@@ -40,8 +40,7 @@ public class HomeController extends Controller {
     public Result index(Integer cat) {
         
         List<Item> itemList = new ArrayList<Item>();
-        List<Category> categoryList = Category.find.query().where().orderBy("name asc").findList();
-        
+        List<Category> categoryList = Category.findAll();
         //0 will return all items
         if(cat == 0){
             itemList = Item.findAll();
@@ -54,7 +53,7 @@ public class HomeController extends Controller {
         }
         Form<Item> itemForm = formFactory.form(Item.class);
 
-        return ok(index.render(itemList, itemForm));
+        return ok(index.render(itemList, itemForm, categoryList));
     }
 
     public Result submit() {

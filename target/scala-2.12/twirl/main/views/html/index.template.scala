@@ -22,10 +22,10 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[List[Item],Form[Item],play.twirl.api.HtmlFormat.Appendable] {
+object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template3[List[Item],Form[Item],List[Category],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*2.2*/(items: List[Item], itemForm: Form[Item]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*2.2*/(items: List[Item], itemForm: Form[Item], cat: List[Category]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 /*4.2*/import helper._
@@ -78,112 +78,115 @@ Seq[Any](format.raw/*3.1*/("""
     
   </div>
 </nav>
+            """),_display_(/*51.14*/for(c <- cat) yield /*51.27*/{_display_(Seq[Any](format.raw/*51.28*/("""
+                """),format.raw/*52.17*/("""<a href=""""),_display_(/*52.27*/routes/*52.33*/.HomeController.index(c.getId())),format.raw/*52.65*/("""">"""),_display_(/*52.68*/c/*52.69*/.getName()),format.raw/*52.79*/("""</a>
 
+            """)))}),format.raw/*54.14*/("""
 
-              <a href=""""),_display_(/*53.25*/routes/*53.31*/.HomeController.index(1)),format.raw/*53.55*/("""">Hard coding value for testing</a>
+              
 
 
          
-        <div class="row">
+        """),format.raw/*60.9*/("""<div class="row">
                 <div class="col-12">
                     <center>
                             <br>
-                            """),_display_(/*61.30*/form(action=routes.HomeController.submit(), 'class -> "form-hotizontal", 'role -> "form")/*61.119*/ {_display_(Seq[Any](format.raw/*61.121*/("""
-                                """),_display_(/*62.34*/CSRF/*62.38*/.formField),format.raw/*62.48*/("""
-                                """),format.raw/*63.33*/("""<form class="form-inline" action=routes.HomeController.submit()>
+                            """),_display_(/*64.30*/form(action=routes.HomeController.submit(), 'class -> "form-hotizontal", 'role -> "form")/*64.119*/ {_display_(Seq[Any](format.raw/*64.121*/("""
+                                """),_display_(/*65.34*/CSRF/*65.38*/.formField),format.raw/*65.48*/("""
+                                """),format.raw/*66.33*/("""<form class="form-inline" action=routes.HomeController.submit()>
                                      <div class="form-group">
 
                                      
                                
-                                """),_display_(/*68.34*/inputText(itemForm("message"),'_label -> "Add New Task", 'size -> 40, 'placeholder -> "Add task here")),format.raw/*68.136*/("""
+                                """),_display_(/*71.34*/inputText(itemForm("message"),'_label -> "Add New Task", 'size -> 40, 'placeholder -> "Add task here")),format.raw/*71.136*/("""
 
                                 
                                 
                     
-                                """),format.raw/*73.33*/("""<input type="submit" value="Add task" class="btn btn-outline-primary">
+                                """),format.raw/*76.33*/("""<input type="submit" value="Add task" class="btn btn-outline-primary">
                     
                                  
                                  </div>
                                 </form>  
                                 </div>              
                             
-                            """)))}),format.raw/*80.30*/("""
-                      """),format.raw/*81.23*/("""<div class="col-12">
+                            """)))}),format.raw/*83.30*/("""
+                      """),format.raw/*84.23*/("""<div class="col-12">
                     <center>      
                     <h3>Due today</h3>
                        
 
 
-                     """),_display_(/*87.23*/for(a <- items) yield /*87.38*/{_display_(Seq[Any](format.raw/*87.39*/("""
+                     """),_display_(/*90.23*/for(a <- items) yield /*90.38*/{_display_(Seq[Any](format.raw/*90.39*/("""
 
                        
-                       """),_display_(/*90.25*/if(a.isToday() == true)/*90.48*/{_display_(Seq[Any](format.raw/*90.49*/("""
+                       """),_display_(/*93.25*/if(a.isToday() == true)/*93.48*/{_display_(Seq[Any](format.raw/*93.49*/("""
 
-                           """),_display_(/*92.29*/defining(false)/*92.44*/ { compare =>_display_(Seq[Any](format.raw/*92.57*/("""  
-                                 """),_display_(/*93.35*/if(a.getCompleted()== compare)/*93.65*/ {_display_(Seq[Any](format.raw/*93.67*/("""
-                                    """),format.raw/*94.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
+                           """),_display_(/*95.29*/defining(false)/*95.44*/ { compare =>_display_(Seq[Any](format.raw/*95.57*/("""  
+                                 """),_display_(/*96.35*/if(a.getCompleted()== compare)/*96.65*/ {_display_(Seq[Any](format.raw/*96.67*/("""
+                                    """),format.raw/*97.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
                                            
                                             
                                             <div class="card-body">
                                             
-                                            <h5 class="card-title text-dark">"""),_display_(/*99.79*/a/*99.80*/.getMessage()),format.raw/*99.93*/("""</h5>
+                                            <h5 class="card-title text-dark">"""),_display_(/*102.79*/a/*102.80*/.getMessage()),format.raw/*102.93*/("""</h5>
 
                                             
-                                                <a href=""""),_display_(/*102.59*/routes/*102.65*/.HomeController.delete(a.getId())),format.raw/*102.98*/("""" class="btn btn-outline-secondary btn-sm">
+                                                <a href=""""),_display_(/*105.59*/routes/*105.65*/.HomeController.delete(a.getId())),format.raw/*105.98*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="far  fa-trash-alt"></i></a>
                                                 </a>
 
-                                                 <a href=""""),_display_(/*106.60*/routes/*106.66*/.HomeController.changeStatus(a.getId())),format.raw/*106.105*/("""" class="btn btn-outline-secondary btn-sm">
+                                                 <a href=""""),_display_(/*109.60*/routes/*109.66*/.HomeController.changeStatus(a.getId())),format.raw/*109.105*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="fas fa-check"></i></a>
                                              
                                             
                                         </div>
                                     </div>
-                                 """)))}),format.raw/*112.35*/("""
-                           """)))}),format.raw/*113.29*/("""
+                                 """)))}),format.raw/*115.35*/("""
+                           """)))}),format.raw/*116.29*/("""
                            
                   
 
-                        """)))}),format.raw/*117.26*/("""
+                        """)))}),format.raw/*120.26*/("""
 
-                     """)))}),format.raw/*119.23*/("""
+                     """)))}),format.raw/*122.23*/("""
 
-                     """),format.raw/*121.22*/("""<hr>
+                     """),format.raw/*124.22*/("""<hr>
                      <h3>Due in future</h3>
 
 
-                      """),_display_(/*125.24*/for(f <- items) yield /*125.39*/{_display_(Seq[Any](format.raw/*125.40*/("""
+                      """),_display_(/*128.24*/for(f <- items) yield /*128.39*/{_display_(Seq[Any](format.raw/*128.40*/("""
 
                        
-                        """),_display_(/*128.26*/if(f.isToday() == false)/*128.50*/{_display_(Seq[Any](format.raw/*128.51*/("""
+                        """),_display_(/*131.26*/if(f.isToday() == false)/*131.50*/{_display_(Seq[Any](format.raw/*131.51*/("""
 
                            
-                            """),_display_(/*131.30*/defining(false)/*131.45*/ { compare =>_display_(Seq[Any](format.raw/*131.58*/("""  
-                                 """),_display_(/*132.35*/if(f.getCompleted()== compare)/*132.65*/ {_display_(Seq[Any](format.raw/*132.67*/("""
-                                    """),format.raw/*133.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
+                            """),_display_(/*134.30*/defining(false)/*134.45*/ { compare =>_display_(Seq[Any](format.raw/*134.58*/("""  
+                                 """),_display_(/*135.35*/if(f.getCompleted()== compare)/*135.65*/ {_display_(Seq[Any](format.raw/*135.67*/("""
+                                    """),format.raw/*136.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
                                             
                                             
                                             <div class="card-body">
-                                            <h5 class="card-title text-dark">"""),_display_(/*137.79*/f/*137.80*/.getMessage()),format.raw/*137.93*/("""</h5>
-                                            <a href=""""),_display_(/*138.55*/routes/*138.61*/.HomeController.delete(f.getId())),format.raw/*138.94*/("""" class="btn btn-outline-secondary btn-sm">
+                                            <h5 class="card-title text-dark">"""),_display_(/*140.79*/f/*140.80*/.getMessage()),format.raw/*140.93*/("""</h5>
+                                            <a href=""""),_display_(/*141.55*/routes/*141.61*/.HomeController.delete(f.getId())),format.raw/*141.94*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="far  fa-trash-alt"></i></a>
                                                 </a>
 
-                                                 <a href=""""),_display_(/*142.60*/routes/*142.66*/.HomeController.changeStatus(f.getId())),format.raw/*142.105*/("""" class="btn btn-outline-secondary btn-sm">
+                                                 <a href=""""),_display_(/*145.60*/routes/*145.66*/.HomeController.changeStatus(f.getId())),format.raw/*145.105*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="fas fa-check"></i></a>
                                         </div>
                                     </div>
 
-                                 """)))}),format.raw/*147.35*/("""
+                                 """)))}),format.raw/*150.35*/("""
                           
-                            """)))}),format.raw/*149.30*/("""
-                        """)))}),format.raw/*150.26*/("""
+                            """)))}),format.raw/*152.30*/("""
+                        """)))}),format.raw/*153.26*/("""
 
-                      """)))}),format.raw/*152.24*/("""
+                      """)))}),format.raw/*155.24*/("""
 
                      
 
-                            """),format.raw/*156.29*/("""</center>
+                            """),format.raw/*159.29*/("""</center>
                             </div>
 
        
@@ -197,9 +200,9 @@ Seq[Any](format.raw/*3.1*/("""
     }
   }
 
-  def render(items:List[Item],itemForm:Form[Item]): play.twirl.api.HtmlFormat.Appendable = apply(items,itemForm)
+  def render(items:List[Item],itemForm:Form[Item],cat:List[Category]): play.twirl.api.HtmlFormat.Appendable = apply(items,itemForm,cat)
 
-  def f:((List[Item],Form[Item]) => play.twirl.api.HtmlFormat.Appendable) = (items,itemForm) => apply(items,itemForm)
+  def f:((List[Item],Form[Item],List[Category]) => play.twirl.api.HtmlFormat.Appendable) = (items,itemForm,cat) => apply(items,itemForm,cat)
 
   def ref: this.type = this
 
@@ -208,11 +211,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Jul 25 23:13:59 IST 2018
+                  DATE: Thu Jul 26 00:25:26 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/index.scala.html
-                  HASH: 8d7fc8442a93ae151ce750b9d31714b8ce645573
-                  MATRIX: 963->2|1077->46|1121->44|1148->62|1175->63|1342->203|1357->209|1420->250|1508->311|1523->317|1584->356|2092->837|2107->843|2169->884|2292->979|2321->980|2366->997|2405->1008|2434->1009|2480->1027|2509->1028|2551->1042|2580->1043|2618->1054|3421->1830|3436->1836|3481->1860|3710->2062|3809->2151|3850->2153|3911->2187|3924->2191|3955->2201|4016->2234|4274->2465|4398->2567|4547->2688|4897->3007|4948->3030|5118->3173|5149->3188|5188->3189|5265->3239|5297->3262|5336->3263|5393->3293|5417->3308|5468->3321|5532->3358|5571->3388|5611->3390|5676->3427|6048->3772|6058->3773|6092->3786|6230->3896|6246->3902|6301->3935|6572->4178|6588->4184|6650->4223|7022->4563|7083->4592|7189->4666|7245->4690|7297->4713|7399->4787|7431->4802|7471->4803|7550->4854|7584->4878|7624->4879|7711->4938|7736->4953|7788->4966|7853->5003|7893->5033|7934->5035|8000->5072|8329->5373|8340->5374|8375->5387|8463->5447|8479->5453|8534->5486|8805->5729|8821->5735|8883->5774|9165->6024|9254->6081|9312->6107|9369->6132|9451->6185
-                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|50->20|50->20|51->21|51->21|51->21|53->23|53->23|55->25|55->25|58->28|83->53|83->53|83->53|91->61|91->61|91->61|92->62|92->62|92->62|93->63|98->68|98->68|103->73|110->80|111->81|117->87|117->87|117->87|120->90|120->90|120->90|122->92|122->92|122->92|123->93|123->93|123->93|124->94|129->99|129->99|129->99|132->102|132->102|132->102|136->106|136->106|136->106|142->112|143->113|147->117|149->119|151->121|155->125|155->125|155->125|158->128|158->128|158->128|161->131|161->131|161->131|162->132|162->132|162->132|163->133|167->137|167->137|167->137|168->138|168->138|168->138|172->142|172->142|172->142|177->147|179->149|180->150|182->152|186->156
+                  HASH: e88d59c0ae56cba05155e45ddd1963cb94b22a2c
+                  MATRIX: 978->2|1113->67|1157->65|1184->83|1211->84|1378->224|1393->230|1456->271|1544->332|1559->338|1620->377|2128->858|2143->864|2205->905|2328->1000|2357->1001|2402->1018|2441->1029|2470->1030|2516->1048|2545->1049|2587->1063|2616->1064|2654->1075|3444->1838|3473->1851|3512->1852|3557->1869|3594->1879|3609->1885|3662->1917|3692->1920|3702->1921|3733->1931|3783->1950|3847->1987|4020->2133|4119->2222|4160->2224|4221->2258|4234->2262|4265->2272|4326->2305|4584->2536|4708->2638|4857->2759|5207->3078|5258->3101|5428->3244|5459->3259|5498->3260|5575->3310|5607->3333|5646->3334|5703->3364|5727->3379|5778->3392|5842->3429|5881->3459|5921->3461|5986->3498|6359->3843|6370->3844|6405->3857|6543->3967|6559->3973|6614->4006|6885->4249|6901->4255|6963->4294|7335->4634|7396->4663|7502->4737|7558->4761|7610->4784|7712->4858|7744->4873|7784->4874|7863->4925|7897->4949|7937->4950|8024->5009|8049->5024|8101->5037|8166->5074|8206->5104|8247->5106|8313->5143|8642->5444|8653->5445|8688->5458|8776->5518|8792->5524|8847->5557|9118->5800|9134->5806|9196->5845|9478->6095|9567->6152|9625->6178|9682->6203|9764->6256
+                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|50->20|50->20|51->21|51->21|51->21|53->23|53->23|55->25|55->25|58->28|81->51|81->51|81->51|82->52|82->52|82->52|82->52|82->52|82->52|82->52|84->54|90->60|94->64|94->64|94->64|95->65|95->65|95->65|96->66|101->71|101->71|106->76|113->83|114->84|120->90|120->90|120->90|123->93|123->93|123->93|125->95|125->95|125->95|126->96|126->96|126->96|127->97|132->102|132->102|132->102|135->105|135->105|135->105|139->109|139->109|139->109|145->115|146->116|150->120|152->122|154->124|158->128|158->128|158->128|161->131|161->131|161->131|164->134|164->134|164->134|165->135|165->135|165->135|166->136|170->140|170->140|170->140|171->141|171->141|171->141|175->145|175->145|175->145|180->150|182->152|183->153|185->155|189->159
                   -- GENERATED --
               */
           

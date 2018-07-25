@@ -4,7 +4,7 @@
 # --- !Ups
 
 create table category (
-  id                            bigint auto_increment not null,
+  id                            integer auto_increment not null,
   name                          varchar(255),
   constraint pk_category primary key (id)
 );
@@ -14,7 +14,7 @@ create table item (
   message                       varchar(255),
   date                          timestamp,
   completed                     boolean,
-  category_id                   bigint,
+  category_id                   integer,
   constraint pk_item primary key (id)
 );
 

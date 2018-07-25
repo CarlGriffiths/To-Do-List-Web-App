@@ -11,7 +11,7 @@ import play.data.validation.*;
 public class Category extends Model {
     
     @Id
-    public Long Id;
+    public int Id;
     public String name;
     
     @OneToMany
@@ -21,7 +21,7 @@ public class Category extends Model {
 
     }
 
-    public Category(Long id, String name){
+    public Category(int id, String name){
         this.Id = id;
         this.name = name;
 
@@ -34,7 +34,7 @@ public class Category extends Model {
       }
 
 
-    public Long getId(){
+    public int getId(){
         return Id;
     }
 
@@ -44,7 +44,7 @@ public class Category extends Model {
 
   
 
-    public void setId(Long id){
+    public void setId(int id){
         this.Id = id;
     }
 
@@ -57,7 +57,8 @@ public class Category extends Model {
 
     // Get all categories from the DB and add to the options hash map
     for (Category c: Category.find.all()) {
-      options.put(c.getId().toString(), c.getName());
+        String id = Integer.toString(c.getId());
+        options.put(strI, c.getName());
     }
     return options;
   }
