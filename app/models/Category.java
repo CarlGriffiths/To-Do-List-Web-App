@@ -58,7 +58,7 @@ public class Category extends Model {
     // Get all categories from the DB and add to the options hash map
     for (Category c: Category.find.all()) {
         String id = Integer.toString(c.getId());
-        options.put(strI, c.getName());
+        options.put(id, c.getName());
     }
     return options;
   }
