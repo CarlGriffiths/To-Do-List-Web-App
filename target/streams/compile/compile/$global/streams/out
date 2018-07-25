@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/views/index.scala.html:53:47: value products is not a member of controllers.ReverseHomeController[0m
+[0m[[0m[31merror[0m] [0m[0m              <a href="@routes.HomeController.products(1)" class="list-group-item  list-group-item-action">Test[0m
+[0m[[0m[31merror[0m] [0m[0m                                              ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

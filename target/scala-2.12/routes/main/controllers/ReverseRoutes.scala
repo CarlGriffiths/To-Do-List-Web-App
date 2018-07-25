@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/Desktop/TodoList/conf/routes
-// @DATE:Wed Jul 25 21:39:09 IST 2018
+// @DATE:Wed Jul 25 23:01:31 IST 2018
 
 import play.api.mvc.Call
 
@@ -17,6 +17,12 @@ package controllers {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:6
+    def index(cat:Integer = 0): Call = {
+      
+      Call("GET", _prefix + play.core.routing.queryString(List(if(cat == 0) None else Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("cat", cat)))))
+    }
   
     // @LINE:12
     def completed(): Call = {
@@ -46,12 +52,6 @@ package controllers {
     def submitDate(id:Integer): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "submitdate" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("id", id)))))
-    }
-  
-    // @LINE:6
-    def index(): Call = {
-      
-      Call("GET", _prefix)
     }
   
     // @LINE:8

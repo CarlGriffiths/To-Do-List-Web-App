@@ -37,12 +37,24 @@ public class HomeController extends Controller {
      * this method will be called when the application receives a
      * <code>GET</code> request with a path of <code>/</code>.
      */
-    public Result index() {
-        List <Item> itemList = Item.find.query().where().orderBy("Id desc").findList();
-        List <Category> cats = Category.findAll();
+    public Result index(Integer cat) {
+        
+        List<Item> itemList = new ArrayList<Item>();
+        List<Category> categoryList = Category.find.query().where().orderBy("name asc").findList();
+        
+        //0 will return all items
+        if(cat == 0){
+            itemList = Item.findAll();
+
+        }
+
+        else {
+            itemList = Category.find.ref(cat).getItems();
+
+        }
         Form<Item> itemForm = formFactory.form(Item.class);
 
-        return ok(index.render(itemList, itemForm, cats));
+        return ok(index.render(itemList, itemForm));
     }
 
     public Result submit() {
@@ -54,7 +66,8 @@ public class HomeController extends Controller {
         int createNewId = getNum() + 1;
 
         if(newItem.getMessage().isEmpty()){
-            return redirect(routes.HomeController.index()); 
+            //the value 0 is passed into parm becasue it requires a arg, and 0 will return all items
+            return redirect(routes.HomeController.index(0)); 
         }
         else {
 
@@ -85,15 +98,17 @@ public class HomeController extends Controller {
         Item item = Item.find.byId(id);
 
         //testing
-        System.out.println("test====" + itemDate.getMessage());
+        System.out.println("test====" + itemDate.getCat());
 
 
-       // item.setMessage(itemDate.getMessage());
+       //item.setMessage(itemDate.getDate());
 
         //setting date to what was passed into form
         item.setDate(itemDate.getDate());
+        item.setCat(itemDate.getCat());
         item.update();
-        return redirect(routes.HomeController.index());
+        //the value 0 is passed into parm becasue it requires a arg, and 0 will return all items
+        return redirect(routes.HomeController.index(0));
     }
 
     public Result delete(int id) {
@@ -108,7 +123,8 @@ public class HomeController extends Controller {
         }
         else {
             itemToChange.delete();
-            return redirect(routes.HomeController.index());
+            //the value 0 is passed into parm becasue it requires a arg, and 0 will return all items
+            return redirect(routes.HomeController.index(0));
 
         }
        
@@ -132,7 +148,7 @@ public class HomeController extends Controller {
 
         
         itemToChange.update();
-        return redirect(routes.HomeController.index());
+        return redirect(routes.HomeController.index(0));
     }
 
     public Result today(){

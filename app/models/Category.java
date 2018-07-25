@@ -48,6 +48,10 @@ public class Category extends Model {
         this.Id = id;
     }
 
+    public List<Item> getItems(){
+        return this.items;
+    }
+
     public static Map<String,String> options() {
     LinkedHashMap<String,String> options = new LinkedHashMap<>();
 

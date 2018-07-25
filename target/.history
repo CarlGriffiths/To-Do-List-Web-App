@@ -83,3 +83,9 @@ clean
 run
 h2-browser
 run
+h2-browser
+run
+h2-browser
+run
+git add *
+run

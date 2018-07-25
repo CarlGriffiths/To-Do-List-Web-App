@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/Desktop/TodoList/conf/routes
-// @DATE:Wed Jul 25 21:39:09 IST 2018
+// @DATE:Wed Jul 25 23:01:31 IST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -18,6 +18,16 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:6
+    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.index",
+      """
+        function(cat0) {
+          return _wA({method:"GET", url:"""" + _prefix + """" + _qS([(cat0 == null ? null : (""" + implicitly[play.api.mvc.QueryStringBindable[Integer]].javascriptUnbind + """)("cat", cat0))])})
+        }
+      """
+    )
   
     // @LINE:12
     def completed: JavaScriptReverseRoute = JavaScriptReverseRoute(
@@ -65,16 +75,6 @@ package controllers.javascript {
       """
         function(id0) {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "submitdate" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[Integer]].javascriptUnbind + """)("id", id0)])})
-        }
-      """
-    )
-  
-    // @LINE:6
-    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.index",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + """"})
         }
       """
     )

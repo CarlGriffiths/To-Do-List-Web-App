@@ -22,10 +22,10 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template3[List[Item],Form[Item],List[Category],play.twirl.api.HtmlFormat.Appendable] {
+object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[List[Item],Form[Item],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*2.2*/(items: List[Item], itemForm: Form[Item], cat: List[Category]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*2.2*/(items: List[Item], itemForm: Form[Item]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 /*4.2*/import helper._
@@ -80,108 +80,110 @@ Seq[Any](format.raw/*3.1*/("""
 </nav>
 
 
+              <a href=""""),_display_(/*53.25*/routes/*53.31*/.HomeController.index(1)),format.raw/*53.55*/("""">Hard coding value for testing</a>
+
 
          
         <div class="row">
                 <div class="col-12">
                     <center>
                             <br>
-                            """),_display_(/*59.30*/form(action=routes.HomeController.submit(), 'class -> "form-hotizontal", 'role -> "form")/*59.119*/ {_display_(Seq[Any](format.raw/*59.121*/("""
-                                """),_display_(/*60.34*/CSRF/*60.38*/.formField),format.raw/*60.48*/("""
-                                """),format.raw/*61.33*/("""<form class="form-inline" action=routes.HomeController.submit()>
+                            """),_display_(/*61.30*/form(action=routes.HomeController.submit(), 'class -> "form-hotizontal", 'role -> "form")/*61.119*/ {_display_(Seq[Any](format.raw/*61.121*/("""
+                                """),_display_(/*62.34*/CSRF/*62.38*/.formField),format.raw/*62.48*/("""
+                                """),format.raw/*63.33*/("""<form class="form-inline" action=routes.HomeController.submit()>
                                      <div class="form-group">
 
                                      
                                
-                                """),_display_(/*66.34*/inputText(itemForm("message"),'_label -> "Add New Task", 'size -> 40, 'placeholder -> "Add task here")),format.raw/*66.136*/("""
+                                """),_display_(/*68.34*/inputText(itemForm("message"),'_label -> "Add New Task", 'size -> 40, 'placeholder -> "Add task here")),format.raw/*68.136*/("""
 
                                 
                                 
                     
-                                """),format.raw/*71.33*/("""<input type="submit" value="Add task" class="btn btn-outline-primary">
+                                """),format.raw/*73.33*/("""<input type="submit" value="Add task" class="btn btn-outline-primary">
                     
                                  
                                  </div>
                                 </form>  
                                 </div>              
                             
-                            """)))}),format.raw/*78.30*/("""
-                      """),format.raw/*79.23*/("""<div class="col-12">
+                            """)))}),format.raw/*80.30*/("""
+                      """),format.raw/*81.23*/("""<div class="col-12">
                     <center>      
                     <h3>Due today</h3>
                        
 
 
-                     """),_display_(/*85.23*/for(a <- items) yield /*85.38*/{_display_(Seq[Any](format.raw/*85.39*/("""
+                     """),_display_(/*87.23*/for(a <- items) yield /*87.38*/{_display_(Seq[Any](format.raw/*87.39*/("""
 
                        
-                       """),_display_(/*88.25*/if(a.isToday() == true)/*88.48*/{_display_(Seq[Any](format.raw/*88.49*/("""
+                       """),_display_(/*90.25*/if(a.isToday() == true)/*90.48*/{_display_(Seq[Any](format.raw/*90.49*/("""
 
-                           """),_display_(/*90.29*/defining(false)/*90.44*/ { compare =>_display_(Seq[Any](format.raw/*90.57*/("""  
-                                 """),_display_(/*91.35*/if(a.getCompleted()== compare)/*91.65*/ {_display_(Seq[Any](format.raw/*91.67*/("""
-                                    """),format.raw/*92.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
+                           """),_display_(/*92.29*/defining(false)/*92.44*/ { compare =>_display_(Seq[Any](format.raw/*92.57*/("""  
+                                 """),_display_(/*93.35*/if(a.getCompleted()== compare)/*93.65*/ {_display_(Seq[Any](format.raw/*93.67*/("""
+                                    """),format.raw/*94.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
                                            
                                             
                                             <div class="card-body">
                                             
-                                            <h5 class="card-title text-dark">"""),_display_(/*97.79*/a/*97.80*/.getMessage()),format.raw/*97.93*/("""</h5>
+                                            <h5 class="card-title text-dark">"""),_display_(/*99.79*/a/*99.80*/.getMessage()),format.raw/*99.93*/("""</h5>
 
                                             
-                                                <a href=""""),_display_(/*100.59*/routes/*100.65*/.HomeController.delete(a.getId())),format.raw/*100.98*/("""" class="btn btn-outline-secondary btn-sm">
+                                                <a href=""""),_display_(/*102.59*/routes/*102.65*/.HomeController.delete(a.getId())),format.raw/*102.98*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="far  fa-trash-alt"></i></a>
                                                 </a>
 
-                                                 <a href=""""),_display_(/*104.60*/routes/*104.66*/.HomeController.changeStatus(a.getId())),format.raw/*104.105*/("""" class="btn btn-outline-secondary btn-sm">
+                                                 <a href=""""),_display_(/*106.60*/routes/*106.66*/.HomeController.changeStatus(a.getId())),format.raw/*106.105*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="fas fa-check"></i></a>
                                              
                                             
                                         </div>
                                     </div>
-                                 """)))}),format.raw/*110.35*/("""
-                           """)))}),format.raw/*111.29*/("""
+                                 """)))}),format.raw/*112.35*/("""
+                           """)))}),format.raw/*113.29*/("""
                            
                   
 
-                        """)))}),format.raw/*115.26*/("""
+                        """)))}),format.raw/*117.26*/("""
 
-                     """)))}),format.raw/*117.23*/("""
+                     """)))}),format.raw/*119.23*/("""
 
-                     """),format.raw/*119.22*/("""<hr>
+                     """),format.raw/*121.22*/("""<hr>
                      <h3>Due in future</h3>
 
 
-                      """),_display_(/*123.24*/for(f <- items) yield /*123.39*/{_display_(Seq[Any](format.raw/*123.40*/("""
+                      """),_display_(/*125.24*/for(f <- items) yield /*125.39*/{_display_(Seq[Any](format.raw/*125.40*/("""
 
                        
-                        """),_display_(/*126.26*/if(f.isToday() == false)/*126.50*/{_display_(Seq[Any](format.raw/*126.51*/("""
+                        """),_display_(/*128.26*/if(f.isToday() == false)/*128.50*/{_display_(Seq[Any](format.raw/*128.51*/("""
 
                            
-                            """),_display_(/*129.30*/defining(false)/*129.45*/ { compare =>_display_(Seq[Any](format.raw/*129.58*/("""  
-                                 """),_display_(/*130.35*/if(f.getCompleted()== compare)/*130.65*/ {_display_(Seq[Any](format.raw/*130.67*/("""
-                                    """),format.raw/*131.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
+                            """),_display_(/*131.30*/defining(false)/*131.45*/ { compare =>_display_(Seq[Any](format.raw/*131.58*/("""  
+                                 """),_display_(/*132.35*/if(f.getCompleted()== compare)/*132.65*/ {_display_(Seq[Any](format.raw/*132.67*/("""
+                                    """),format.raw/*133.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
                                             
                                             
                                             <div class="card-body">
-                                            <h5 class="card-title text-dark">"""),_display_(/*135.79*/f/*135.80*/.getMessage()),format.raw/*135.93*/("""</h5>
-                                            <a href=""""),_display_(/*136.55*/routes/*136.61*/.HomeController.delete(f.getId())),format.raw/*136.94*/("""" class="btn btn-outline-secondary btn-sm">
+                                            <h5 class="card-title text-dark">"""),_display_(/*137.79*/f/*137.80*/.getMessage()),format.raw/*137.93*/("""</h5>
+                                            <a href=""""),_display_(/*138.55*/routes/*138.61*/.HomeController.delete(f.getId())),format.raw/*138.94*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="far  fa-trash-alt"></i></a>
                                                 </a>
 
-                                                 <a href=""""),_display_(/*140.60*/routes/*140.66*/.HomeController.changeStatus(f.getId())),format.raw/*140.105*/("""" class="btn btn-outline-secondary btn-sm">
+                                                 <a href=""""),_display_(/*142.60*/routes/*142.66*/.HomeController.changeStatus(f.getId())),format.raw/*142.105*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="fas fa-check"></i></a>
                                         </div>
                                     </div>
 
-                                 """)))}),format.raw/*145.35*/("""
+                                 """)))}),format.raw/*147.35*/("""
                           
-                            """)))}),format.raw/*147.30*/("""
-                        """)))}),format.raw/*148.26*/("""
+                            """)))}),format.raw/*149.30*/("""
+                        """)))}),format.raw/*150.26*/("""
 
-                      """)))}),format.raw/*150.24*/("""
+                      """)))}),format.raw/*152.24*/("""
 
                      
 
-                            """),format.raw/*154.29*/("""</center>
+                            """),format.raw/*156.29*/("""</center>
                             </div>
 
        
@@ -195,9 +197,9 @@ Seq[Any](format.raw/*3.1*/("""
     }
   }
 
-  def render(items:List[Item],itemForm:Form[Item],cat:List[Category]): play.twirl.api.HtmlFormat.Appendable = apply(items,itemForm,cat)
+  def render(items:List[Item],itemForm:Form[Item]): play.twirl.api.HtmlFormat.Appendable = apply(items,itemForm)
 
-  def f:((List[Item],Form[Item],List[Category]) => play.twirl.api.HtmlFormat.Appendable) = (items,itemForm,cat) => apply(items,itemForm,cat)
+  def f:((List[Item],Form[Item]) => play.twirl.api.HtmlFormat.Appendable) = (items,itemForm) => apply(items,itemForm)
 
   def ref: this.type = this
 
@@ -206,11 +208,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Jul 25 21:59:11 IST 2018
+                  DATE: Wed Jul 25 23:13:59 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/index.scala.html
-                  HASH: bc23ca557bb8fb3f3a2a845aae9c0bcca43aee09
-                  MATRIX: 978->2|1113->67|1157->65|1184->83|1211->84|1378->224|1393->230|1456->271|1544->332|1559->338|1620->377|2128->858|2143->864|2205->905|2328->1000|2357->1001|2402->1018|2441->1029|2470->1030|2516->1048|2545->1049|2587->1063|2616->1064|2654->1075|3598->1992|3697->2081|3738->2083|3799->2117|3812->2121|3843->2131|3904->2164|4162->2395|4286->2497|4435->2618|4785->2937|4836->2960|5006->3103|5037->3118|5076->3119|5153->3169|5185->3192|5224->3193|5281->3223|5305->3238|5356->3251|5420->3288|5459->3318|5499->3320|5564->3357|5936->3702|5946->3703|5980->3716|6118->3826|6134->3832|6189->3865|6460->4108|6476->4114|6538->4153|6910->4493|6971->4522|7077->4596|7133->4620|7185->4643|7287->4717|7319->4732|7359->4733|7438->4784|7472->4808|7512->4809|7599->4868|7624->4883|7676->4896|7741->4933|7781->4963|7822->4965|7888->5002|8217->5303|8228->5304|8263->5317|8351->5377|8367->5383|8422->5416|8693->5659|8709->5665|8771->5704|9053->5954|9142->6011|9200->6037|9257->6062|9339->6115
-                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|50->20|50->20|51->21|51->21|51->21|53->23|53->23|55->25|55->25|58->28|89->59|89->59|89->59|90->60|90->60|90->60|91->61|96->66|96->66|101->71|108->78|109->79|115->85|115->85|115->85|118->88|118->88|118->88|120->90|120->90|120->90|121->91|121->91|121->91|122->92|127->97|127->97|127->97|130->100|130->100|130->100|134->104|134->104|134->104|140->110|141->111|145->115|147->117|149->119|153->123|153->123|153->123|156->126|156->126|156->126|159->129|159->129|159->129|160->130|160->130|160->130|161->131|165->135|165->135|165->135|166->136|166->136|166->136|170->140|170->140|170->140|175->145|177->147|178->148|180->150|184->154
+                  HASH: 8d7fc8442a93ae151ce750b9d31714b8ce645573
+                  MATRIX: 963->2|1077->46|1121->44|1148->62|1175->63|1342->203|1357->209|1420->250|1508->311|1523->317|1584->356|2092->837|2107->843|2169->884|2292->979|2321->980|2366->997|2405->1008|2434->1009|2480->1027|2509->1028|2551->1042|2580->1043|2618->1054|3421->1830|3436->1836|3481->1860|3710->2062|3809->2151|3850->2153|3911->2187|3924->2191|3955->2201|4016->2234|4274->2465|4398->2567|4547->2688|4897->3007|4948->3030|5118->3173|5149->3188|5188->3189|5265->3239|5297->3262|5336->3263|5393->3293|5417->3308|5468->3321|5532->3358|5571->3388|5611->3390|5676->3427|6048->3772|6058->3773|6092->3786|6230->3896|6246->3902|6301->3935|6572->4178|6588->4184|6650->4223|7022->4563|7083->4592|7189->4666|7245->4690|7297->4713|7399->4787|7431->4802|7471->4803|7550->4854|7584->4878|7624->4879|7711->4938|7736->4953|7788->4966|7853->5003|7893->5033|7934->5035|8000->5072|8329->5373|8340->5374|8375->5387|8463->5447|8479->5453|8534->5486|8805->5729|8821->5735|8883->5774|9165->6024|9254->6081|9312->6107|9369->6132|9451->6185
+                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|50->20|50->20|51->21|51->21|51->21|53->23|53->23|55->25|55->25|58->28|83->53|83->53|83->53|91->61|91->61|91->61|92->62|92->62|92->62|93->63|98->68|98->68|103->73|110->80|111->81|117->87|117->87|117->87|120->90|120->90|120->90|122->92|122->92|122->92|123->93|123->93|123->93|124->94|129->99|129->99|129->99|132->102|132->102|132->102|136->106|136->106|136->106|142->112|143->113|147->117|149->119|151->121|155->125|155->125|155->125|158->128|158->128|158->128|161->131|161->131|161->131|162->132|162->132|162->132|163->133|167->137|167->137|167->137|168->138|168->138|168->138|172->142|172->142|172->142|177->147|179->149|180->150|182->152|186->156
                   -- GENERATED --
               */
           

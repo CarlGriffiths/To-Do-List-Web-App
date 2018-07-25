@@ -3,7 +3,7 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
+GET     /                           controllers.HomeController.index(cat:Integer ?=0)
 POST     /submit                           controllers.HomeController.submit
 GET     /task                         controllers.HomeController.addDate(id: Integer)
 POST     /submitdate                           controllers.HomeController.submitDate(id: Integer)

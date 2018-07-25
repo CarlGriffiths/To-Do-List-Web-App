@@ -73,6 +73,13 @@ public class Item extends Model {
     public void setDate(Date d){
         this.date = d;
     }
+    public void setCat(Category c){
+        this.category = c;
+    }
+
+    public Category getCat(){
+        return category;
+    }
 
     public String dateToString(){
 
