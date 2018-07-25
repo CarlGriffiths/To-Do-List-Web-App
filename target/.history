@@ -72,3 +72,14 @@ exit
 run
 exit
 run
+exit
+run
+h2-browser
+sbt
+run
+sbt
+exit
+clean
+run
+h2-browser
+run

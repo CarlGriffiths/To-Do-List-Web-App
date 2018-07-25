@@ -58,15 +58,20 @@ Seq[Any](format.raw/*3.1*/("""
                                 """),format.raw/*28.33*/("""<form class="form-inline" action=routes.HomeController.submit()>
                                         <div class="form-group">
                                
-                               """),_display_(/*31.33*/inputText(itemForm("message"),'_label -> "Is this correct?", 'size -> 40)),format.raw/*31.106*/("""
+                               
                                 """),_display_(/*32.34*/inputDate(itemForm("date"),'_label -> "Enter date", 'size -> 90)),format.raw/*32.98*/("""
+                                 """),_display_(/*33.35*/select(
+                                        itemForm("category.Id"), 
+                                        options(Category.options),
+                                        '_label -> "Category", 
+                                        '_default -> "-- Choose a category --",'_showConstraints -> false, 'class -> "form-control")),format.raw/*37.133*/("""
                     
-                                """),format.raw/*34.33*/("""<input type="submit" value="Add" class="btn btn-secondary">
+                                """),format.raw/*39.33*/("""<input type="submit" value="Add" class="btn btn-secondary">
 
-                            """)))}),format.raw/*36.30*/("""
+                            """)))}),format.raw/*41.30*/("""
                     
                            
-    """),format.raw/*39.5*/("""</body>
+    """),format.raw/*44.5*/("""</body>
 </html>
 """))
       }
@@ -84,11 +89,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Jul 16 06:10:37 IST 2018
+                  DATE: Wed Jul 25 22:05:19 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/adddate.scala.html
-                  HASH: 75a4886b8a5f7c864f1da1bdc2d44891cf308bd7
-                  MATRIX: 962->2|1070->40|1114->38|1141->56|1168->57|1335->197|1350->203|1413->244|1501->305|1516->311|1577->350|2085->831|2100->837|2162->878|2432->1121|2537->1216|2578->1218|2639->1252|2652->1256|2683->1266|2744->1299|2965->1493|3060->1566|3121->1600|3206->1664|3288->1718|3409->1808|3490->1862
-                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|56->26|56->26|56->26|57->27|57->27|57->27|58->28|61->31|61->31|62->32|62->32|64->34|66->36|69->39
+                  HASH: a3adb7f2f6820952d9acc0ace98ba951a6c6490f
+                  MATRIX: 962->2|1070->40|1114->38|1141->56|1168->57|1335->197|1350->203|1413->244|1501->305|1516->311|1577->350|2085->831|2100->837|2162->878|2432->1121|2537->1216|2578->1218|2639->1252|2652->1256|2683->1266|2744->1299|2998->1526|3083->1590|3145->1625|3504->1962|3586->2016|3707->2106|3788->2160
+                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|56->26|56->26|56->26|57->27|57->27|57->27|58->28|62->32|62->32|63->33|67->37|69->39|71->41|74->44
                   -- GENERATED --
               */
           

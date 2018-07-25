@@ -39,9 +39,10 @@ public class HomeController extends Controller {
      */
     public Result index() {
         List <Item> itemList = Item.find.query().where().orderBy("Id desc").findList();
+        List <Category> cats = Category.findAll();
         Form<Item> itemForm = formFactory.form(Item.class);
 
-        return ok(index.render(itemList, itemForm));
+        return ok(index.render(itemList, itemForm, cats));
     }
 
     public Result submit() {
@@ -87,7 +88,7 @@ public class HomeController extends Controller {
         System.out.println("test====" + itemDate.getMessage());
 
 
-        item.setMessage(itemDate.getMessage());
+       // item.setMessage(itemDate.getMessage());
 
         //setting date to what was passed into form
         item.setDate(itemDate.getDate());

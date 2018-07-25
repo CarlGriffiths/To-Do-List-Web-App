@@ -28,8 +28,13 @@
                                 <form class="form-inline" action=routes.HomeController.submit()>
                                         <div class="form-group">
                                
-                               @inputText(itemForm("message"),'_label -> "Is this correct?", 'size -> 40)
+                               
                                 @inputDate(itemForm("date"),'_label -> "Enter date", 'size -> 90)
+                                 @select(
+                                        itemForm("category.Id"), 
+                                        options(Category.options),
+                                        '_label -> "Category", 
+                                        '_default -> "-- Choose a category --",'_showConstraints -> false, 'class -> "form-control")
                     
                                 <input type="submit" value="Add" class="btn btn-secondary">
 
