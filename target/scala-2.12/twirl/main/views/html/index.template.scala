@@ -78,115 +78,120 @@ Seq[Any](format.raw/*3.1*/("""
     
   </div>
 </nav>
-            """),_display_(/*51.14*/for(c <- cat) yield /*51.27*/{_display_(Seq[Any](format.raw/*51.28*/("""
-                """),format.raw/*52.17*/("""<a href=""""),_display_(/*52.27*/routes/*52.33*/.HomeController.index(c.getId())),format.raw/*52.65*/("""">"""),_display_(/*52.68*/c/*52.69*/.getName()),format.raw/*52.79*/("""</a>
-
-            """)))}),format.raw/*54.14*/("""
+            
 
               
 
 
          
-        """),format.raw/*60.9*/("""<div class="row">
+        <div class="row">
                 <div class="col-12">
                     <center>
                             <br>
-                            """),_display_(/*64.30*/form(action=routes.HomeController.submit(), 'class -> "form-hotizontal", 'role -> "form")/*64.119*/ {_display_(Seq[Any](format.raw/*64.121*/("""
-                                """),_display_(/*65.34*/CSRF/*65.38*/.formField),format.raw/*65.48*/("""
-                                """),format.raw/*66.33*/("""<form class="form-inline" action=routes.HomeController.submit()>
+                            """),_display_(/*61.30*/form(action=routes.HomeController.submit(), 'class -> "form-hotizontal", 'role -> "form")/*61.119*/ {_display_(Seq[Any](format.raw/*61.121*/("""
+                                """),_display_(/*62.34*/CSRF/*62.38*/.formField),format.raw/*62.48*/("""
+                                """),format.raw/*63.33*/("""<form class="form-inline" action=routes.HomeController.submit()>
                                      <div class="form-group">
 
                                      
                                
-                                """),_display_(/*71.34*/inputText(itemForm("message"),'_label -> "Add New Task", 'size -> 40, 'placeholder -> "Add task here")),format.raw/*71.136*/("""
+                                """),_display_(/*68.34*/inputText(itemForm("message"),'_label -> "Add New Task", 'size -> 40, 'placeholder -> "Add task here")),format.raw/*68.136*/("""
 
                                 
                                 
                     
-                                """),format.raw/*76.33*/("""<input type="submit" value="Add task" class="btn btn-outline-primary">
+                                """),format.raw/*73.33*/("""<input type="submit" value="Add task" class="btn btn-outline-primary">
                     
                                  
                                  </div>
                                 </form>  
                                 </div>              
                             
-                            """)))}),format.raw/*83.30*/("""
-                      """),format.raw/*84.23*/("""<div class="col-12">
-                    <center>      
+                            """)))}),format.raw/*80.30*/("""
+                      """),format.raw/*81.23*/("""<div class="col-12">
+                    <center> 
+                     <a href=""""),_display_(/*83.32*/routes/*83.38*/.HomeController.index(0)),format.raw/*83.62*/("""">All |</a>
+                     """),_display_(/*84.23*/for(c <- cat) yield /*84.36*/{_display_(Seq[Any](format.raw/*84.37*/("""
+                    """),format.raw/*85.21*/("""<a href=""""),_display_(/*85.31*/routes/*85.37*/.HomeController.index(c.getId)),format.raw/*85.67*/("""">"""),_display_(/*85.70*/c/*85.71*/.getName()),format.raw/*85.81*/(""" """),format.raw/*85.82*/("""|</a>
+
+                    """)))}),format.raw/*87.22*/("""    
+                    """),format.raw/*88.21*/("""<hr>
                     <h3>Due today</h3>
                        
 
 
-                     """),_display_(/*90.23*/for(a <- items) yield /*90.38*/{_display_(Seq[Any](format.raw/*90.39*/("""
+                     """),_display_(/*93.23*/for(a <- items) yield /*93.38*/{_display_(Seq[Any](format.raw/*93.39*/("""
 
                        
-                       """),_display_(/*93.25*/if(a.isToday() == true)/*93.48*/{_display_(Seq[Any](format.raw/*93.49*/("""
+                       """),_display_(/*96.25*/if(a.isToday() == true)/*96.48*/{_display_(Seq[Any](format.raw/*96.49*/("""
 
-                           """),_display_(/*95.29*/defining(false)/*95.44*/ { compare =>_display_(Seq[Any](format.raw/*95.57*/("""  
-                                 """),_display_(/*96.35*/if(a.getCompleted()== compare)/*96.65*/ {_display_(Seq[Any](format.raw/*96.67*/("""
-                                    """),format.raw/*97.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
+                           """),_display_(/*98.29*/defining(false)/*98.44*/ { compare =>_display_(Seq[Any](format.raw/*98.57*/("""  
+                                 """),_display_(/*99.35*/if(a.getCompleted()== compare)/*99.65*/ {_display_(Seq[Any](format.raw/*99.67*/("""
+                                    """),format.raw/*100.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
                                            
                                             
                                             <div class="card-body">
                                             
-                                            <h5 class="card-title text-dark">"""),_display_(/*102.79*/a/*102.80*/.getMessage()),format.raw/*102.93*/("""</h5>
+                                            <h5 class="card-title text-dark">"""),_display_(/*105.79*/a/*105.80*/.getMessage()),format.raw/*105.93*/("""</h5>
+                                            <p class="card-title text-secondary">"""),_display_(/*106.83*/a/*106.84*/.getCat().getName()),format.raw/*106.103*/("""</p>
 
                                             
-                                                <a href=""""),_display_(/*105.59*/routes/*105.65*/.HomeController.delete(a.getId())),format.raw/*105.98*/("""" class="btn btn-outline-secondary btn-sm">
+                                                <a href=""""),_display_(/*109.59*/routes/*109.65*/.HomeController.delete(a.getId())),format.raw/*109.98*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="far  fa-trash-alt"></i></a>
                                                 </a>
 
-                                                 <a href=""""),_display_(/*109.60*/routes/*109.66*/.HomeController.changeStatus(a.getId())),format.raw/*109.105*/("""" class="btn btn-outline-secondary btn-sm">
+                                                 <a href=""""),_display_(/*113.60*/routes/*113.66*/.HomeController.changeStatus(a.getId())),format.raw/*113.105*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="fas fa-check"></i></a>
                                              
                                             
                                         </div>
                                     </div>
-                                 """)))}),format.raw/*115.35*/("""
-                           """)))}),format.raw/*116.29*/("""
+                                 """)))}),format.raw/*119.35*/("""
+                           """)))}),format.raw/*120.29*/("""
                            
                   
 
-                        """)))}),format.raw/*120.26*/("""
+                        """)))}),format.raw/*124.26*/("""
 
-                     """)))}),format.raw/*122.23*/("""
+                     """)))}),format.raw/*126.23*/("""
 
-                     """),format.raw/*124.22*/("""<hr>
+                     """),format.raw/*128.22*/("""<hr>
                      <h3>Due in future</h3>
 
 
-                      """),_display_(/*128.24*/for(f <- items) yield /*128.39*/{_display_(Seq[Any](format.raw/*128.40*/("""
+                      """),_display_(/*132.24*/for(f <- items) yield /*132.39*/{_display_(Seq[Any](format.raw/*132.40*/("""
 
                        
-                        """),_display_(/*131.26*/if(f.isToday() == false)/*131.50*/{_display_(Seq[Any](format.raw/*131.51*/("""
+                        """),_display_(/*135.26*/if(f.isToday() == false)/*135.50*/{_display_(Seq[Any](format.raw/*135.51*/("""
 
                            
-                            """),_display_(/*134.30*/defining(false)/*134.45*/ { compare =>_display_(Seq[Any](format.raw/*134.58*/("""  
-                                 """),_display_(/*135.35*/if(f.getCompleted()== compare)/*135.65*/ {_display_(Seq[Any](format.raw/*135.67*/("""
-                                    """),format.raw/*136.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
+                            """),_display_(/*138.30*/defining(false)/*138.45*/ { compare =>_display_(Seq[Any](format.raw/*138.58*/("""  
+                                 """),_display_(/*139.35*/if(f.getCompleted()== compare)/*139.65*/ {_display_(Seq[Any](format.raw/*139.67*/("""
+                                    """),format.raw/*140.37*/("""<div class="card border-primary mb-3" style="max-width: 25rem;">
                                             
                                             
                                             <div class="card-body">
-                                            <h5 class="card-title text-dark">"""),_display_(/*140.79*/f/*140.80*/.getMessage()),format.raw/*140.93*/("""</h5>
-                                            <a href=""""),_display_(/*141.55*/routes/*141.61*/.HomeController.delete(f.getId())),format.raw/*141.94*/("""" class="btn btn-outline-secondary btn-sm">
+                                            <h5 class="card-title text-dark">"""),_display_(/*144.79*/f/*144.80*/.getMessage()),format.raw/*144.93*/("""</h5>
+                                            <p class="card-title text-secondary">"""),_display_(/*145.83*/f/*145.84*/.getCat().getName()),format.raw/*145.103*/("""</p>
+                                            <a href=""""),_display_(/*146.55*/routes/*146.61*/.HomeController.delete(f.getId())),format.raw/*146.94*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="far  fa-trash-alt"></i></a>
                                                 </a>
 
-                                                 <a href=""""),_display_(/*145.60*/routes/*145.66*/.HomeController.changeStatus(f.getId())),format.raw/*145.105*/("""" class="btn btn-outline-secondary btn-sm">
+                                                 <a href=""""),_display_(/*150.60*/routes/*150.66*/.HomeController.changeStatus(f.getId())),format.raw/*150.105*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="fas fa-check"></i></a>
                                         </div>
                                     </div>
 
-                                 """)))}),format.raw/*150.35*/("""
+                                 """)))}),format.raw/*155.35*/("""
                           
-                            """)))}),format.raw/*152.30*/("""
-                        """)))}),format.raw/*153.26*/("""
+                            """)))}),format.raw/*157.30*/("""
+                        """)))}),format.raw/*158.26*/("""
 
-                      """)))}),format.raw/*155.24*/("""
+                      """)))}),format.raw/*160.24*/("""
 
                      
 
-                            """),format.raw/*159.29*/("""</center>
+                            """),format.raw/*164.29*/("""</center>
                             </div>
 
        
@@ -211,11 +216,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Jul 26 00:25:26 IST 2018
+                  DATE: Thu Jul 26 02:38:02 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/index.scala.html
-                  HASH: e88d59c0ae56cba05155e45ddd1963cb94b22a2c
-                  MATRIX: 978->2|1113->67|1157->65|1184->83|1211->84|1378->224|1393->230|1456->271|1544->332|1559->338|1620->377|2128->858|2143->864|2205->905|2328->1000|2357->1001|2402->1018|2441->1029|2470->1030|2516->1048|2545->1049|2587->1063|2616->1064|2654->1075|3444->1838|3473->1851|3512->1852|3557->1869|3594->1879|3609->1885|3662->1917|3692->1920|3702->1921|3733->1931|3783->1950|3847->1987|4020->2133|4119->2222|4160->2224|4221->2258|4234->2262|4265->2272|4326->2305|4584->2536|4708->2638|4857->2759|5207->3078|5258->3101|5428->3244|5459->3259|5498->3260|5575->3310|5607->3333|5646->3334|5703->3364|5727->3379|5778->3392|5842->3429|5881->3459|5921->3461|5986->3498|6359->3843|6370->3844|6405->3857|6543->3967|6559->3973|6614->4006|6885->4249|6901->4255|6963->4294|7335->4634|7396->4663|7502->4737|7558->4761|7610->4784|7712->4858|7744->4873|7784->4874|7863->4925|7897->4949|7937->4950|8024->5009|8049->5024|8101->5037|8166->5074|8206->5104|8247->5106|8313->5143|8642->5444|8653->5445|8688->5458|8776->5518|8792->5524|8847->5557|9118->5800|9134->5806|9196->5845|9478->6095|9567->6152|9625->6178|9682->6203|9764->6256
-                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|50->20|50->20|51->21|51->21|51->21|53->23|53->23|55->25|55->25|58->28|81->51|81->51|81->51|82->52|82->52|82->52|82->52|82->52|82->52|82->52|84->54|90->60|94->64|94->64|94->64|95->65|95->65|95->65|96->66|101->71|101->71|106->76|113->83|114->84|120->90|120->90|120->90|123->93|123->93|123->93|125->95|125->95|125->95|126->96|126->96|126->96|127->97|132->102|132->102|132->102|135->105|135->105|135->105|139->109|139->109|139->109|145->115|146->116|150->120|152->122|154->124|158->128|158->128|158->128|161->131|161->131|161->131|164->134|164->134|164->134|165->135|165->135|165->135|166->136|170->140|170->140|170->140|171->141|171->141|171->141|175->145|175->145|175->145|180->150|182->152|183->153|185->155|189->159
+                  HASH: 1c0a0eee584cd4dd856524a8090a45e48a7db009
+                  MATRIX: 978->2|1113->67|1157->65|1184->83|1211->84|1378->224|1393->230|1456->271|1544->332|1559->338|1620->377|2128->858|2143->864|2205->905|2328->1000|2357->1001|2402->1018|2441->1029|2470->1030|2516->1048|2545->1049|2587->1063|2616->1064|2654->1075|3626->2020|3725->2109|3766->2111|3827->2145|3840->2149|3871->2159|3932->2192|4190->2423|4314->2525|4463->2646|4813->2965|4864->2988|4973->3070|4988->3076|5033->3100|5094->3134|5123->3147|5162->3148|5211->3169|5248->3179|5263->3185|5314->3215|5344->3218|5354->3219|5385->3229|5414->3230|5473->3258|5526->3283|5645->3375|5676->3390|5715->3391|5792->3441|5824->3464|5863->3465|5920->3495|5944->3510|5995->3523|6059->3560|6098->3590|6138->3592|6204->3629|6577->3974|6588->3975|6623->3988|6739->4076|6750->4077|6792->4096|6929->4205|6945->4211|7000->4244|7271->4487|7287->4493|7349->4532|7721->4872|7782->4901|7888->4975|7944->4999|7996->5022|8098->5096|8130->5111|8170->5112|8249->5163|8283->5187|8323->5188|8410->5247|8435->5262|8487->5275|8552->5312|8592->5342|8633->5344|8699->5381|9028->5682|9039->5683|9074->5696|9190->5784|9201->5785|9243->5804|9330->5863|9346->5869|9401->5902|9672->6145|9688->6151|9750->6190|10032->6440|10121->6497|10179->6523|10236->6548|10318->6601
+                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|50->20|50->20|51->21|51->21|51->21|53->23|53->23|55->25|55->25|58->28|91->61|91->61|91->61|92->62|92->62|92->62|93->63|98->68|98->68|103->73|110->80|111->81|113->83|113->83|113->83|114->84|114->84|114->84|115->85|115->85|115->85|115->85|115->85|115->85|115->85|115->85|117->87|118->88|123->93|123->93|123->93|126->96|126->96|126->96|128->98|128->98|128->98|129->99|129->99|129->99|130->100|135->105|135->105|135->105|136->106|136->106|136->106|139->109|139->109|139->109|143->113|143->113|143->113|149->119|150->120|154->124|156->126|158->128|162->132|162->132|162->132|165->135|165->135|165->135|168->138|168->138|168->138|169->139|169->139|169->139|170->140|174->144|174->144|174->144|175->145|175->145|175->145|176->146|176->146|176->146|180->150|180->150|180->150|185->155|187->157|188->158|190->160|194->164
                   -- GENERATED --
               */
           

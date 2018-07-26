@@ -181,6 +181,7 @@ public class HomeController extends Controller {
     public Result completed(){
         List <Item> itemList = Item.find.query().where().orderBy("Id desc").findList();
         //Form<Item> itemForm = formFactory.form(Item.class);
+        
 
         return ok(completed.render(itemList));
 

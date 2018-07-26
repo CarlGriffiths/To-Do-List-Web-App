@@ -98,3 +98,5 @@ run
 exit
 clean
 run
+clean
+run

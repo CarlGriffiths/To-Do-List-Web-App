@@ -48,10 +48,7 @@
     
   </div>
 </nav>
-            @for(c <- cat){
-                <a href="@routes.HomeController.index(c.getId())">@c.getName()</a>
-
-            }
+            
 
               
 
@@ -82,7 +79,13 @@
                             
                             }
                       <div class="col-12">
-                    <center>      
+                    <center> 
+                     <a href="@routes.HomeController.index(0)">All |</a>
+                     @for(c <- cat){
+                    <a href="@routes.HomeController.index(c.getId)">@c.getName() |</a>
+
+                    }    
+                    <hr>
                     <h3>Due today</h3>
                        
 
@@ -100,6 +103,7 @@
                                             <div class="card-body">
                                             
                                             <h5 class="card-title text-dark">@a.getMessage()</h5>
+                                            <p class="card-title text-secondary">@a.getCat().getName()</p>
 
                                             
                                                 <a href="@routes.HomeController.delete(a.getId())" class="btn btn-outline-secondary btn-sm">
@@ -138,6 +142,7 @@
                                             
                                             <div class="card-body">
                                             <h5 class="card-title text-dark">@f.getMessage()</h5>
+                                            <p class="card-title text-secondary">@f.getCat().getName()</p>
                                             <a href="@routes.HomeController.delete(f.getId())" class="btn btn-outline-secondary btn-sm">
                                                 <i class="far  fa-trash-alt"></i></a>
                                                 </a>
