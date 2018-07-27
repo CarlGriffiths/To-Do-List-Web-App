@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/Desktop/TodoList/conf/routes
-// @DATE:Thu Jul 26 02:31:43 IST 2018
+// @DATE:Fri Jul 27 19:30:58 IST 2018
 
 import play.api.mvc.Call
 
@@ -30,6 +30,12 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "completed")
     }
   
+    // @LINE:13
+    def edit(id:Integer): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "edit" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("id", id)))))
+    }
+  
     // @LINE:7
     def submit(): Call = {
       
@@ -51,25 +57,25 @@ package controllers {
     // @LINE:9
     def submitDate(id:Integer): Call = {
       
-      Call("POST", _prefix + { _defaultPrefix } + "submitdate" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("id", id)))))
+      Call("POST", _prefix + { _defaultPrefix } + "submitdate" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Integer]].unbind("id", id)))
     }
   
     // @LINE:8
     def addDate(id:Integer): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "task" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("id", id)))))
+      Call("GET", _prefix + { _defaultPrefix } + "task" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Integer]].unbind("id", id)))
     }
   
   }
 
-  // @LINE:16
+  // @LINE:18
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:16
+    // @LINE:18
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))

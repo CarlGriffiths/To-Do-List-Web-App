@@ -9,7 +9,7 @@
 		extra-sbtVersion="1.0"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20180724022043"/>
+		date="20180727182749"/>
 	<dependencies>
 		<module organisation="com.typesafe.sbt" name="sbt-play-ebean">
 			<revision name="4.0.6" status="release" pubdate="20171011200637" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/playframework/play-ebean" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="132">

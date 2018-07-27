@@ -5,11 +5,13 @@
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index(cat:Integer ?=0)
 POST     /submit                           controllers.HomeController.submit
-GET     /task                         controllers.HomeController.addDate(id: Integer)
-POST     /submitdate                           controllers.HomeController.submitDate(id: Integer)
+GET     /task:id                         controllers.HomeController.addDate(id: Integer)
+POST     /submitdate:id                           controllers.HomeController.submitDate(id: Integer)
 GET /completed:id                     controllers.HomeController.changeStatus(id: Integer)
 GET /delete/:id                     controllers.HomeController.delete(id: Integer)
 GET /completed                     controllers.HomeController.completed
+GET /edit                     controllers.HomeController.edit(id: Integer)
+
 
 
 # Map static resources from the /public folder to the /assets URL path

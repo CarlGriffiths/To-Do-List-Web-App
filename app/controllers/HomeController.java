@@ -79,6 +79,16 @@ public class HomeController extends Controller {
         }
     }
 
+    public Result edit(int id) {
+
+        Form<Item> itemForm = formFactory.form(Item.class);
+        Item itemFind = Item.find.byId(id);
+        itemForm = formFactory.form(Item.class).fill(itemFind);
+    
+        return ok(edit.render(itemForm, id));
+    }
+
+
     public Result addDate(int id) {
 
         Form<Item> itemForm = formFactory.form(Item.class);
