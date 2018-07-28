@@ -145,12 +145,17 @@ public class HomeController extends Controller {
 
         if(itemToChange.getCompleted() == false){
             itemToChange.setCompletedTrue();
+            //sets the date complated to todays date
+            itemToChange.setDateCompleted(date);
+            //System.out.println("test status date====" + itemToChange.getDateCompleted());
 
         }
 
         else if (itemToChange.getCompleted() == true){
 
             itemToChange.setCompletedFalse();
+            //sets the date complated to todays date
+           
              itemToChange.update();
             return redirect(routes.HomeController.completed());
         }

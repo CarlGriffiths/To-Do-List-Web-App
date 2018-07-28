@@ -61,7 +61,13 @@
                                             
                                             
                                             <div class="card-body">
-                                            <h5 class="card-title text-dark">@f.getMessage()</h5>
+                                                    <div style="clear: both">
+                                                            <h5 style="float: center">@f.getMessage()</h5>
+                                                            <p style="float: center">@f.getDateCompleted()</p>
+                                                            
+                                                        </div>
+                                                        <hr />
+                                          
                                             <a href="@routes.HomeController.delete(f.getId())" class="btn btn-outline-secondary btn-sm">
                                                 <i class="far  fa-trash-alt"></i></a>
                                                 </a>

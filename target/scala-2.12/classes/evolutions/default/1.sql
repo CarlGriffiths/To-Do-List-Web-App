@@ -14,6 +14,7 @@ create table item (
   message                       varchar(255),
   date                          timestamp,
   completed                     boolean,
+  date_completed                timestamp,
   category_id                   integer,
   constraint pk_item primary key (id)
 );

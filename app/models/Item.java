@@ -15,6 +15,7 @@ public class Item extends Model {
     public String message;
     public Date date;
     public Boolean completed;
+    public Date dateCompleted;
     //public static int dueToday;
    
     @ManyToOne
@@ -53,7 +54,17 @@ public class Item extends Model {
     public Date getDate(){
         return date;
     }
+    public Category getCat(){
+        return category;
+    }
 
+    public String getDateCompleted(){
+        //add one becasue jan starts at 0
+        int month = dateCompleted.getMonth() + 1;
+        String stringreturned = "Completed on: " + dateCompleted.getDate() + "/" + month  + "/" + dateCompleted.getMonth();
+        return stringreturned;
+    }
+    
     public void setId(int id){
         this.Id = id;
     }
@@ -76,10 +87,11 @@ public class Item extends Model {
     public void setCat(Category c){
         this.category = c;
     }
-
-    public Category getCat(){
-        return category;
+    
+    public void setDateCompleted(Date d){
+        this.dateCompleted = d;
     }
+    
 
     public String dateToString(){
 
@@ -113,11 +125,7 @@ public class Item extends Model {
         return returnValue;
     }
 
-    public int testdate(){
-
-        return date.hashCode();
-        
-    }
+    
 
     
 
