@@ -102,8 +102,11 @@
                                             
                                             <div class="card-body">
                                             
-                                            <h5 class="card-title text-dark">@a.getMessage()</h5>
-                                            <p class="card-title text-secondary">@a.getCat().getName()</p>
+                                                <div style="clear: both">
+                                                    <h4 style="float: center">@a.getMessage()</h4>
+                                                    <p style="float: center">@a.getCat().getName()</p>
+                                                </div>
+                                                <hr />
 
                                             
                                                 <a href="@routes.HomeController.delete(a.getId())" class="btn btn-outline-secondary btn-sm">
@@ -144,14 +147,20 @@
                                             
                                             
                                             <div class="card-body">
-                                            <h5 class="card-title text-dark">@f.getMessage()</h5>
-                                            <p class="card-title text-secondary">@f.getCat().getName()</p>
+                                                <div style="clear: both">
+                                                    <h4 style="float: center">@f.getMessage()</h4>
+                                                    <p style="float: center">@f.getCat().getName()</p>
+                                                </div>
+                                                <hr />
                                             <a href="@routes.HomeController.delete(f.getId())" class="btn btn-outline-secondary btn-sm">
                                                 <i class="far  fa-trash-alt"></i></a>
                                                 </a>
 
                                                  <a href="@routes.HomeController.changeStatus(f.getId())" class="btn btn-outline-secondary btn-sm">
                                                 <i class="fas fa-check"></i></a>
+
+                                                <a href="@routes.HomeController.edit(f.getId())" class="btn btn-outline-secondary btn-sm">
+                                                    <i class="fas fa-edit"></i></a>
                                         </div>
                                     </div>
 
