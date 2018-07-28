@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/Desktop/TodoList/conf/routes
-// @DATE:Fri Jul 27 19:30:58 IST 2018
+// @DATE:Sat Jul 28 18:05:20 IST 2018
 
 import play.api.mvc.Call
 
@@ -33,7 +33,7 @@ package controllers {
     // @LINE:13
     def edit(id:Integer): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "edit" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("id", id)))))
+      Call("GET", _prefix + { _defaultPrefix } + "edit/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Integer]].unbind("id", id)))
     }
   
     // @LINE:7
@@ -63,7 +63,7 @@ package controllers {
     // @LINE:8
     def addDate(id:Integer): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "task" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Integer]].unbind("id", id)))
+      Call("GET", _prefix + { _defaultPrefix } + "task/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Integer]].unbind("id", id)))
     }
   
   }

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/Desktop/TodoList/conf/routes
-// @DATE:Fri Jul 27 19:30:58 IST 2018
+// @DATE:Sat Jul 28 18:05:20 IST 2018
 
 package router
 
@@ -41,12 +41,12 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.index(cat:Integer ?= 0)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """submit""", """controllers.HomeController.submit"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """task""" + "$" + """id<[^/]+>""", """controllers.HomeController.addDate(id:Integer)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """task/""" + "$" + """id<[^/]+>""", """controllers.HomeController.addDate(id:Integer)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """submitdate""" + "$" + """id<[^/]+>""", """controllers.HomeController.submitDate(id:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """completed""" + "$" + """id<[^/]+>""", """controllers.HomeController.changeStatus(id:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """delete/""" + "$" + """id<[^/]+>""", """controllers.HomeController.delete(id:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """completed""", """controllers.HomeController.completed"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """edit""", """controllers.HomeController.edit(id:Integer)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """edit/""" + "$" + """id<[^/]+>""", """controllers.HomeController.edit(id:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -93,7 +93,7 @@ class Routes(
 
   // @LINE:8
   private[this] lazy val controllers_HomeController_addDate2_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("task"), DynamicPart("id", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("task/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_HomeController_addDate2_invoker = createInvoker(
     HomeController_0.addDate(fakeValue[Integer]),
@@ -103,7 +103,7 @@ class Routes(
       "addDate",
       Seq(classOf[Integer]),
       "GET",
-      this.prefix + """task""" + "$" + """id<[^/]+>""",
+      this.prefix + """task/""" + "$" + """id<[^/]+>""",
       """""",
       Seq()
     )
@@ -183,7 +183,7 @@ class Routes(
 
   // @LINE:13
   private[this] lazy val controllers_HomeController_edit7_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("edit")))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("edit/"), DynamicPart("id", """[^/]+""",true)))
   )
   private[this] lazy val controllers_HomeController_edit7_invoker = createInvoker(
     HomeController_0.edit(fakeValue[Integer]),
@@ -193,7 +193,7 @@ class Routes(
       "edit",
       Seq(classOf[Integer]),
       "GET",
-      this.prefix + """edit""",
+      this.prefix + """edit/""" + "$" + """id<[^/]+>""",
       """""",
       Seq()
     )
@@ -264,7 +264,7 @@ class Routes(
   
     // @LINE:13
     case controllers_HomeController_edit7_route(params@_) =>
-      call(params.fromQuery[Integer]("id", None)) { (id) =>
+      call(params.fromPath[Integer]("id", None)) { (id) =>
         controllers_HomeController_edit7_invoker.call(HomeController_0.edit(id))
       }
   

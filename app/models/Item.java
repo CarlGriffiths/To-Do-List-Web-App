@@ -103,6 +103,24 @@ public class Item extends Model {
         return returnValue;
     }
 
+    public Boolean hasDatePassed(){
+        Boolean returnValue = false;
+
+    
+        if(getDate().before(new Date())){
+            returnValue = true;
+        }
+        return returnValue;
+    }
+
+    public int testdate(){
+
+        return date.hashCode();
+        
+    }
+
+    
+
 
     
 }

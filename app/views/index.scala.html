@@ -143,7 +143,7 @@
                       @for(f <- items){
 
                        
-                        @if(f.isToday() == false){
+                        @if(f.hasDatePassed() == false){
 
                            
                             @defining(false) { compare =>  
@@ -155,6 +155,7 @@
                                                 <div style="clear: both">
                                                     <h5 style="float: center">@f.getMessage()</h5>
                                                     <p style="float: center">@f.getCat().getName()</p>
+                                                    
                                                 </div>
                                                 <hr />
                                             <a href="@routes.HomeController.delete(f.getId())" class="btn btn-outline-secondary btn-sm">
