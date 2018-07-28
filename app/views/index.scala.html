@@ -75,10 +75,10 @@
                                  
                                  </div>
                                 </form>  
-                                </div>              
+                                            
                             
                             }
-                      <div class="col-12">
+                     
                     <center> 
                      <a href="@routes.HomeController.index(0)">All |</a>
                      @for(c <- cat){
@@ -86,6 +86,9 @@
 
                     }    
                     <hr>
+                </div>  
+                <div class="col-6">
+                    <center>
                     <h3>Due today</h3>
                        
 
@@ -97,13 +100,13 @@
 
                            @defining(false) { compare =>  
                                  @if(a.getCompleted()== compare) {
-                                    <div class="card border-primary mb-3" style="max-width: 25rem;">
+                                    <div class="card border-primary mb-3" style="max-width: 27rem;">
                                            
                                             
                                             <div class="card-body">
                                             
                                                 <div style="clear: both">
-                                                    <h4 style="float: center">@a.getMessage()</h4>
+                                                    <h5 style="float: center">@a.getMessage()</h5>
                                                     <p style="float: center">@a.getCat().getName()</p>
                                                 </div>
                                                 <hr />
@@ -130,8 +133,10 @@
                         }
 
                      }
-
-                     <hr>
+                     
+                    </div>
+                    <div class="col-5">
+                    <center>
                      <h3>Due in future</h3>
 
 
@@ -143,12 +148,12 @@
                            
                             @defining(false) { compare =>  
                                  @if(f.getCompleted()== compare) {
-                                    <div class="card border-primary mb-3" style="max-width: 25rem;">
+                                    <div class="card border-primary mb-3" style="max-width: 27rem;">
                                             
                                             
                                             <div class="card-body">
                                                 <div style="clear: both">
-                                                    <h4 style="float: center">@f.getMessage()</h4>
+                                                    <h5 style="float: center">@f.getMessage()</h5>
                                                     <p style="float: center">@f.getCat().getName()</p>
                                                 </div>
                                                 <hr />

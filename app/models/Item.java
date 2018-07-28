@@ -43,7 +43,7 @@ public class Item extends Model {
     }
 
     public String getMessage(){
-        return message;
+        return message.toUpperCase();
     }
 
     public Boolean getCompleted(){

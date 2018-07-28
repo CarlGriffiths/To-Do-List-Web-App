@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/views/index.scala.html:162:86: not found: value a[0m
-[0m[[0m[31merror[0m] [0m[0m                                                <a href="@routes.HomeController.edit(a.getId())" class="btn btn-outline-secondary btn-sm">[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                                     ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/models/Item.java:46:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   method upperCase()[0m
+[0m[[0m[31merror[0m] [0m[0m  location: variable message of type java.lang.String[0m
+[0m[[0m[31merror[0m] [0m[0m        return message.upperCase();[0m
