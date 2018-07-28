@@ -4,7 +4,7 @@
 ![alt text](https://i.imgur.com/m1yy3Rj.png)
 
 ### Completed Page
-![alt text](https://i.imgur.com/LA9H3pq.png)
+![alt text](https://i.imgur.com/nhLxBPp.png)
 
 
 Current features:
