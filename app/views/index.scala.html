@@ -9,7 +9,7 @@
 
             
         <title>title</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
          <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
@@ -29,25 +29,18 @@
     </head>
     <body>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="#">Navbar</a>
-
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      
-      <li class="nav-item">
+  <!-- Grey with black text -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
         <a class="nav-link" href=".">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="/completed">completed</a>
+        <a class="nav-link" href="/completed">Completed</a>
       </li>
+      
     </ul>
-    
-  </div>
-</nav>
+  </nav>
             
 
               
@@ -100,7 +93,7 @@
 
                            @defining(false) { compare =>  
                                  @if(a.getCompleted()== compare) {
-                                    <div class="card border-primary mb-3" style="max-width: 27rem;">
+                                    <div class="card border-dark mb-3" style="max-width: 27rem;">
                                            
                                             
                                             <div class="card-body">
@@ -148,7 +141,7 @@
                            
                             @defining(false) { compare =>  
                                  @if(f.getCompleted()== compare) {
-                                    <div class="card border-primary mb-3" style="max-width: 27rem;">
+                                    <div class="card border-dark mb-3" style="max-width: 27rem;">
                                             
                                             
                                             <div class="card-body">

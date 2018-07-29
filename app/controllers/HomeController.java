@@ -79,6 +79,10 @@ public class HomeController extends Controller {
         }
     }
 
+    public Result test(){
+        return ok(test.render());
+    }
+
     public Result edit(int id) {
 
         Form<Item> itemForm = formFactory.form(Item.class);
