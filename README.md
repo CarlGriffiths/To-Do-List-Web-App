@@ -8,13 +8,12 @@
 
 
 Current features:
-* To-do list tasks can be created
+* To-do list tasks can be created, updated and deleted 
 * To-do list tasks can be as either marked as completed or uncompleted, if an item is marked as completed then it will be striked out
-* To-do list tasks can be deleted
 * Date can be added to items
 * Homepage displays the events 'due today' on the left and displays items 'due in the future' on the right
 * Add To-do list tasks catergoies, e.g. a housework category would have items such as 'do laundry'
-* Tasks can be edited
+
 
 
 
