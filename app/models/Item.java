@@ -14,7 +14,7 @@ public class Item extends Model {
     public int Id;
     public String message;
     public Date date;
-    public Boolean completed;
+    public Boolean completed = false;
     public Date dateCompleted;
     //public static int dueToday;
    
@@ -70,7 +70,7 @@ public class Item extends Model {
     }
 
     public void setMessage(String message){
-        setCompletedFalse();
+        //setCompletedFalse();
         this.message = message;
     }
 
