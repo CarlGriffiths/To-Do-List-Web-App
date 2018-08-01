@@ -2,5 +2,5 @@
 [0m[[0m[0mdebug[0m] [0m[0mAll sources are invalidated.[0m
 [0m[[0m[0mdebug[0m] [0m[0mRecompiling all 3 sources: invalidated sources (3) exceeded 50.0% of all sources[0m
 [0m[[0m[0minfo[0m] [0m[0mCompiling 3 Java sources to /home/wdd/Desktop/TodoList/target/scala-2.12/test-classes ...[0m
-[0m[[0m[0mdebug[0m] [0m[0mAttempting to call com.sun.tools.javac.api.JavacTool@2a4c2f5a directly...[0m
+[0m[[0m[0mdebug[0m] [0m[0mAttempting to call com.sun.tools.javac.api.JavacTool@4fc3159c directly...[0m
 [0m[[0m[31merror[0m] [0m[0m(Test / [31mcompileIncremental[0m) javac returned non-zero exit code[0m
