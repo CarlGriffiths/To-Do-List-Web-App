@@ -180,9 +180,7 @@ public class HomeController extends Controller {
         return TODO;
             
     }
-
     
-
     public int getNum(){
         List <Item> itemList = Item.findAll();
         int highest = 0;
@@ -206,10 +204,25 @@ public class HomeController extends Controller {
     public Result completed(){
         List <Item> itemList = Item.find.query().where().orderBy("Id desc").findList();
         //Form<Item> itemForm = formFactory.form(Item.class);
-        
 
         return ok(completed.render(itemList));
 
+    }
+
+    public Result register() {
+
+        Form<User> userForm = formFactory.form(User.class);
+        return ok(register.render(userForm));
+    }
+
+    public Result submitRegister() {
+
+        Form<User> userForm = formFactory.form(User.class).bindFromRequest();
+        User newUser = userForm.get();
+
+        newUser.save();
+
+        return redirect(routes.HomeController.index(0));
     }
 
 }

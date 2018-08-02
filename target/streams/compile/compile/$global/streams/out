@@ -1,5 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:89:1: method render in class views.html.test cannot be applied to given types;[0m
-[0m[[0m[31merror[0m] [0m[0m  required: no arguments[0m
-[0m[[0m[31merror[0m] [0m[0m  found: java.util.List<models.Item>[0m
-[0m[[0m[31merror[0m] [0m[0m  reason: actual and formal argument lists differ in length[0m
-[0m[[0m[31merror[0m] [0m[0m        return ok(test.render(items));[0m

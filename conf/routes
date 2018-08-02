@@ -6,13 +6,15 @@
 GET     /                           controllers.HomeController.index(cat:Integer ?=0)
 POST     /submit                           controllers.HomeController.submit
 GET     /task/:id                         controllers.HomeController.addDate(id: Integer)
-POST     /submitdate:id                           controllers.HomeController.submitDate(id: Integer)
+POST     /submitdate:id                controllers.HomeController.submitDate(id: Integer)
 GET /completed:id                     controllers.HomeController.changeStatus(id: Integer)
 GET /delete/:id                     controllers.HomeController.delete(id: Integer)
-GET /completed                     controllers.HomeController.completed
-GET /edit/:id                     controllers.HomeController.edit(id: Integer)
-GET     /test                           controllers.HomeController.test
-GET     /overdue                           controllers.HomeController.overdue
+GET /completed                       controllers.HomeController.completed
+GET /edit/:id                         controllers.HomeController.edit(id: Integer)
+GET     /test                         controllers.HomeController.test
+GET     /overdue                      controllers.HomeController.overdue
+GET /register                         controllers.HomeController.register  
+POST /submitRegister                         controllers.HomeController.submitRegister  
 
 
 
