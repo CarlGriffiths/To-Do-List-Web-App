@@ -221,21 +221,21 @@ public class HomeController extends Controller {
         User newUser = userForm.get();
         
 
-        if(checkEmail(newUser.getEmail()) == true){
-            newUser.save();
-            System.out.println("yesy");
-            return redirect(routes.HomeController.index(0));
+        if(checkEmail(newUser.getEmail()) == false){
+            
+            System.out.println("email not unique");
+            flash("emailError", "Error please use a different email");
+            return redirect(routes.HomeController.register());
         }
         
-        
-        return redirect(routes.HomeController.register());
+        newUser.save();
+        return redirect(routes.HomeController.index(0));
+       
         
     }
 
     public boolean checkEmail(String e) {
 
-       
-        
         List<User> allUsers = User.findAll();
         Set<String> hSet = new HashSet<>();
 

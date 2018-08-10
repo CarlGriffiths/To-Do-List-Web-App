@@ -1,6 +1,8 @@
 
 @(userForm: Form[User])
 
+
+
 @import helper._
 
 <!DOCTYPE html>
@@ -22,6 +24,11 @@
         <div class="row">
                 <div class="col-12 center-block">
                     <center>
+                            @if(flash.containsKey("emailError")) {
+                                <div class="alert alert-warning">
+                                  @flash.get("emailError");
+                                </div>
+                              }
                             <br>
                             @form(action=routes.HomeController.submitRegister(), 'class -> "form-hotizontal", 'role -> "form") {
                                 @CSRF.formField

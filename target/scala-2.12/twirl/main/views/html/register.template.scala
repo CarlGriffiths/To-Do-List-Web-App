@@ -28,23 +28,25 @@ object register extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.H
   def apply/*2.2*/(userForm: Form[User]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
-/*4.2*/import helper._
+/*6.2*/import helper._
 
 
 Seq[Any](format.raw/*3.1*/("""
-"""),format.raw/*5.1*/("""
-"""),format.raw/*6.1*/("""<!DOCTYPE html>
+
+
+"""),format.raw/*7.1*/("""
+"""),format.raw/*8.1*/("""<!DOCTYPE html>
 <html lang="en">
     <head>
 
             
         <title>title</title>
-        <link rel="stylesheet" media="screen" href=""""),_display_(/*12.54*/routes/*12.60*/.Assets.versioned("stylesheets/main.css")),format.raw/*12.101*/("""">
-        <link rel="shortcut icon" type="image/png" href=""""),_display_(/*13.59*/routes/*13.65*/.Assets.versioned("images/favicon.png")),format.raw/*13.104*/("""">
+        <link rel="stylesheet" media="screen" href=""""),_display_(/*14.54*/routes/*14.60*/.Assets.versioned("stylesheets/main.css")),format.raw/*14.101*/("""">
+        <link rel="shortcut icon" type="image/png" href=""""),_display_(/*15.59*/routes/*15.65*/.Assets.versioned("images/favicon.png")),format.raw/*15.104*/("""">
          <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-        <script src=""""),_display_(/*17.23*/routes/*17.29*/.Assets.versioned("javascripts/hello.js")),format.raw/*17.70*/("""" type="text/javascript"></script>
+        <script src=""""),_display_(/*19.23*/routes/*19.29*/.Assets.versioned("javascripts/hello.js")),format.raw/*19.70*/("""" type="text/javascript"></script>
     </head>
     <body></body>
 
@@ -52,22 +54,27 @@ Seq[Any](format.raw/*3.1*/("""
         <div class="row">
                 <div class="col-12 center-block">
                     <center>
-                            <br>
-                            """),_display_(/*26.30*/form(action=routes.HomeController.submitRegister(), 'class -> "form-hotizontal", 'role -> "form")/*26.127*/ {_display_(Seq[Any](format.raw/*26.129*/("""
-                                """),_display_(/*27.34*/CSRF/*27.38*/.formField),format.raw/*27.48*/("""
-                                """),format.raw/*28.33*/("""<form class="form-inline" action=routes.HomeController.submit()>
+                            """),_display_(/*27.30*/if(flash.containsKey("emailError"))/*27.65*/ {_display_(Seq[Any](format.raw/*27.67*/("""
+                                """),format.raw/*28.33*/("""<div class="alert alert-warning">
+                                  """),_display_(/*29.36*/flash/*29.41*/.get("emailError")),format.raw/*29.59*/(""";
+                                </div>
+                              """)))}),format.raw/*31.32*/("""
+                            """),format.raw/*32.29*/("""<br>
+                            """),_display_(/*33.30*/form(action=routes.HomeController.submitRegister(), 'class -> "form-hotizontal", 'role -> "form")/*33.127*/ {_display_(Seq[Any](format.raw/*33.129*/("""
+                                """),_display_(/*34.34*/CSRF/*34.38*/.formField),format.raw/*34.48*/("""
+                                """),format.raw/*35.33*/("""<form class="form-inline" action=routes.HomeController.submit()>
                                 <div class="form-group">
                                
-                                """),_display_(/*31.34*/inputText(userForm("email"),'_label -> "email", 'size -> 40, 'placeholder -> "email")),format.raw/*31.119*/("""
-                                """),_display_(/*32.34*/inputPassword(userForm("pass"),'_label -> "password", 'size -> 40, 'placeholder -> "password")),format.raw/*32.128*/("""
+                                """),_display_(/*38.34*/inputText(userForm("email"),'_label -> "email", 'size -> 40, 'placeholder -> "email")),format.raw/*38.119*/("""
+                                """),_display_(/*39.34*/inputPassword(userForm("pass"),'_label -> "password", 'size -> 40, 'placeholder -> "password")),format.raw/*39.128*/("""
 
                     
-                                """),format.raw/*35.33*/("""<input type="submit" value="Register" class="btn btn-secondary">
+                                """),format.raw/*42.33*/("""<input type="submit" value="Register" class="btn btn-secondary">
 
-                            """)))}),format.raw/*37.30*/("""
+                            """)))}),format.raw/*44.30*/("""
                     
                            
-    """),format.raw/*40.5*/("""</body>
+    """),format.raw/*47.5*/("""</body>
 </html>
 """))
       }
@@ -85,11 +92,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Aug 10 17:56:55 IST 2018
+                  DATE: Fri Aug 10 19:11:27 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/register.scala.html
-                  HASH: 2154fc83146108daf27c4371c0e16134285c3cbb
-                  MATRIX: 955->2|1050->27|1094->25|1121->43|1148->44|1315->184|1330->190|1393->231|1481->292|1496->298|1557->337|2065->818|2080->824|2142->865|2412->1108|2519->1205|2560->1207|2621->1241|2634->1245|2665->1255|2726->1288|2940->1475|3047->1560|3108->1594|3224->1688|3307->1743|3433->1838|3514->1892
-                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|56->26|56->26|56->26|57->27|57->27|57->27|58->28|61->31|61->31|62->32|62->32|65->35|67->37|70->40
+                  HASH: df15b1f06ae7795f57ce759886e3d2fdf9cdc6fa
+                  MATRIX: 955->2|1050->29|1094->25|1123->45|1150->46|1317->186|1332->192|1395->233|1483->294|1498->300|1559->339|2067->820|2082->826|2144->867|2381->1077|2425->1112|2465->1114|2526->1147|2622->1216|2636->1221|2675->1239|2778->1311|2835->1340|2896->1374|3003->1471|3044->1473|3105->1507|3118->1511|3149->1521|3210->1554|3424->1741|3531->1826|3592->1860|3708->1954|3791->2009|3917->2104|3998->2158
+                  LINES: 28->2|31->6|34->3|37->7|38->8|44->14|44->14|44->14|45->15|45->15|45->15|49->19|49->19|49->19|57->27|57->27|57->27|58->28|59->29|59->29|59->29|61->31|62->32|63->33|63->33|63->33|64->34|64->34|64->34|65->35|68->38|68->38|69->39|69->39|72->42|74->44|77->47
                   -- GENERATED --
               */
           
