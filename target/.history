@@ -122,3 +122,5 @@ h2-browser
 exit
 clean
 h2-browser
+run
+exit

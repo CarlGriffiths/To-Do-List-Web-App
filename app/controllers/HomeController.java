@@ -219,10 +219,37 @@ public class HomeController extends Controller {
 
         Form<User> userForm = formFactory.form(User.class).bindFromRequest();
         User newUser = userForm.get();
+        
 
-        newUser.save();
-
-        return redirect(routes.HomeController.index(0));
+        if(checkEmail(newUser.getEmail()) == true){
+            newUser.save();
+            System.out.println("yesy");
+            return redirect(routes.HomeController.index(0));
+        }
+        
+        
+        return redirect(routes.HomeController.register());
+        
     }
+
+    public boolean checkEmail(String e) {
+
+       
+        
+        List<User> allUsers = User.findAll();
+        Set<String> hSet = new HashSet<>();
+
+        for(int i = 0; i < allUsers.size(); i++){
+            if(allUsers.get(i).getEmail().equals(e)){
+                return false;
+
+            }
+        }
+        
+        
+       return true;
+        
+    }
+
 
 }
