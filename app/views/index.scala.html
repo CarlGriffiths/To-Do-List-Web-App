@@ -50,6 +50,11 @@
         <div class="row">
                 <div class="col-12">
                     <center>
+                            @if(flash.containsKey("emptyMessage")) {
+                                <div class="alert alert-warning">
+                                @flash.get("emptyMessage");
+                                </div>
+                            }
                             <br>
                             @form(action=routes.HomeController.submit(), 'class -> "form-hotizontal", 'role -> "form") {
                                 @CSRF.formField

@@ -64,7 +64,9 @@ public class HomeController extends Controller {
         //gets the total num of items and add 1 for new id
         int createNewId = getNum() + 1;
 
+        //if task message is empty then do not submit
         if(newItem.getMessage().isEmpty()){
+            flash("emptyMessage", "Error please enter a task");
             //the value 0 is passed into parm becasue it requires a arg, and 0 will return all items
             return redirect(routes.HomeController.index(0)); 
         }
