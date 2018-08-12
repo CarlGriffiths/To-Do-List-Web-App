@@ -15,8 +15,8 @@ public class User extends Model {
     public String pass;
     
    
-    //@ManyToOne
-    //public Category category;
+    @OneToMany
+    public List<Item> items;
 
     public User(){
 
@@ -53,6 +53,26 @@ public class User extends Model {
     }
     public void setPass(String p){
         this.pass = p;
+    }
+
+     public static User getUserById(String id){
+        if (id == null){
+            return null;
+        }
+        else {
+            return find.byId(id);
+        }
+
+    }
+
+    public void addItem(Item i) {
+        items.add(i);
+        
+    }
+
+     public List<Item> getItems() {
+        return items;
+        
     }
 
  

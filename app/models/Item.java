@@ -21,6 +21,9 @@ public class Item extends Model {
     @ManyToOne
     public Category category;
 
+    @ManyToOne
+    public User user;
+
     public Item(){
 
     }
@@ -58,6 +61,10 @@ public class Item extends Model {
         return category;
     }
 
+    public User getUser(){
+        return user;
+    }
+
     public String getDateCompleted(){
         //add one becasue jan starts at 0
         int month = dateCompleted.getMonth() + 1;
@@ -86,6 +93,9 @@ public class Item extends Model {
     }
     public void setCat(Category c){
         this.category = c;
+    }
+    public void setUser(User u){
+        this.user = u;
     }
     
     public void setDateCompleted(Date d){

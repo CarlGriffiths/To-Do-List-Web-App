@@ -79,10 +79,12 @@ public class HomeController extends Controller {
         else {
 
         newItem.setId(createNewId);
-        
-
         //the date is set on the adddate page, so instead of gettting a null value I initially set it to todays date
         newItem.setDate(date);
+        User p = User.getUserById(session().get("email"));
+        Item itemFind = Item.find.byId(createNewId);
+        p.addItem(itemFind);
+        newItem.setUser(p);        
         newItem.save();
         return redirect(routes.HomeController.addDate(createNewId));
         }
@@ -211,9 +213,13 @@ public class HomeController extends Controller {
     @Transactional
     public Result completed(){
         List <Item> itemList = Item.find.query().where().orderBy("Id desc").findList();
-        //Form<Item> itemForm = formFactory.form(Item.class);
+        List<Item> uItem = new ArrayList<>();
+        User u = User.getUserById(session().get("email"));
 
-        return ok(completed.render(itemList));
+        uItem = u.getItems();
+
+
+        return ok(completed.render(uItem));
 
     }
 

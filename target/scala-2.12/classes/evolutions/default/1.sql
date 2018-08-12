@@ -16,6 +16,7 @@ create table item (
   completed                     boolean,
   date_completed                timestamp,
   category_id                   integer,
+  user_email                    varchar(255),
   constraint pk_item primary key (id)
 );
 
@@ -28,11 +29,17 @@ create table user (
 alter table item add constraint fk_item_category_id foreign key (category_id) references category (id) on delete restrict on update restrict;
 create index ix_item_category_id on item (category_id);
 
+alter table item add constraint fk_item_user_email foreign key (user_email) references user (email) on delete restrict on update restrict;
+create index ix_item_user_email on item (user_email);
+
 
 # --- !Downs
 
 alter table item drop constraint if exists fk_item_category_id;
 drop index if exists ix_item_category_id;
+
+alter table item drop constraint if exists fk_item_user_email;
+drop index if exists ix_item_user_email;
 
 drop table if exists category;
 
