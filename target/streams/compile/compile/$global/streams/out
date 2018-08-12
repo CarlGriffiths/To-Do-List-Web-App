@@ -1,7 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/views/index.scala.html:111:57: '(' expected but 'else' found.[0m
-[0m[[0m[31merror[0m] [0m[0m                                                    @if else(a.getCat() == null){[0m
-[0m[[0m[31merror[0m] [0m[0m                                                        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/views/index.scala.html:133:9: illegal start of simple expression[0m
-[0m[[0m[31merror[0m] [0m[0m                           }[0m
-[0m[[0m[31merror[0m] [0m[0m        ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/views/index.scala.html:161:83: not found: value a[0m
+[0m[[0m[31merror[0m] [0m[0m                                                        <p style="float: center">@a.getCat().getName()</p>[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
