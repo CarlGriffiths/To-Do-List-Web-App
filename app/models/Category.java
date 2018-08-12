@@ -48,7 +48,7 @@ public class Category extends Model {
         this.Id = id;
     }
 
-    public List<Item> getItems(){
+    public List<Item> getCatItems(){
         return this.items;
     }
 

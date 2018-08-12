@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:153:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   method getEmail()[0m
-[0m[[0m[31merror[0m] [0m[0m  location: variable itemToChange of type models.Item[0m
-[0m[[0m[31merror[0m] [0m[0m        if (itemToChange.getCompleted() == true && itemToChange.getEmail().equals(u)){[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:61:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   variable u[0m
+[0m[[0m[31merror[0m] [0m[0m  location: interface java.util.List<models.Item>[0m
+[0m[[0m[31merror[0m] [0m[0m            itemList = Category.find.ref(cat).getCatItems().u.getItems();[0m

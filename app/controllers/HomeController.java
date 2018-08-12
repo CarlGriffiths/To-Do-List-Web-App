@@ -47,14 +47,23 @@ public class HomeController extends Controller {
         
         List<Item> itemList = new ArrayList<Item>();
         List<Category> categoryList = Category.findAll();
+        //gets logged in users
+        User u = User.getUserById(session().get("email"));
         //0 will return all items
         if(cat == 0){
-            itemList = Item.findAll();
+            //returns list of items for the logged in user
+            itemList = u.getItems();
+            
 
         }
-
         else {
-            itemList = Category.find.ref(cat).getItems();
+            List<Item> temp = Category.find.ref(cat).getCatItems();
+            for(int i = 0; i < temp.size(); i++){
+                if(temp.get(i).getUser().equals(u)){
+                   itemList.add(temp.get(i));
+                }
+            }
+            
 
         }
         Form<Item> itemForm = formFactory.form(Item.class);
@@ -147,8 +156,6 @@ public class HomeController extends Controller {
         
         User u = User.getUserById(session().get("email"));
         u.getEmail();
-
-
        
         if (itemToChange.getCompleted() == true && itemToChange.getUser().equals(u)){
 
