@@ -1,16 +1,22 @@
 package controllers;
 
-import java.util.*;
-
-import play.data.*;
-
 import play.mvc.*;
 
-import views.html.*;
+import play.api.Environment;
+import play.data.*;
+import play.db.ebean.Transactional;
 
+import java.util.*;
 import javax.inject.Inject;
 
 import models.*;
+
+import play.mvc.Http.*;
+import play.mvc.Http.MultipartFormData.FilePart;
+import java.io.File;
+
+
+import views.html.*;
 
 
 /**
@@ -201,6 +207,8 @@ public class HomeController extends Controller {
                 return highest; 
     }
 
+    @Security.Authenticated(Secured.class)
+    @Transactional
     public Result completed(){
         List <Item> itemList = Item.find.query().where().orderBy("Id desc").findList();
         //Form<Item> itemForm = formFactory.form(Item.class);
@@ -213,6 +221,28 @@ public class HomeController extends Controller {
 
         Form<User> userForm = formFactory.form(User.class);
         return ok(register.render(userForm));
+    }
+
+     public Result login() {
+
+        Form<Login> loginForm = formFactory.form(Login.class);
+        return ok(login.render(loginForm));
+    }
+
+    public Result submitLogin() {
+
+        Form<Login> loginForm = formFactory.form(Login.class).bindFromRequest();
+
+        if(loginForm.hasErrors()){
+            return badRequest(login.render(loginForm));
+
+        }
+
+        else{
+            session().clear();
+            session("email", loginForm.get().getEmail());
+        }
+        return redirect(routes.HomeController.index(0));
     }
 
     public Result submitRegister() {

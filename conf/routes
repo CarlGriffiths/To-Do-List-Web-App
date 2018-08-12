@@ -13,7 +13,9 @@ GET /completed                       controllers.HomeController.completed
 GET /edit/:id                         controllers.HomeController.edit(id: Integer)
 GET     /test                         controllers.HomeController.test
 GET     /overdue                      controllers.HomeController.overdue
-GET /register                         controllers.HomeController.register  
+GET /register                         controllers.HomeController.register 
+GET /login                         controllers.HomeController.login 
+GET /submitLogin                         controllers.HomeController.submitLogin 
 POST /submitRegister                         controllers.HomeController.submitRegister  
 
 

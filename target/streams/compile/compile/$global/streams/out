@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/views/index.scala.html:161:83: not found: value a[0m
-[0m[[0m[31merror[0m] [0m[0m                                                        <p style="float: center">@a.getCat().getName()</p>[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/Secured.java:19:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   variable Controller[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class controllers.routes[0m
+[0m[[0m[31merror[0m] [0m[0m        return redirect(controllers.routes.Controller.login());[0m

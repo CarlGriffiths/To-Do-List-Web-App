@@ -12,15 +12,11 @@ public class Login  {
     //@ManyToOne
     //public Category category;
 
-    public Login(){
-
-    }
-
-    public Login(String email, String pass){
-        
-        this.email = email;
-        this.pass = pass;  
-
+    public String validate(){
+        if(User.auth(email, pass) == null){
+            return "invalid email or password";
+        }
+        return null;
     }
 
 
