@@ -144,16 +144,27 @@ public class HomeController extends Controller {
     public Result delete(int id) {
         
         Item itemToChange = Item.find.byId(id);
+        
+        User u = User.getUserById(session().get("email"));
+        u.getEmail();
+
 
        
-        if (itemToChange.getCompleted() == true){
+        if (itemToChange.getCompleted() == true && itemToChange.getUser().equals(u)){
+
 
             itemToChange.delete();
             return redirect(routes.HomeController.completed());
         }
-        else {
+        else if (itemToChange.getCompleted() == false && itemToChange.getUser().equals(u)) {
             itemToChange.delete();
             //the value 0 is passed into parm becasue it requires a arg, and 0 will return all items
+            return redirect(routes.HomeController.index(0));
+
+        }
+
+        else{
+            System.out.println("Error!!! you cannto delete other users posts");
             return redirect(routes.HomeController.index(0));
 
         }
@@ -209,8 +220,8 @@ public class HomeController extends Controller {
                 return highest; 
     }
 
-    @Security.Authenticated(Secured.class)
-    @Transactional
+    //@Security.Authenticated(Secured.class)
+    //@Transactional
     public Result completed(){
         List <Item> itemList = Item.find.query().where().orderBy("Id desc").findList();
         List<Item> uItem = new ArrayList<>();
