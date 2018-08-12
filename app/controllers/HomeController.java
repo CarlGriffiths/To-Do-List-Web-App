@@ -73,6 +73,7 @@ public class HomeController extends Controller {
         else {
 
         newItem.setId(createNewId);
+        
 
         //the date is set on the adddate page, so instead of gettting a null value I initially set it to todays date
         newItem.setDate(date);
@@ -194,13 +195,10 @@ public class HomeController extends Controller {
                  if(num > highest){
                     highest = num;
                 
-                    }
-            
-        }
+                }
+            }   
 
-                return highest;
-            
-
+                return highest; 
     }
 
     public Result completed(){

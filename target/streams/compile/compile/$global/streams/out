@@ -1,2 +1,7 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:69:1: ';' expected[0m
-[0m[[0m[31merror[0m] [0m[0m            flash("emptyMessage", "Error please enter a task")[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/views/index.scala.html:111:57: '(' expected but 'else' found.[0m
+[0m[[0m[31merror[0m] [0m[0m                                                    @if else(a.getCat() == null){[0m
+[0m[[0m[31merror[0m] [0m[0m                                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/views/index.scala.html:133:9: illegal start of simple expression[0m
+[0m[[0m[31merror[0m] [0m[0m                           }[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

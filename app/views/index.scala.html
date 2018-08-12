@@ -105,7 +105,12 @@
                                             
                                                 <div style="clear: both">
                                                     <h5 style="float: center">@a.getMessage()</h5>
+                                                    @if(a.getCat() != null){
                                                     <p style="float: center">@a.getCat().getName()</p>
+                                                    } else{
+                                                        <p>No category selected</p>
+                                                        }
+                                                     
                                                 </div>
                                                 <hr />
 
@@ -152,7 +157,11 @@
                                             <div class="card-body">
                                                 <div style="clear: both">
                                                     <h5 style="float: center">@f.getMessage()</h5>
-                                                    <p style="float: center">@f.getCat().getName()</p>
+                                                    @if(f.getCat() != null){
+                                                        <p style="float: center">@a.getCat().getName()</p>
+                                                        } else{
+                                                            <p>No category selected</p>
+                                                            }
                                                     
                                                 </div>
                                                 <hr />
