@@ -30,6 +30,7 @@
                                 </div>
                               }
                             <br>
+                            <h2>Login or <a href="@routes.HomeController.register">Register</a></h2> 
                             @form(action=routes.HomeController.submitLogin(), 'class -> "form-hotizontal", 'role -> "form") {
                                 @CSRF.formField
                                 <form class="form-inline" action=routes.HomeController.submit()>

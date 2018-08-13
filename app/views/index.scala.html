@@ -1,5 +1,5 @@
 
-@(items: List[Item], itemForm: Form[Item], cat: List[Category])
+@(items: List[Item], itemForm: Form[Item], cat: List[Category], user: User)
 
 @import helper._
 
@@ -30,21 +30,21 @@
     <body>
 
   <!-- Grey with black text -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href=".">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/completed">Completed</a>
-      </li>
-      
-    </ul>
-  </nav>
-            
-
-              
-
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href=".">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/completed">Completed</a>
+            </li>
+            @if(user != null){
+            <li class="nav-item">
+                <a class="nav-link" href="/completed"> LOgout</a>
+            </li>
+            } 
+            </ul>
+        </nav>
 
          
         <div class="row">
@@ -87,6 +87,7 @@
                 </div>  
                 <div class="col-6">
                     <center>
+                    <h1>@user.getcompcount()</h1>
                     <h3>Due today</h3>
                        
 
@@ -105,7 +106,7 @@
                                             
                                                 <div style="clear: both">
                                                     <h5 style="float: center">@a.getMessage()</h5>
-                                                     <h5 style="float: center">Testing: @a.getUser().getEmail()</h5>
+                                                     
                                                     @if(a.getCat() != null){
                                                     <p style="float: center">@a.getCat().getName()</p>
                                                     } else{
@@ -138,7 +139,7 @@
 
                      }
                      
-                    </div>
+                                    </div>
                     <div class="col-5">
                     <center>
                      <h3>Due in future</h3>

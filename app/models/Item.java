@@ -16,6 +16,7 @@ public class Item extends Model {
     public Date date;
     public Boolean completed = false;
     public Date dateCompleted;
+    
     //public static int dueToday;
    
     @ManyToOne
@@ -82,6 +83,7 @@ public class Item extends Model {
     }
 
     public void setCompletedTrue(){
+        
         this.completed = true;
     }
 

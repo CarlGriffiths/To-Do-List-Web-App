@@ -53,21 +53,22 @@ Seq[Any](format.raw/*3.1*/("""
                 <div class="col-12 center-block">
                     <center>
                             <br>
-                            """),_display_(/*26.30*/form(action=routes.HomeController.submitRegister(), 'class -> "form-hotizontal", 'role -> "form")/*26.127*/ {_display_(Seq[Any](format.raw/*26.129*/("""
-                                """),_display_(/*27.34*/CSRF/*27.38*/.formField),format.raw/*27.48*/("""
-                                """),format.raw/*28.33*/("""<form class="form-inline" action=routes.HomeController.submit()>
+                            <h2>Register</h2>
+                            """),_display_(/*27.30*/form(action=routes.HomeController.submitRegister(), 'class -> "form-hotizontal", 'role -> "form")/*27.127*/ {_display_(Seq[Any](format.raw/*27.129*/("""
+                                """),_display_(/*28.34*/CSRF/*28.38*/.formField),format.raw/*28.48*/("""
+                                """),format.raw/*29.33*/("""<form class="form-inline" action=routes.HomeController.submit()>
                                 <div class="form-group">
                                
-                                """),_display_(/*31.34*/inputText(userForm("email"),'_label -> "email", 'size -> 40, 'placeholder -> "email")),format.raw/*31.119*/("""
-                                """),_display_(/*32.34*/inputPassword(userForm("pass"),'_label -> "password", 'size -> 40, 'placeholder -> "password")),format.raw/*32.128*/("""
+                                """),_display_(/*32.34*/inputText(userForm("email"),'_label -> "email", 'size -> 40, 'placeholder -> "email")),format.raw/*32.119*/("""
+                                """),_display_(/*33.34*/inputPassword(userForm("pass"),'_label -> "password", 'size -> 40, 'placeholder -> "password")),format.raw/*33.128*/("""
 
                     
-                                """),format.raw/*35.33*/("""<input type="submit" value="Register" class="btn btn-secondary">
+                                """),format.raw/*36.33*/("""<input type="submit" value="Register" class="btn btn-secondary">
 
-                            """)))}),format.raw/*37.30*/("""
+                            """)))}),format.raw/*38.30*/("""
                     
                            
-    """),format.raw/*40.5*/("""</body>
+    """),format.raw/*41.5*/("""</body>
 </html>
 """))
       }
@@ -85,11 +86,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Aug 10 19:17:54 IST 2018
+                  DATE: Mon Aug 13 12:16:15 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/register.scala.html
-                  HASH: 2154fc83146108daf27c4371c0e16134285c3cbb
-                  MATRIX: 955->2|1050->27|1094->25|1121->43|1148->44|1315->184|1330->190|1393->231|1481->292|1496->298|1557->337|2065->818|2080->824|2142->865|2412->1108|2519->1205|2560->1207|2621->1241|2634->1245|2665->1255|2726->1288|2940->1475|3047->1560|3108->1594|3224->1688|3307->1743|3433->1838|3514->1892
-                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|56->26|56->26|56->26|57->27|57->27|57->27|58->28|61->31|61->31|62->32|62->32|65->35|67->37|70->40
+                  HASH: ad45a19201408f66f710267b6ec6d77b4367ae95
+                  MATRIX: 955->2|1050->27|1094->25|1121->43|1148->44|1315->184|1330->190|1393->231|1481->292|1496->298|1557->337|2065->818|2080->824|2142->865|2458->1154|2565->1251|2606->1253|2667->1287|2680->1291|2711->1301|2772->1334|2986->1521|3093->1606|3154->1640|3270->1734|3353->1789|3479->1884|3560->1938
+                  LINES: 28->2|31->4|34->3|35->5|36->6|42->12|42->12|42->12|43->13|43->13|43->13|47->17|47->17|47->17|57->27|57->27|57->27|58->28|58->28|58->28|59->29|62->32|62->32|63->33|63->33|66->36|68->38|71->41
                   -- GENERATED --
               */
           

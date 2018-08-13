@@ -22,10 +22,10 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template3[List[Item],Form[Item],List[Category],play.twirl.api.HtmlFormat.Appendable] {
+object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template4[List[Item],Form[Item],List[Category],User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*2.2*/(items: List[Item], itemForm: Form[Item], cat: List[Category]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*2.2*/(items: List[Item], itemForm: Form[Item], cat: List[Category], user: User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 /*4.2*/import helper._
@@ -60,21 +60,21 @@ Seq[Any](format.raw/*3.1*/("""
     <body>
 
   <!-- Grey with black text -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href=".">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/completed">Completed</a>
-      </li>
-      
-    </ul>
-  </nav>
-            
-
-              
-
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href=".">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/completed">Completed</a>
+            </li>
+            """),_display_(/*41.14*/if(user != null)/*41.30*/{_display_(Seq[Any](format.raw/*41.31*/("""
+            """),format.raw/*42.13*/("""<li class="nav-item">
+                <a class="nav-link" href="/completed"> LOgout</a>
+            </li>
+            """)))}),format.raw/*45.14*/(""" 
+            """),format.raw/*46.13*/("""</ul>
+        </nav>
 
          
         <div class="row">
@@ -117,107 +117,108 @@ Seq[Any](format.raw/*3.1*/("""
                 </div>  
                 <div class="col-6">
                     <center>
+                    <h1>"""),_display_(/*90.26*/user/*90.30*/.getcompcount()),format.raw/*90.45*/("""</h1>
                     <h3>Due today</h3>
                        
 
 
-                     """),_display_(/*94.23*/for(a <- items) yield /*94.38*/{_display_(Seq[Any](format.raw/*94.39*/("""
+                     """),_display_(/*95.23*/for(a <- items) yield /*95.38*/{_display_(Seq[Any](format.raw/*95.39*/("""
 
                        
-                       """),_display_(/*97.25*/if(a.isToday() == true)/*97.48*/{_display_(Seq[Any](format.raw/*97.49*/("""
+                       """),_display_(/*98.25*/if(a.isToday() == true)/*98.48*/{_display_(Seq[Any](format.raw/*98.49*/("""
 
-                           """),_display_(/*99.29*/defining(false)/*99.44*/ { compare =>_display_(Seq[Any](format.raw/*99.57*/("""  
-                                 """),_display_(/*100.35*/if(a.getCompleted()== compare)/*100.65*/ {_display_(Seq[Any](format.raw/*100.67*/("""
-                                    """),format.raw/*101.37*/("""<div class="card border-dark mb-3" style="max-width: 27rem;">
+                           """),_display_(/*100.29*/defining(false)/*100.44*/ { compare =>_display_(Seq[Any](format.raw/*100.57*/("""  
+                                 """),_display_(/*101.35*/if(a.getCompleted()== compare)/*101.65*/ {_display_(Seq[Any](format.raw/*101.67*/("""
+                                    """),format.raw/*102.37*/("""<div class="card border-dark mb-3" style="max-width: 27rem;">
                                            
                                             
                                             <div class="card-body">
                                             
                                                 <div style="clear: both">
-                                                    <h5 style="float: center">"""),_display_(/*107.80*/a/*107.81*/.getMessage()),format.raw/*107.94*/("""</h5>
-                                                     <h5 style="float: center">Testing: """),_display_(/*108.90*/a/*108.91*/.getUser().getEmail()),format.raw/*108.112*/("""</h5>
-                                                    """),_display_(/*109.54*/if(a.getCat() != null)/*109.76*/{_display_(Seq[Any](format.raw/*109.77*/("""
-                                                    """),format.raw/*110.53*/("""<p style="float: center">"""),_display_(/*110.79*/a/*110.80*/.getCat().getName()),format.raw/*110.99*/("""</p>
-                                                    """)))}/*111.55*/else/*111.59*/{_display_(Seq[Any](format.raw/*111.60*/("""
-                                                        """),format.raw/*112.57*/("""<p>No category selected</p>
-                                                        """)))}),format.raw/*113.58*/("""
+                                                    <h5 style="float: center">"""),_display_(/*108.80*/a/*108.81*/.getMessage()),format.raw/*108.94*/("""</h5>
                                                      
-                                                """),format.raw/*115.49*/("""</div>
+                                                    """),_display_(/*110.54*/if(a.getCat() != null)/*110.76*/{_display_(Seq[Any](format.raw/*110.77*/("""
+                                                    """),format.raw/*111.53*/("""<p style="float: center">"""),_display_(/*111.79*/a/*111.80*/.getCat().getName()),format.raw/*111.99*/("""</p>
+                                                    """)))}/*112.55*/else/*112.59*/{_display_(Seq[Any](format.raw/*112.60*/("""
+                                                        """),format.raw/*113.57*/("""<p>No category selected</p>
+                                                        """)))}),format.raw/*114.58*/("""
+                                                     
+                                                """),format.raw/*116.49*/("""</div>
                                                 <hr />
 
                                             
-                                                <a href=""""),_display_(/*119.59*/routes/*119.65*/.HomeController.delete(a.getId())),format.raw/*119.98*/("""" class="btn btn-outline-secondary btn-sm">
+                                                <a href=""""),_display_(/*120.59*/routes/*120.65*/.HomeController.delete(a.getId())),format.raw/*120.98*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="far  fa-trash-alt"></i></a>
                                                 </a>
 
-                                                 <a href=""""),_display_(/*123.60*/routes/*123.66*/.HomeController.changeStatus(a.getId())),format.raw/*123.105*/("""" class="btn btn-outline-secondary btn-sm">
+                                                 <a href=""""),_display_(/*124.60*/routes/*124.66*/.HomeController.changeStatus(a.getId())),format.raw/*124.105*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="fas fa-check"></i></a>
 
-                                                <a href=""""),_display_(/*126.59*/routes/*126.65*/.HomeController.edit(a.getId())),format.raw/*126.96*/("""" class="btn btn-outline-secondary btn-sm">
+                                                <a href=""""),_display_(/*127.59*/routes/*127.65*/.HomeController.edit(a.getId())),format.raw/*127.96*/("""" class="btn btn-outline-secondary btn-sm">
                                                     <i class="fas fa-edit"></i></a>
                                              
                                             
                                         </div>
                                     </div>
-                                 """)))}),format.raw/*132.35*/("""
-                           """)))}),format.raw/*133.29*/("""
+                                 """)))}),format.raw/*133.35*/("""
+                           """)))}),format.raw/*134.29*/("""
                            
                   
 
-                        """)))}),format.raw/*137.26*/("""
+                        """)))}),format.raw/*138.26*/("""
 
-                     """)))}),format.raw/*139.23*/("""
+                     """)))}),format.raw/*140.23*/("""
                      
-                    """),format.raw/*141.21*/("""</div>
+                                    """),format.raw/*142.37*/("""</div>
                     <div class="col-5">
                     <center>
                      <h3>Due in future</h3>
 
 
-                      """),_display_(/*147.24*/for(f <- items) yield /*147.39*/{_display_(Seq[Any](format.raw/*147.40*/("""
+                      """),_display_(/*148.24*/for(f <- items) yield /*148.39*/{_display_(Seq[Any](format.raw/*148.40*/("""
 
                        
-                        """),_display_(/*150.26*/if(f.hasDatePassed() == false)/*150.56*/{_display_(Seq[Any](format.raw/*150.57*/("""
+                        """),_display_(/*151.26*/if(f.hasDatePassed() == false)/*151.56*/{_display_(Seq[Any](format.raw/*151.57*/("""
 
                            
-                            """),_display_(/*153.30*/defining(false)/*153.45*/ { compare =>_display_(Seq[Any](format.raw/*153.58*/("""  
-                                 """),_display_(/*154.35*/if(f.getCompleted()== compare)/*154.65*/ {_display_(Seq[Any](format.raw/*154.67*/("""
-                                    """),format.raw/*155.37*/("""<div class="card border-dark mb-3" style="max-width: 27rem;">
+                            """),_display_(/*154.30*/defining(false)/*154.45*/ { compare =>_display_(Seq[Any](format.raw/*154.58*/("""  
+                                 """),_display_(/*155.35*/if(f.getCompleted()== compare)/*155.65*/ {_display_(Seq[Any](format.raw/*155.67*/("""
+                                    """),format.raw/*156.37*/("""<div class="card border-dark mb-3" style="max-width: 27rem;">
                                             
                                             
                                             <div class="card-body">
                                                 <div style="clear: both">
-                                                    <h5 style="float: center">"""),_display_(/*160.80*/f/*160.81*/.getMessage()),format.raw/*160.94*/("""</h5>
-                                                    """),_display_(/*161.54*/if(f.getCat() != null)/*161.76*/{_display_(Seq[Any](format.raw/*161.77*/("""
-                                                        """),format.raw/*162.57*/("""<p style="float: center">"""),_display_(/*162.83*/f/*162.84*/.getCat().getName()),format.raw/*162.103*/("""</p>
-                                                        """)))}/*163.59*/else/*163.63*/{_display_(Seq[Any](format.raw/*163.64*/("""
-                                                            """),format.raw/*164.61*/("""<p>No category selected</p>
-                                                            """)))}),format.raw/*165.62*/("""
+                                                    <h5 style="float: center">"""),_display_(/*161.80*/f/*161.81*/.getMessage()),format.raw/*161.94*/("""</h5>
+                                                    """),_display_(/*162.54*/if(f.getCat() != null)/*162.76*/{_display_(Seq[Any](format.raw/*162.77*/("""
+                                                        """),format.raw/*163.57*/("""<p style="float: center">"""),_display_(/*163.83*/f/*163.84*/.getCat().getName()),format.raw/*163.103*/("""</p>
+                                                        """)))}/*164.59*/else/*164.63*/{_display_(Seq[Any](format.raw/*164.64*/("""
+                                                            """),format.raw/*165.61*/("""<p>No category selected</p>
+                                                            """)))}),format.raw/*166.62*/("""
                                                     
-                                                """),format.raw/*167.49*/("""</div>
+                                                """),format.raw/*168.49*/("""</div>
                                                 <hr />
-                                            <a href=""""),_display_(/*169.55*/routes/*169.61*/.HomeController.delete(f.getId())),format.raw/*169.94*/("""" class="btn btn-outline-secondary btn-sm">
+                                            <a href=""""),_display_(/*170.55*/routes/*170.61*/.HomeController.delete(f.getId())),format.raw/*170.94*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="far  fa-trash-alt"></i></a>
                                                 </a>
 
-                                                 <a href=""""),_display_(/*173.60*/routes/*173.66*/.HomeController.changeStatus(f.getId())),format.raw/*173.105*/("""" class="btn btn-outline-secondary btn-sm">
+                                                 <a href=""""),_display_(/*174.60*/routes/*174.66*/.HomeController.changeStatus(f.getId())),format.raw/*174.105*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="fas fa-check"></i></a>
 
-                                                <a href=""""),_display_(/*176.59*/routes/*176.65*/.HomeController.edit(f.getId())),format.raw/*176.96*/("""" class="btn btn-outline-secondary btn-sm">
+                                                <a href=""""),_display_(/*177.59*/routes/*177.65*/.HomeController.edit(f.getId())),format.raw/*177.96*/("""" class="btn btn-outline-secondary btn-sm">
                                                     <i class="fas fa-edit"></i></a>
                                         </div>
                                     </div>
 
-                                 """)))}),format.raw/*181.35*/("""
+                                 """)))}),format.raw/*182.35*/("""
                           
-                            """)))}),format.raw/*183.30*/("""
-                        """)))}),format.raw/*184.26*/("""
+                            """)))}),format.raw/*184.30*/("""
+                        """)))}),format.raw/*185.26*/("""
 
-                      """)))}),format.raw/*186.24*/("""
+                      """)))}),format.raw/*187.24*/("""
 
                      
 
-                            """),format.raw/*190.29*/("""</center>
+                            """),format.raw/*191.29*/("""</center>
                             </div>
 
        
@@ -231,9 +232,9 @@ Seq[Any](format.raw/*3.1*/("""
     }
   }
 
-  def render(items:List[Item],itemForm:Form[Item],cat:List[Category]): play.twirl.api.HtmlFormat.Appendable = apply(items,itemForm,cat)
+  def render(items:List[Item],itemForm:Form[Item],cat:List[Category],user:User): play.twirl.api.HtmlFormat.Appendable = apply(items,itemForm,cat,user)
 
-  def f:((List[Item],Form[Item],List[Category]) => play.twirl.api.HtmlFormat.Appendable) = (items,itemForm,cat) => apply(items,itemForm,cat)
+  def f:((List[Item],Form[Item],List[Category],User) => play.twirl.api.HtmlFormat.Appendable) = (items,itemForm,cat,user) => apply(items,itemForm,cat,user)
 
   def ref: this.type = this
 
@@ -242,11 +243,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Aug 13 00:17:09 IST 2018
+                  DATE: Mon Aug 13 15:40:37 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/index.scala.html
-                  HASH: 2d7a2b295a22189089341861a4fe3608e537ba23
-                  MATRIX: 978->2|1113->67|1157->65|1184->83|1211->84|1392->238|1407->244|1468->283|1976->764|1991->770|2053->811|2176->906|2205->907|2250->924|2289->935|2318->936|2364->954|2393->955|2435->969|2464->970|2502->981|3062->1514|3108->1551|3148->1553|3209->1586|3303->1653|3317->1658|3358->1678|3459->1748|3516->1777|3577->1811|3676->1900|3717->1902|3778->1936|3791->1940|3822->1950|3883->1983|4141->2214|4265->2316|4414->2437|4756->2748|4827->2791|4895->2832|4910->2838|4955->2862|5016->2896|5045->2909|5084->2910|5133->2931|5170->2941|5185->2947|5236->2977|5266->2980|5276->2981|5307->2991|5336->2992|5395->3020|5448->3045|5657->3227|5688->3242|5727->3243|5804->3293|5836->3316|5875->3317|5932->3347|5956->3362|6007->3375|6072->3412|6112->3442|6153->3444|6219->3481|6664->3898|6675->3899|6710->3912|6833->4007|6844->4008|6888->4029|6975->4088|7007->4110|7047->4111|7129->4164|7183->4190|7194->4191|7235->4210|7313->4269|7327->4273|7367->4274|7453->4331|7570->4416|7702->4519|7896->4685|7912->4691|7967->4724|8238->4967|8254->4973|8316->5012|8528->5196|8544->5202|8597->5233|8972->5576|9033->5605|9139->5679|9195->5703|9267->5746|9440->5891|9472->5906|9512->5907|9591->5958|9631->5988|9671->5989|9758->6048|9783->6063|9835->6076|9900->6113|9940->6143|9981->6145|10047->6182|10448->6555|10459->6556|10494->6569|10581->6628|10613->6650|10653->6651|10739->6708|10793->6734|10804->6735|10846->6754|10928->6817|10942->6821|10982->6822|11072->6883|11193->6972|11324->7074|11468->7190|11484->7196|11539->7229|11810->7472|11826->7478|11888->7517|12100->7701|12116->7707|12169->7738|12454->7991|12543->8048|12601->8074|12658->8099|12740->8152
-                  LINES: 28->2|31->4|34->3|35->5|36->6|43->13|43->13|43->13|47->17|47->17|47->17|50->20|50->20|51->21|51->21|51->21|53->23|53->23|55->25|55->25|58->28|83->53|83->53|83->53|84->54|85->55|85->55|85->55|87->57|88->58|89->59|89->59|89->59|90->60|90->60|90->60|91->61|96->66|96->66|101->71|108->78|110->80|111->81|111->81|111->81|112->82|112->82|112->82|113->83|113->83|113->83|113->83|113->83|113->83|113->83|113->83|115->85|116->86|124->94|124->94|124->94|127->97|127->97|127->97|129->99|129->99|129->99|130->100|130->100|130->100|131->101|137->107|137->107|137->107|138->108|138->108|138->108|139->109|139->109|139->109|140->110|140->110|140->110|140->110|141->111|141->111|141->111|142->112|143->113|145->115|149->119|149->119|149->119|153->123|153->123|153->123|156->126|156->126|156->126|162->132|163->133|167->137|169->139|171->141|177->147|177->147|177->147|180->150|180->150|180->150|183->153|183->153|183->153|184->154|184->154|184->154|185->155|190->160|190->160|190->160|191->161|191->161|191->161|192->162|192->162|192->162|192->162|193->163|193->163|193->163|194->164|195->165|197->167|199->169|199->169|199->169|203->173|203->173|203->173|206->176|206->176|206->176|211->181|213->183|214->184|216->186|220->190
+                  HASH: c6f5700a146942adfd144b3b18ecd77108dbe64e
+                  MATRIX: 983->2|1130->79|1174->77|1201->95|1228->96|1409->250|1424->256|1485->295|1993->776|2008->782|2070->823|2193->918|2222->919|2267->936|2306->947|2335->948|2381->966|2410->967|2452->981|2481->982|2519->993|2960->1407|2985->1423|3024->1424|3065->1437|3215->1556|3257->1570|3437->1723|3483->1760|3523->1762|3584->1795|3678->1862|3692->1867|3733->1887|3834->1957|3891->1986|3952->2020|4051->2109|4092->2111|4153->2145|4166->2149|4197->2159|4258->2192|4516->2423|4640->2525|4789->2646|5131->2957|5202->3000|5270->3041|5285->3047|5330->3071|5391->3105|5420->3118|5459->3119|5508->3140|5545->3150|5560->3156|5611->3186|5641->3189|5651->3190|5682->3200|5711->3201|5770->3229|5823->3254|5970->3374|5983->3378|6019->3393|6139->3486|6170->3501|6209->3502|6286->3552|6318->3575|6357->3576|6415->3606|6440->3621|6492->3634|6557->3671|6597->3701|6638->3703|6704->3740|7149->4157|7160->4158|7195->4171|7336->4284|7368->4306|7408->4307|7490->4360|7544->4386|7555->4387|7596->4406|7674->4465|7688->4469|7728->4470|7814->4527|7931->4612|8063->4715|8257->4881|8273->4887|8328->4920|8599->5163|8615->5169|8677->5208|8889->5392|8905->5398|8958->5429|9333->5772|9394->5801|9500->5875|9556->5899|9644->5958|9817->6103|9849->6118|9889->6119|9968->6170|10008->6200|10048->6201|10135->6260|10160->6275|10212->6288|10277->6325|10317->6355|10358->6357|10424->6394|10825->6767|10836->6768|10871->6781|10958->6840|10990->6862|11030->6863|11116->6920|11170->6946|11181->6947|11223->6966|11305->7029|11319->7033|11359->7034|11449->7095|11570->7184|11701->7286|11845->7402|11861->7408|11916->7441|12187->7684|12203->7690|12265->7729|12477->7913|12493->7919|12546->7950|12831->8203|12920->8260|12978->8286|13035->8311|13117->8364
+                  LINES: 28->2|31->4|34->3|35->5|36->6|43->13|43->13|43->13|47->17|47->17|47->17|50->20|50->20|51->21|51->21|51->21|53->23|53->23|55->25|55->25|58->28|71->41|71->41|71->41|72->42|75->45|76->46|83->53|83->53|83->53|84->54|85->55|85->55|85->55|87->57|88->58|89->59|89->59|89->59|90->60|90->60|90->60|91->61|96->66|96->66|101->71|108->78|110->80|111->81|111->81|111->81|112->82|112->82|112->82|113->83|113->83|113->83|113->83|113->83|113->83|113->83|113->83|115->85|116->86|120->90|120->90|120->90|125->95|125->95|125->95|128->98|128->98|128->98|130->100|130->100|130->100|131->101|131->101|131->101|132->102|138->108|138->108|138->108|140->110|140->110|140->110|141->111|141->111|141->111|141->111|142->112|142->112|142->112|143->113|144->114|146->116|150->120|150->120|150->120|154->124|154->124|154->124|157->127|157->127|157->127|163->133|164->134|168->138|170->140|172->142|178->148|178->148|178->148|181->151|181->151|181->151|184->154|184->154|184->154|185->155|185->155|185->155|186->156|191->161|191->161|191->161|192->162|192->162|192->162|193->163|193->163|193->163|193->163|194->164|194->164|194->164|195->165|196->166|198->168|200->170|200->170|200->170|204->174|204->174|204->174|207->177|207->177|207->177|212->182|214->184|215->185|217->187|221->191
                   -- GENERATED --
               */
           

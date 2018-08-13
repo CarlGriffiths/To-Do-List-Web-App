@@ -71,7 +71,7 @@ public class HomeController extends Controller {
         }
         Form<Item> itemForm = formFactory.form(Item.class);
 
-        return ok(index.render(itemList, itemForm, categoryList));
+        return ok(index.render(itemList, itemForm, categoryList, u));
     }
 
     public Result submit() {
@@ -199,7 +199,9 @@ public class HomeController extends Controller {
             itemToChange.setCompletedTrue();
             //sets the date complated to todays date
             itemToChange.setDateCompleted(date);
-          
+            u.addToCompleted();
+            System.out.println("is it in...!!");
+            u.update();
             itemToChange.update();
             return redirect(routes.HomeController.index(0));
 
@@ -207,10 +209,12 @@ public class HomeController extends Controller {
 
         else if (itemToChange.getCompleted() == true && itemToChange.getUser().equals(u)){
 
-            itemToChange.setCompletedFalse();
+            itemToChange.setCompletedFalse(); 
             //sets the date complated to todays date
-           
-             itemToChange.update();
+            u.subtractFromCompleted();
+            
+            u.update();
+            itemToChange.update();
             return redirect(routes.HomeController.completed());
         }
 

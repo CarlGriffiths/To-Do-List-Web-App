@@ -23,6 +23,7 @@
                 <div class="col-12 center-block">
                     <center>
                             <br>
+                            <h2>Register</h2>
                             @form(action=routes.HomeController.submitRegister(), 'class -> "form-hotizontal", 'role -> "form") {
                                 @CSRF.formField
                                 <form class="form-inline" action=routes.HomeController.submit()>

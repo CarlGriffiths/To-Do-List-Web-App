@@ -13,6 +13,7 @@ public class User extends Model {
     @Id
     public String email;
     public String pass;
+    public int compcount = 0;
     
    
     @OneToMany
@@ -47,12 +48,21 @@ public class User extends Model {
     public String getPass(){
         return pass;
     }
+    public int getcompcount(){
+        return compcount;
+    }
 
     public void setEmail(String e){
         this.email = e;
     }
     public void setPass(String p){
         this.pass = p;
+    }
+    public void addToCompleted(){
+        compcount = compcount + 1;
+    }
+     public void subtractFromCompleted(){
+        compcount = compcount - 1;
     }
 
      public static User getUserById(String id){

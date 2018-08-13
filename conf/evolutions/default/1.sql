@@ -23,6 +23,7 @@ create table item (
 create table user (
   email                         varchar(255) not null,
   pass                          varchar(255),
+  compcount                     integer not null,
   constraint pk_user primary key (email)
 );
 

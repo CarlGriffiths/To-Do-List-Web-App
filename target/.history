@@ -133,3 +133,9 @@ h2-browser
 run
 h2-browser
 run
+sbt
+exi
+run
+sbt
+exit
+run
