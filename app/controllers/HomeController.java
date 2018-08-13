@@ -55,11 +55,15 @@ public class HomeController extends Controller {
         //0 will return all items
         if(cat == 0){
             //returns list of items for the logged in user
+            //this can be done even easier by calling the getItems() in user class
+            //see complated view for working example
             itemList = u.getItems();
             
 
         }
         else {
+            //this is another way to diplay items which belong to the user
+            //here I check if item(i) user(which is email) is equal to the user which is logged in
             List<Item> temp = Category.find.ref(cat).getCatItems();
             for(int i = 0; i < temp.size(); i++){
                 if(temp.get(i).getUser().equals(u)){

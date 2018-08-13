@@ -85,9 +85,10 @@ public class User extends Model {
         
     }
 
- 
-    
-
+    public int getNumUncompleted(){
+       
+        return getItems().size() - getcompcount();
+    }
 
     
 }
