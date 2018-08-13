@@ -22,10 +22,10 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object overdue extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[List[Item],play.twirl.api.HtmlFormat.Appendable] {
+object overdue extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[List[Item],User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*2.2*/(items: List[Item]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*2.2*/(items: List[Item], user: User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 /*4.2*/import helper._
@@ -70,9 +70,9 @@ Seq[Any](format.raw/*3.1*/("""
 
                      <hr>
                      
+                    
 
-
-                      """),_display_(/*45.24*/for(f <- items) yield /*45.39*/{_display_(Seq[Any](format.raw/*45.40*/("""
+                      """),_display_(/*45.24*/for(f <- user.getItems()) yield /*45.49*/{_display_(Seq[Any](format.raw/*45.50*/("""
 
                        
                         
@@ -125,9 +125,9 @@ Seq[Any](format.raw/*3.1*/("""
     }
   }
 
-  def render(items:List[Item]): play.twirl.api.HtmlFormat.Appendable = apply(items)
+  def render(items:List[Item],user:User): play.twirl.api.HtmlFormat.Appendable = apply(items,user)
 
-  def f:((List[Item]) => play.twirl.api.HtmlFormat.Appendable) = (items) => apply(items)
+  def f:((List[Item],User) => play.twirl.api.HtmlFormat.Appendable) = (items,user) => apply(items,user)
 
   def ref: this.type = this
 
@@ -136,10 +136,10 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Aug 10 17:56:55 IST 2018
+                  DATE: Mon Aug 13 16:42:23 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/overdue.scala.html
-                  HASH: a112f59af4599a943da9423710b556a87700889a
-                  MATRIX: 954->2|1046->24|1090->22|1117->40|1144->41|1325->195|1340->201|1401->240|1909->721|1924->727|1986->768|2733->1488|2764->1503|2803->1504|2911->1585|2934->1599|2985->1612|3049->1649|3089->1680|3129->1682|3222->1747|3634->2132|3644->2133|3679->2146|4057->2497|4072->2503|4126->2536|4396->2779|4411->2785|4472->2824|4778->3099|4839->3129|4928->3187|5031->3262
+                  HASH: 1ecc138d0c87f41bd93e85215e6844375ef6ebfb
+                  MATRIX: 959->2|1063->36|1107->34|1134->52|1161->53|1342->207|1357->213|1418->252|1926->733|1941->739|2003->780|2770->1520|2811->1545|2850->1546|2958->1627|2981->1641|3032->1654|3096->1691|3136->1722|3176->1724|3269->1789|3681->2174|3691->2175|3726->2188|4104->2539|4119->2545|4173->2578|4443->2821|4458->2827|4519->2866|4825->3141|4886->3171|4975->3229|5078->3304
                   LINES: 28->2|31->4|34->3|35->5|36->6|43->13|43->13|43->13|47->17|47->17|47->17|75->45|75->45|75->45|79->49|79->49|79->49|80->50|80->50|80->50|82->52|87->57|87->57|87->57|93->63|93->63|93->63|97->67|97->67|97->67|103->73|104->74|107->77|113->83
                   -- GENERATED --
               */

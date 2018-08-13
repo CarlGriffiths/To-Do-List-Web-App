@@ -1,5 +1,5 @@
 
-@(items: List[Item])
+@(items: List[Item], user: User)
 
 @import helper._
 
@@ -40,9 +40,9 @@
 
                      <hr>
                      
+                    
 
-
-                      @for(f <- items){
+                      @for(f <- user.getItems()){
 
                        
                         

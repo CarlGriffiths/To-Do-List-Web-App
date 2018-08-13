@@ -109,7 +109,7 @@ public class HomeController extends Controller {
     public Result overdue(){
         List<Item> items = Item.findAll();
 
-        return ok(overdue.render(items));
+        return ok(overdue.render(items, User.getUserById(session().get("email"))));
     }
 
     public Result edit(int id) {
