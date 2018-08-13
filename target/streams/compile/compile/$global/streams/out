@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:61:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   variable u[0m
-[0m[[0m[31merror[0m] [0m[0m  location: interface java.util.List<models.Item>[0m
-[0m[[0m[31merror[0m] [0m[0m            itemList = Category.find.ref(cat).getCatItems().u.getItems();[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:121:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   variable getUser[0m
+[0m[[0m[31merror[0m] [0m[0m  location: variable itemFind of type models.Item[0m
+[0m[[0m[31merror[0m] [0m[0m        if(itemFind.getUser.equals(u)){[0m

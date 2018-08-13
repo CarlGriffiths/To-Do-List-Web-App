@@ -43,6 +43,9 @@ public class HomeController extends Controller {
      * this method will be called when the application receives a
      * <code>GET</code> request with a path of <code>/</code>.
      */
+
+     @Security.Authenticated(Secured.class)
+    @Transactional
     public Result index(Integer cat) {
         
         List<Item> itemList = new ArrayList<Item>();
@@ -113,9 +116,17 @@ public class HomeController extends Controller {
 
         Form<Item> itemForm = formFactory.form(Item.class);
         Item itemFind = Item.find.byId(id);
+        User u = User.getUserById(session().get("email"));
+        
+        if(itemFind.getUser().equals(u)){
         itemForm = formFactory.form(Item.class).fill(itemFind);
-    
         return ok(edit.render(itemForm, id));
+        }
+        else{
+            System.out.println("error! you can only edit your own posts");
+            return redirect(routes.HomeController.index(0));
+        }
+        
     }
 
 
@@ -227,8 +238,8 @@ public class HomeController extends Controller {
                 return highest; 
     }
 
-    //@Security.Authenticated(Secured.class)
-    //@Transactional
+    @Security.Authenticated(Secured.class)
+    @Transactional
     public Result completed(){
         List <Item> itemList = Item.find.query().where().orderBy("Id desc").findList();
         List<Item> uItem = new ArrayList<>();
