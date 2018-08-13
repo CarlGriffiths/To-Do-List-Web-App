@@ -16,7 +16,8 @@ GET     /overdue                      controllers.HomeController.overdue
 GET /register                         controllers.HomeController.register 
 GET /login                         controllers.HomeController.login 
 GET /submitLogin                         controllers.HomeController.submitLogin 
-POST /submitRegister                         controllers.HomeController.submitRegister  
+POST /submitRegister                         controllers.HomeController.submitRegister 
+GET /logout                         controllers.HomeController.logout  
 
 
 

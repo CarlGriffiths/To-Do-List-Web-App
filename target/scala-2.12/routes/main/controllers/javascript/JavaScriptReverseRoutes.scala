@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/Desktop/TodoList/conf/routes
-// @DATE:Sun Aug 12 20:24:50 IST 2018
+// @DATE:Mon Aug 13 23:32:40 IST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -65,6 +65,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "submitLogin"})
+        }
+      """
+    )
+  
+    // @LINE:20
+    def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.logout",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "logout"})
         }
       """
     )
@@ -161,7 +171,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:24
+  // @LINE:25
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -169,7 +179,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:24
+    // @LINE:25
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

@@ -312,9 +312,7 @@ public class HomeController extends Controller {
         }
         
         newUser.save();
-        return redirect(routes.HomeController.index(0));
-       
-        
+        return redirect(routes.HomeController.index(0)); 
     }
 
     public boolean checkEmail(String e) {
@@ -332,6 +330,11 @@ public class HomeController extends Controller {
         
        return true;
         
+    }
+
+    public Result logout(){
+        session().clear();
+        return redirect(routes.HomeController.index(0));
     }
 
 
