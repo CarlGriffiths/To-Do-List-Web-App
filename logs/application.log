@@ -376,3 +376,15 @@ play.sbt.PlayExceptions$CompilationException: Compilation error[cannot find symb
     filters.ExampleFilter
 
 2018-08-13 01:19:59,442 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-312 - Application started (Dev)
+2018-08-13 01:25:06,121 [INFO] from application in application-akka.actor.default-dispatcher-8 - Shutting down connection pool.
+2018-08-13 01:25:06,402 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-326 - Creating Pool for datasource 'default'
+2018-08-13 01:25:06,463 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-326 - Database [default] connected at jdbc:h2:file:./data/toDoApp
+2018-08-13 01:25:06,617 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-326 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-08-13 01:25:06,739 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-326 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+    filters.ExampleFilter
+
+2018-08-13 01:25:06,740 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-326 - Application started (Dev)

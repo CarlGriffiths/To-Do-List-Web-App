@@ -166,7 +166,7 @@ public class HomeController extends Controller {
         Item itemToChange = Item.find.byId(id);
         
         User u = User.getUserById(session().get("email"));
-        u.getEmail();
+        
        
         if (itemToChange.getCompleted() == true && itemToChange.getUser().equals(u)){
 
@@ -192,16 +192,20 @@ public class HomeController extends Controller {
 
     public Result changeStatus(int id){
         Item itemToChange = Item.find.byId(id);
+        User u = User.getUserById(session().get("email"));
+        
 
-        if(itemToChange.getCompleted() == false){
+        if(itemToChange.getCompleted() == false && itemToChange.getUser().equals(u)){
             itemToChange.setCompletedTrue();
             //sets the date complated to todays date
             itemToChange.setDateCompleted(date);
-            //System.out.println("test status date====" + itemToChange.getDateCompleted());
+          
+            itemToChange.update();
+            return redirect(routes.HomeController.index(0));
 
         }
 
-        else if (itemToChange.getCompleted() == true){
+        else if (itemToChange.getCompleted() == true && itemToChange.getUser().equals(u)){
 
             itemToChange.setCompletedFalse();
             //sets the date complated to todays date
@@ -210,9 +214,13 @@ public class HomeController extends Controller {
             return redirect(routes.HomeController.completed());
         }
 
+        else{
+            System.out.println("you can only edit your items");
+            return redirect(routes.HomeController.index(0));
+        }
+
         
-        itemToChange.update();
-        return redirect(routes.HomeController.index(0));
+        
     }
 
     public Result today(){
