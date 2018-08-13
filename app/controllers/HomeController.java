@@ -110,6 +110,8 @@ public class HomeController extends Controller {
         return ok(test.render());
     }
 
+     @Security.Authenticated(Secured.class)
+    @Transactional
     public Result overdue(){
         List<Item> items = Item.findAll();
 

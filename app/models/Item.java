@@ -16,6 +16,9 @@ public class Item extends Model {
     public Date date;
     public Boolean completed = false;
     public Date dateCompleted;
+    // in milli-seconds, this is becasue Date works in miliseconds, in the furture use Calandar instead 
+    //as it's easier to work with
+    public static final long HOUR = 3600*1000; 
     
     //public static int dueToday;
    
@@ -129,9 +132,11 @@ public class Item extends Model {
 
     public Boolean hasDatePassed(){
         Boolean returnValue = false;
-
-    
-        if(getDate().before(new Date())){
+        
+        //add 24 to date items to prevent items being due due being all market uncomplated
+        //this is because the new day will be ahead by milseconds,so below will return true even if its tha same day
+        Date itemdateplus24 = new Date(date.getTime() + 22 * HOUR);
+        if(itemdateplus24.before(new Date())){
             returnValue = true;
         }
         return returnValue;
