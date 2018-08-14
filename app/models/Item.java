@@ -135,19 +135,21 @@ public class Item extends Model {
         //Date itemdateplus24 = new Date(date.getTime() + 1 * HOUR);
         
         //the above method is no longer needed as I found a simplier solution, which is is to simplay check 
-        //if it's not todays date, this means gets the around the problem which is that the new date being ahead by seconds 
+        //if it's not todays date, and then check if it's before todays date, if true then the date is in the past
+        
+        //this gets the around the problem which is that the new date being ahead by seconds 
         //even if its the same day
         if(isToday() == false){
             if(date.before(new Date())){
-            return false;
+            return true;
             }
         }
-        return true;
+        return false;
     }
 
     public Boolean dueFuture(){
         
-        if(hasDatePassed() == true && isToday() == false){
+        if(hasDatePassed() == false && isToday() == false){
             return true;
         }
         return false;
