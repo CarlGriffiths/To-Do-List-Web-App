@@ -1,7 +1,7 @@
 ##### This is a CRUD To-Do list web application which I have created using Play framework. The reason for this project is to help me get a better understanding of Play Framework and MVC architecture in general
 
 ### Index page
-![alt text](https://i.imgur.com/CbodVpK.png)
+![alt text](https://i.imgur.com/az8uglH.png)
 
 ### Completed Page
 ![alt text](https://i.imgur.com/CIE2I1F.png)
@@ -13,7 +13,9 @@ Current features:
 * Homepage displays the events 'due today' on the left and displays items 'due in the future' on the right
 * Add To-do list tasks catergoies, e.g. a housework category would have items such as 'do laundry'
 
-
+To be done:
+* Add main.scala.html to handle dynamic content such as navbar etc
+* Add link to uncompleted page to navbar
 
 
 
