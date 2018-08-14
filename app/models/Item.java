@@ -133,8 +133,14 @@ public class Item extends Model {
         //add 24 to date items to prevent items being due due being all market uncomplated
         //this is because the new day will be ahead by milseconds,so below will return true even if its tha same day
         //Date itemdateplus24 = new Date(date.getTime() + 1 * HOUR);
-        if(date.before(new Date())){
+        
+        //the above method is no longer needed as I found a simplier solution, which is is to simplay check 
+        //if it's not todays date, this means gets the around the problem which is that the new date being ahead by seconds 
+        //even if its the same day
+        if(isToday() == false){
+            if(date.before(new Date())){
             return false;
+            }
         }
         return true;
     }
