@@ -36,27 +36,19 @@
                     <center>
                            
                     <h2>Completed</h2>     
-                   
-
                      <hr>
                      
-                    
-
                       @for(f <- user.getItems()){
-
-                       
                         
-                             @defining(true) { compare =>  
+                             @defining(false) { compare =>  
                                  @if(f.hasDatePassed()== compare) {
                            
                                     <div class="card border-dark mb-3" style="max-width: 25rem;">
-                                            
-                                            
+   
                                             <div class="card-body">
                                                     <div style="clear: both">
                                                             <h5 style="float: center">@f.getMessage()</h5>
-                                                            
-                                                            
+                                                           
                                                         </div>
                                                         <hr />
                                           

@@ -148,7 +148,7 @@
                       @for(f <- items){
 
                        
-                        @if(f.isToday() == false){
+                        @if(f.dueFuture() == true){
 
                            
                             @defining(false) { compare =>  
@@ -164,6 +164,7 @@
                                                         } else{
                                                             <p>No category selected</p>
                                                             }
+                                                            @f.dateToString()
                                                     
                                                 </div>
                                                 <hr />

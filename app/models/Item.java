@@ -121,25 +121,30 @@ public class Item extends Model {
     }
 
     public Boolean isToday(){
-        Boolean returnValue = false;
-
-    
+        
         if(dateToString().equals(todaysDateToString())){
-            returnValue = true;
+            return true;
         }
-        return returnValue;
+        return false;
     }
 
     public Boolean hasDatePassed(){
-        Boolean returnValue = false;
         
         //add 24 to date items to prevent items being due due being all market uncomplated
         //this is because the new day will be ahead by milseconds,so below will return true even if its tha same day
-        Date itemdateplus24 = new Date(date.getTime() + 22 * HOUR);
-        if(itemdateplus24.before(new Date())){
-            returnValue = true;
+        //Date itemdateplus24 = new Date(date.getTime() + 1 * HOUR);
+        if(date.before(new Date())){
+            return false;
         }
-        return returnValue;
+        return true;
+    }
+
+    public Boolean dueFuture(){
+        
+        if(hasDatePassed() == true && isToday() == false){
+            return true;
+        }
+        return false;
     }
 
     

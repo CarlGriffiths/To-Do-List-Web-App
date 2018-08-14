@@ -66,51 +66,43 @@ Seq[Any](format.raw/*3.1*/("""
                     <center>
                            
                     <h2>Completed</h2>     
-                   
-
                      <hr>
                      
-                    
-
-                      """),_display_(/*45.24*/for(f <- user.getItems()) yield /*45.49*/{_display_(Seq[Any](format.raw/*45.50*/("""
-
-                       
+                      """),_display_(/*41.24*/for(f <- user.getItems()) yield /*41.49*/{_display_(Seq[Any](format.raw/*41.50*/("""
                         
-                             """),_display_(/*49.31*/defining(true)/*49.45*/ { compare =>_display_(Seq[Any](format.raw/*49.58*/("""  
-                                 """),_display_(/*50.35*/if(f.hasDatePassed()== compare)/*50.66*/ {_display_(Seq[Any](format.raw/*50.68*/("""
+                             """),_display_(/*43.31*/defining(false)/*43.46*/ { compare =>_display_(Seq[Any](format.raw/*43.59*/("""  
+                                 """),_display_(/*44.35*/if(f.hasDatePassed()== compare)/*44.66*/ {_display_(Seq[Any](format.raw/*44.68*/("""
                            
-                                    """),format.raw/*52.37*/("""<div class="card border-dark mb-3" style="max-width: 25rem;">
-                                            
-                                            
+                                    """),format.raw/*46.37*/("""<div class="card border-dark mb-3" style="max-width: 25rem;">
+   
                                             <div class="card-body">
                                                     <div style="clear: both">
-                                                            <h5 style="float: center">"""),_display_(/*57.88*/f/*57.89*/.getMessage()),format.raw/*57.102*/("""</h5>
-                                                            
-                                                            
+                                                            <h5 style="float: center">"""),_display_(/*50.88*/f/*50.89*/.getMessage()),format.raw/*50.102*/("""</h5>
+                                                           
                                                         </div>
                                                         <hr />
                                           
-                                            <a href=""""),_display_(/*63.55*/routes/*63.61*/.HomeController.delete(f.getId())),format.raw/*63.94*/("""" class="btn btn-outline-secondary btn-sm">
+                                            <a href=""""),_display_(/*55.55*/routes/*55.61*/.HomeController.delete(f.getId())),format.raw/*55.94*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="far  fa-trash-alt"></i></a>
                                                 </a>
 
-                                                 <a href=""""),_display_(/*67.60*/routes/*67.66*/.HomeController.changeStatus(f.getId())),format.raw/*67.105*/("""" class="btn btn-secondary btn-sm">
+                                                 <a href=""""),_display_(/*59.60*/routes/*59.66*/.HomeController.changeStatus(f.getId())),format.raw/*59.105*/("""" class="btn btn-secondary btn-sm">
                                                 <i class="fas fa-check"></i></a>
                                         </div>
                                     </div>
 
                                  
-                                """)))}),format.raw/*73.34*/("""
-                            """)))}),format.raw/*74.30*/("""
+                                """)))}),format.raw/*65.34*/("""
+                            """)))}),format.raw/*66.30*/("""
 
                               
-                        """)))}),format.raw/*77.26*/("""
+                        """)))}),format.raw/*69.26*/("""
 
                     
 
                      
 
-                            """),format.raw/*83.29*/("""</center>
+                            """),format.raw/*75.29*/("""</center>
                             </div>
 
           
@@ -136,11 +128,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Aug 13 16:42:23 IST 2018
+                  DATE: Tue Aug 14 20:19:59 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/overdue.scala.html
-                  HASH: 1ecc138d0c87f41bd93e85215e6844375ef6ebfb
-                  MATRIX: 959->2|1063->36|1107->34|1134->52|1161->53|1342->207|1357->213|1418->252|1926->733|1941->739|2003->780|2770->1520|2811->1545|2850->1546|2958->1627|2981->1641|3032->1654|3096->1691|3136->1722|3176->1724|3269->1789|3681->2174|3691->2175|3726->2188|4104->2539|4119->2545|4173->2578|4443->2821|4458->2827|4519->2866|4825->3141|4886->3171|4975->3229|5078->3304
-                  LINES: 28->2|31->4|34->3|35->5|36->6|43->13|43->13|43->13|47->17|47->17|47->17|75->45|75->45|75->45|79->49|79->49|79->49|80->50|80->50|80->50|82->52|87->57|87->57|87->57|93->63|93->63|93->63|97->67|97->67|97->67|103->73|104->74|107->77|113->83
+                  HASH: 630bff98902b955f50700e4ec9c85bfc58086931
+                  MATRIX: 959->2|1063->36|1107->34|1134->52|1161->53|1342->207|1357->213|1418->252|1926->733|1941->739|2003->780|2727->1477|2768->1502|2807->1503|2890->1559|2914->1574|2965->1587|3029->1624|3069->1655|3109->1657|3202->1722|3528->2021|3538->2022|3573->2035|3889->2324|3904->2330|3958->2363|4228->2606|4243->2612|4304->2651|4610->2926|4671->2956|4760->3014|4863->3089
+                  LINES: 28->2|31->4|34->3|35->5|36->6|43->13|43->13|43->13|47->17|47->17|47->17|71->41|71->41|71->41|73->43|73->43|73->43|74->44|74->44|74->44|76->46|80->50|80->50|80->50|85->55|85->55|85->55|89->59|89->59|89->59|95->65|96->66|99->69|105->75
                   -- GENERATED --
               */
           
