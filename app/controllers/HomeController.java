@@ -212,7 +212,11 @@ public class HomeController extends Controller {
             itemToChange.setCompletedTrue();
             //sets the date complated to todays date
             itemToChange.setDateCompleted(date);
-            u.addToCompleted();
+
+            //add 10 points if completed
+            u.addPoints();
+           
+            
             System.out.println("is it in...!!");
             u.update();
             itemToChange.update();
@@ -224,7 +228,11 @@ public class HomeController extends Controller {
 
             itemToChange.setCompletedFalse(); 
             //sets the date complated to todays date
-            u.subtractFromCompleted();
+            
+            
+             //remove 10 points if added by mistake
+            u.subtractPoints();
+           
             
             u.update();
             itemToChange.update();
