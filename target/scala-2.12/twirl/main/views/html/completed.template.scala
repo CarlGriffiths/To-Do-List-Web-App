@@ -22,10 +22,10 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object completed extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[List[Item],play.twirl.api.HtmlFormat.Appendable] {
+object completed extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[List[Item],User,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*2.2*/(items: List[Item]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*2.2*/(items: List[Item], user: User):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 /*4.2*/import helper._
@@ -125,9 +125,9 @@ Seq[Any](format.raw/*3.1*/("""
     }
   }
 
-  def render(items:List[Item]): play.twirl.api.HtmlFormat.Appendable = apply(items)
+  def render(items:List[Item],user:User): play.twirl.api.HtmlFormat.Appendable = apply(items,user)
 
-  def f:((List[Item]) => play.twirl.api.HtmlFormat.Appendable) = (items) => apply(items)
+  def f:((List[Item],User) => play.twirl.api.HtmlFormat.Appendable) = (items,user) => apply(items,user)
 
   def ref: this.type = this
 
@@ -136,10 +136,10 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Aug 10 17:56:55 IST 2018
+                  DATE: Wed Aug 15 21:44:18 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/completed.scala.html
-                  HASH: 0e6f8847b14a2312b2ea4810d107bc65a13c5362
-                  MATRIX: 956->2|1048->24|1092->22|1119->40|1146->41|1327->195|1342->201|1403->240|1911->721|1926->727|1988->768|2735->1488|2766->1503|2805->1504|2913->1585|2936->1599|2987->1612|3051->1649|3090->1679|3130->1681|3223->1746|3643->2139|3653->2140|3688->2153|3816->2254|3826->2255|3867->2274|4183->2563|4198->2569|4252->2602|4522->2845|4537->2851|4598->2890|4904->3165|4965->3195|5054->3253|5157->3328
+                  HASH: 1bf11a3bbc2125cc086aced46d4e9e0913fe2c31
+                  MATRIX: 961->2|1065->36|1109->34|1136->52|1163->53|1344->207|1359->213|1420->252|1928->733|1943->739|2005->780|2752->1500|2783->1515|2822->1516|2930->1597|2953->1611|3004->1624|3068->1661|3107->1691|3147->1693|3240->1758|3660->2151|3670->2152|3705->2165|3833->2266|3843->2267|3884->2286|4200->2575|4215->2581|4269->2614|4539->2857|4554->2863|4615->2902|4921->3177|4982->3207|5071->3265|5174->3340
                   LINES: 28->2|31->4|34->3|35->5|36->6|43->13|43->13|43->13|47->17|47->17|47->17|75->45|75->45|75->45|79->49|79->49|79->49|80->50|80->50|80->50|82->52|87->57|87->57|87->57|88->58|88->58|88->58|93->63|93->63|93->63|97->67|97->67|97->67|103->73|104->74|107->77|113->83
                   -- GENERATED --
               */

@@ -55,8 +55,8 @@ public class HomeController extends Controller {
         //0 will return all items
         if(cat == 0){
             //returns list of items for the logged in user
-            //this can be done even easier by calling the getItems() in user class
-            //see complated view for working example
+            //this can be done even easier by calling the getItems() from user class, beasue each user has a list of items
+            //see completed view for working example
             itemList = u.getItems();
             
 
@@ -118,12 +118,15 @@ public class HomeController extends Controller {
         return ok(overdue.render(items, User.getUserById(session().get("email"))));
     }
 
+    @Security.Authenticated(Secured.class)
+    @Transactional
     public Result edit(int id) {
 
         Form<Item> itemForm = formFactory.form(Item.class);
         Item itemFind = Item.find.byId(id);
         User u = User.getUserById(session().get("email"));
         
+        //this is so users can only edit their own items
         if(itemFind.getUser().equals(u)){
         itemForm = formFactory.form(Item.class).fill(itemFind);
         return ok(edit.render(itemForm, id));
@@ -135,7 +138,8 @@ public class HomeController extends Controller {
         
     }
 
-
+    @Security.Authenticated(Secured.class)
+    @Transactional
     public Result addDate(int id) {
 
         Form<Item> itemForm = formFactory.form(Item.class);
@@ -167,6 +171,8 @@ public class HomeController extends Controller {
         return redirect(routes.HomeController.index(0));
     }
 
+    @Security.Authenticated(Secured.class)
+    @Transactional
     public Result delete(int id) {
         
         Item itemToChange = Item.find.byId(id);
@@ -195,7 +201,8 @@ public class HomeController extends Controller {
        
         
     }
-
+    @Security.Authenticated(Secured.class)
+    @Transactional
     public Result changeStatus(int id){
         Item itemToChange = Item.find.byId(id);
         User u = User.getUserById(session().get("email"));
@@ -266,7 +273,7 @@ public class HomeController extends Controller {
         uItem = u.getItems();
 
 
-        return ok(completed.render(uItem));
+        return ok(completed.render(uItem, u));
 
     }
 

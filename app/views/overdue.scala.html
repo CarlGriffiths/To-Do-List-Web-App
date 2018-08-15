@@ -35,11 +35,11 @@
                 <div class="col-12 center-block">
                     <center>
                            
-                    <h2>Completed</h2>     
+                    <h2>Overdue</h2>     
                      <hr>
                      
                       @for(f <- user.getItems()){
-                        
+                        @if(f.getCompleted()== false) {
                              @defining(true) { compare =>  
                                  @if(f.hasDatePassed()== compare) {
                            
@@ -56,20 +56,17 @@
                                                 <i class="far  fa-trash-alt"></i></a>
                                                 </a>
 
-                                                 <a href="@routes.HomeController.changeStatus(f.getId())" class="btn btn-secondary btn-sm">
+                                                 <a href="@routes.HomeController.changeStatus(f.getId())" class="btn btn-outline-secondary btn-sm">
                                                 <i class="fas fa-check"></i></a>
                                         </div>
                                     </div>
-
                                  
                                 }
                             }
-
                               
                         }
-
                     
-
+                    }
                      
 
                             </center>
