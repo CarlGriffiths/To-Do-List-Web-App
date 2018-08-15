@@ -58,7 +58,11 @@ public class HomeController extends Controller {
             //this can be done even easier by calling the getItems() from user class, beasue each user has a list of items
             //see completed view for working example
             itemList = u.getItems();
-            
+
+            //testing this as a way to remove 10 points for overdue items
+            for(int i = 0; i < itemList.size(); i++){
+                itemList.get(i).hasDatePassed();
+            }
 
         }
         else {

@@ -65,6 +65,7 @@ public class Item extends Model {
         return category;
     }
 
+    //returns object of user, email is primary key
     public User getUser(){
         return user;
     }
@@ -141,7 +142,9 @@ public class Item extends Model {
         //even if its the same day
         if(isToday() == false){
             if(date.before(new Date())){
+            user.subtractPoints();
             return true;
+
             }
         }
         return false;
