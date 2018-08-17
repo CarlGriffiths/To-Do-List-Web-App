@@ -18,6 +18,7 @@ GET /login                         controllers.HomeController.login
 GET /submitLogin                         controllers.HomeController.submitLogin 
 POST /submitRegister                         controllers.HomeController.submitRegister 
 GET /logout                         controllers.HomeController.logout  
+GET /stats                         controllers.HomeController.stats 
 
 
 

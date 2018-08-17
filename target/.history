@@ -141,3 +141,5 @@ exit
 run
 exit
 run
+sbt
+run

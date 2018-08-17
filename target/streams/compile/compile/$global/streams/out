@@ -1,4 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:61:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   variable getItems[0m
-[0m[[0m[31merror[0m] [0m[0m  location: variable u of type models.User[0m
-[0m[[0m[31merror[0m] [0m[0m            String t = u.getItems.dateToString(); [0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:356:1: non-static method getItems() cannot be referenced from a static context[0m
+[0m[[0m[31merror[0m] [0m[0m        List<Item> itemList = User.getItems();[0m

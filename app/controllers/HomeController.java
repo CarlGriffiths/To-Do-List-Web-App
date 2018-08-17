@@ -59,10 +59,6 @@ public class HomeController extends Controller {
             //see completed view for working example
             itemList = u.getItems();
 
-            //testing this as a way to remove 10 points for overdue items
-            for(int i = 0; i < itemList.size(); i++){
-                itemList.get(i).hasDatePassed();
-            }
 
         }
         else {
@@ -354,6 +350,19 @@ public class HomeController extends Controller {
     public Result logout(){
         session().clear();
         return redirect(routes.HomeController.index(0));
+    }
+
+    public Result stats(){
+        User u = User.getUserById(session().get("email"));
+        List<Item> itemList = u.getItems();
+
+        //testing this as a way to remove 10 points for overdue items
+        for(int i = 0; i < itemList.size(); i++){
+            //hasDatePassed(); calls a method to subtract points if it's true
+            itemList.get(i).hasDatePassed();
+         }
+
+        return ok(stats.render(u));
     }
 
 

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/Desktop/TodoList/conf/routes
-// @DATE:Mon Aug 13 23:32:40 IST 2018
+// @DATE:Fri Aug 17 20:42:54 IST 2018
 
 package controllers;
 
