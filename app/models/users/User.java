@@ -14,6 +14,7 @@ public class User extends Model {
     public String email;
     public String pass;
     public int points = 0;
+    public int completed = 0;
     
    
     @OneToMany
@@ -52,6 +53,13 @@ public class User extends Model {
         return points;
     }
 
+    public int getCompletedCount(){
+        //simply divide the current point by 10 to get the num of completed items 
+        //seen as uers get 10 points for each item complated
+        completed = points / 10;
+        return completed;
+    }
+
     public void setEmail(String e){
         this.email = e;
     }
@@ -60,10 +68,12 @@ public class User extends Model {
     }
     public void addPoints(){
         points += 10;
+        
     }
      public void subtractPoints(){
         points -= 10;
     }
+
 
      public static User getUserById(String id){
         if (id == null){
@@ -85,10 +95,10 @@ public class User extends Model {
         
     }
 
-    //public int getNumUncompleted(){
+    public int getNumUncompleted(){
        
-    //    return getItems().size() - getcompcount();
-    //}
+        return getItems().size() - getCompletedCount();
+    }
 
     
 }

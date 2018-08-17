@@ -215,7 +215,6 @@ public class HomeController extends Controller {
 
             //add 10 points if completed
             u.addPoints();
-           
             
             System.out.println("is it in...!!");
             u.update();
