@@ -56,7 +56,15 @@ public class User extends Model {
     public int getCompletedCount(){
         //simply divide the current point by 10 to get the num of completed items 
         //seen as uers get 10 points for each item complated
-        completed = points / 10;
+
+        //this is in case the users points go below 0, that way we would not be dividing by negative points
+        if(points < 0){
+        completed = 0 / 10;
+        }
+        else{
+            completed = points / 10;
+        }
+    
         return completed;
     }
 
