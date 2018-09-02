@@ -3,55 +3,7 @@
 
 @import helper._
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-
-            
-        <title>title</title>
-        
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
-         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-        <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>
-        <script>  
-
-            function checkInput(message){
-                if(message){
-
-                }
-
-            }
-
-
-        </script>
-    </head>
-    <body>
-
-  <!-- Grey with black text -->
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href=".">Tasks</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/completed">Completed</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/overdue">Overdue</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/stats">Stats</a>
-            </li>
-            @if(user != null){
-            <li class="nav-item">
-                
-                <a class="nav-link" href="@routes.HomeController.logout"> Logout</a>
-            </li>
-            } 
-            </ul>
-        </nav>
+@main("home", user) {
 
          
         <div class="row">
@@ -116,7 +68,7 @@
                                                     <p style="float: center">@a.getCat().getName()</p>
                                                     } else{
                                                         <p>No category selected</p>
-                                                        }
+                                                       }
                                                      @a.dateToString()
                                                 </div>
                                                 <hr />
@@ -201,5 +153,5 @@
                
            
 
-    </body>
-</html>
+}
+

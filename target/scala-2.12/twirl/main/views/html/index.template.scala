@@ -33,92 +33,44 @@ object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 
 Seq[Any](format.raw/*3.1*/("""
 """),format.raw/*5.1*/("""
-"""),format.raw/*6.1*/("""<!DOCTYPE html>
-<html lang="en">
-    <head>
-
-            
-        <title>title</title>
-        
-        <link rel="shortcut icon" type="image/png" href=""""),_display_(/*13.59*/routes/*13.65*/.Assets.versioned("images/favicon.png")),format.raw/*13.104*/("""">
-         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-        <script src=""""),_display_(/*17.23*/routes/*17.29*/.Assets.versioned("javascripts/hello.js")),format.raw/*17.70*/("""" type="text/javascript"></script>
-        <script>  
-
-            function checkInput(message)"""),format.raw/*20.41*/("""{"""),format.raw/*20.42*/("""
-                """),format.raw/*21.17*/("""if(message)"""),format.raw/*21.28*/("""{"""),format.raw/*21.29*/("""
-
-                """),format.raw/*23.17*/("""}"""),format.raw/*23.18*/("""
-
-            """),format.raw/*25.13*/("""}"""),format.raw/*25.14*/("""
-
-
-        """),format.raw/*28.9*/("""</script>
-    </head>
-    <body>
-
-  <!-- Grey with black text -->
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href=".">Tasks</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/completed">Completed</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/overdue">Overdue</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/stats">Stats</a>
-            </li>
-            """),_display_(/*47.14*/if(user != null)/*47.30*/{_display_(Seq[Any](format.raw/*47.31*/("""
-            """),format.raw/*48.13*/("""<li class="nav-item">
-                
-                <a class="nav-link" href=""""),_display_(/*50.44*/routes/*50.50*/.HomeController.logout),format.raw/*50.72*/(""""> Logout</a>
-            </li>
-            """)))}),format.raw/*52.14*/(""" 
-            """),format.raw/*53.13*/("""</ul>
-        </nav>
+"""),_display_(/*6.2*/main("Login", user)/*6.21*/ {_display_(Seq[Any](format.raw/*6.23*/("""
 
          
-        <div class="row">
+        """),format.raw/*9.9*/("""<div class="row">
                 <div class="col-12">
                     <center>
-                            """),_display_(/*60.30*/if(flash.containsKey("emptyMessage"))/*60.67*/ {_display_(Seq[Any](format.raw/*60.69*/("""
-                                """),format.raw/*61.33*/("""<div class="alert alert-warning">
-                                """),_display_(/*62.34*/flash/*62.39*/.get("emptyMessage")),format.raw/*62.59*/(""";
+                            """),_display_(/*12.30*/if(flash.containsKey("emptyMessage"))/*12.67*/ {_display_(Seq[Any](format.raw/*12.69*/("""
+                                """),format.raw/*13.33*/("""<div class="alert alert-warning">
+                                """),_display_(/*14.34*/flash/*14.39*/.get("emptyMessage")),format.raw/*14.59*/(""";
                                 </div>
-                            """)))}),format.raw/*64.30*/("""
-                            """),format.raw/*65.29*/("""<br>
-                            """),_display_(/*66.30*/form(action=routes.HomeController.submit(), 'class -> "form-hotizontal", 'role -> "form")/*66.119*/ {_display_(Seq[Any](format.raw/*66.121*/("""
-                                """),_display_(/*67.34*/CSRF/*67.38*/.formField),format.raw/*67.48*/("""
-                                """),format.raw/*68.33*/("""<form class="form-inline" action=routes.HomeController.submit()>
+                            """)))}),format.raw/*16.30*/("""
+                            """),format.raw/*17.29*/("""<br>
+                            """),_display_(/*18.30*/form(action=routes.HomeController.submit(), 'class -> "form-hotizontal", 'role -> "form")/*18.119*/ {_display_(Seq[Any](format.raw/*18.121*/("""
+                                """),_display_(/*19.34*/CSRF/*19.38*/.formField),format.raw/*19.48*/("""
+                                """),format.raw/*20.33*/("""<form class="form-inline" action=routes.HomeController.submit()>
                                      <div class="form-group">
 
                                      
                                
-                                """),_display_(/*73.34*/inputText(itemForm("message"),'_label -> "Add New Task", 'size -> 40, 'placeholder -> "Add task here")),format.raw/*73.136*/("""
+                                """),_display_(/*25.34*/inputText(itemForm("message"),'_label -> "Add New Task", 'size -> 40, 'placeholder -> "Add task here")),format.raw/*25.136*/("""
 
                     
-                                """),format.raw/*76.33*/("""<input type="submit" value="Add task" class="btn btn-outline-primary">
+                                """),format.raw/*28.33*/("""<input type="submit" value="Add task" class="btn btn-outline-primary">
                     
                                  
                                  </div>
                                 </form>  
                                             
                             
-                            """)))}),format.raw/*83.30*/("""
+                            """)))}),format.raw/*35.30*/("""
                      
-                    """),format.raw/*85.21*/("""<center> 
-                     <a href=""""),_display_(/*86.32*/routes/*86.38*/.HomeController.index(0)),format.raw/*86.62*/("""">All |</a>
-                     """),_display_(/*87.23*/for(c <- cat) yield /*87.36*/{_display_(Seq[Any](format.raw/*87.37*/("""
-                    """),format.raw/*88.21*/("""<a href=""""),_display_(/*88.31*/routes/*88.37*/.HomeController.index(c.getId)),format.raw/*88.67*/("""">"""),_display_(/*88.70*/c/*88.71*/.getName()),format.raw/*88.81*/(""" """),format.raw/*88.82*/("""|</a>
+                    """),format.raw/*37.21*/("""<center> 
+                     <a href=""""),_display_(/*38.32*/routes/*38.38*/.HomeController.index(0)),format.raw/*38.62*/("""">All |</a>
+                     """),_display_(/*39.23*/for(c <- cat) yield /*39.36*/{_display_(Seq[Any](format.raw/*39.37*/("""
+                    """),format.raw/*40.21*/("""<a href=""""),_display_(/*40.31*/routes/*40.37*/.HomeController.index(c.getId)),format.raw/*40.67*/("""">"""),_display_(/*40.70*/c/*40.71*/.getName()),format.raw/*40.81*/(""" """),format.raw/*40.82*/("""|</a>
 
-                    """)))}),format.raw/*90.22*/("""    
-                    """),format.raw/*91.21*/("""<hr>
+                    """)))}),format.raw/*42.22*/("""    
+                    """),format.raw/*43.21*/("""<hr>
                 </div> 
             
                 <div class="col-6">
@@ -127,112 +79,112 @@ Seq[Any](format.raw/*3.1*/("""
                     <h3>Due today</h3>
 
 
-                     """),_display_(/*100.23*/for(a <- items) yield /*100.38*/{_display_(Seq[Any](format.raw/*100.39*/("""
+                     """),_display_(/*52.23*/for(a <- items) yield /*52.38*/{_display_(Seq[Any](format.raw/*52.39*/("""
                          
                        
-                       """),_display_(/*103.25*/if(a.isToday() == true)/*103.48*/{_display_(Seq[Any](format.raw/*103.49*/("""
+                       """),_display_(/*55.25*/if(a.isToday() == true)/*55.48*/{_display_(Seq[Any](format.raw/*55.49*/("""
 
-                           """),_display_(/*105.29*/defining(false)/*105.44*/ { compare =>_display_(Seq[Any](format.raw/*105.57*/("""  
-                                 """),_display_(/*106.35*/if(a.getCompleted()== compare)/*106.65*/ {_display_(Seq[Any](format.raw/*106.67*/("""
-                                    """),format.raw/*107.37*/("""<div class="card border-dark mb-3" style="max-width: 27rem;">
+                           """),_display_(/*57.29*/defining(false)/*57.44*/ { compare =>_display_(Seq[Any](format.raw/*57.57*/("""  
+                                 """),_display_(/*58.35*/if(a.getCompleted()== compare)/*58.65*/ {_display_(Seq[Any](format.raw/*58.67*/("""
+                                    """),format.raw/*59.37*/("""<div class="card border-dark mb-3" style="max-width: 27rem;">
                                            
                                             
                                             <div class="card-body">
                                             
                                                 <div style="clear: both">
-                                                    <h5 style="float: center">"""),_display_(/*113.80*/a/*113.81*/.getMessage()),format.raw/*113.94*/("""</h5>
+                                                    <h5 style="float: center">"""),_display_(/*65.80*/a/*65.81*/.getMessage()),format.raw/*65.94*/("""</h5>
                                                      
-                                                    """),_display_(/*115.54*/if(a.getCat() != null)/*115.76*/{_display_(Seq[Any](format.raw/*115.77*/("""
-                                                    """),format.raw/*116.53*/("""<p style="float: center">"""),_display_(/*116.79*/a/*116.80*/.getCat().getName()),format.raw/*116.99*/("""</p>
-                                                    """)))}/*117.55*/else/*117.59*/{_display_(Seq[Any](format.raw/*117.60*/("""
-                                                        """),format.raw/*118.57*/("""<p>No category selected</p>
-                                                        """)))}),format.raw/*119.58*/("""
-                                                     """),_display_(/*120.55*/a/*120.56*/.dateToString()),format.raw/*120.71*/("""
-                                                """),format.raw/*121.49*/("""</div>
+                                                    """),_display_(/*67.54*/if(a.getCat() != null)/*67.76*/{_display_(Seq[Any](format.raw/*67.77*/("""
+                                                    """),format.raw/*68.53*/("""<p style="float: center">"""),_display_(/*68.79*/a/*68.80*/.getCat().getName()),format.raw/*68.99*/("""</p>
+                                                    """)))}/*69.55*/else/*69.59*/{_display_(Seq[Any](format.raw/*69.60*/("""
+                                                        """),format.raw/*70.57*/("""<p>No category selected</p>
+                                                       """)))}),format.raw/*71.57*/("""
+                                                     """),_display_(/*72.55*/a/*72.56*/.dateToString()),format.raw/*72.71*/("""
+                                                """),format.raw/*73.49*/("""</div>
                                                 <hr />
 
                                             
-                                                <a href=""""),_display_(/*125.59*/routes/*125.65*/.HomeController.delete(a.getId())),format.raw/*125.98*/("""" class="btn btn-outline-secondary btn-sm">
+                                                <a href=""""),_display_(/*77.59*/routes/*77.65*/.HomeController.delete(a.getId())),format.raw/*77.98*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="far  fa-trash-alt"></i></a>
                                                 </a>
 
-                                                 <a href=""""),_display_(/*129.60*/routes/*129.66*/.HomeController.changeStatus(a.getId())),format.raw/*129.105*/("""" class="btn btn-outline-secondary btn-sm">
+                                                 <a href=""""),_display_(/*81.60*/routes/*81.66*/.HomeController.changeStatus(a.getId())),format.raw/*81.105*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="fas fa-check"></i></a>
 
-                                                <a href=""""),_display_(/*132.59*/routes/*132.65*/.HomeController.edit(a.getId())),format.raw/*132.96*/("""" class="btn btn-outline-secondary btn-sm">
+                                                <a href=""""),_display_(/*84.59*/routes/*84.65*/.HomeController.edit(a.getId())),format.raw/*84.96*/("""" class="btn btn-outline-secondary btn-sm">
                                                     <i class="fas fa-edit"></i></a>
                                              
                                             
                                         </div>
                                     </div>
-                                 """)))}),format.raw/*138.35*/("""
-                           """)))}),format.raw/*139.29*/("""
+                                 """)))}),format.raw/*90.35*/("""
+                           """)))}),format.raw/*91.29*/("""
                            
                   
 
-                        """)))}),format.raw/*143.26*/("""
+                        """)))}),format.raw/*95.26*/("""
 
-                     """)))}),format.raw/*145.23*/("""
+                     """)))}),format.raw/*97.23*/("""
                      
-                                    """),format.raw/*147.37*/("""</div>
+                                    """),format.raw/*99.37*/("""</div>
                     <div class="col-5">
                     <center>
                      <h3>Due in future</h3>
 
 
-                      """),_display_(/*153.24*/for(f <- items) yield /*153.39*/{_display_(Seq[Any](format.raw/*153.40*/("""
+                      """),_display_(/*105.24*/for(f <- items) yield /*105.39*/{_display_(Seq[Any](format.raw/*105.40*/("""
 
                        
-                        """),_display_(/*156.26*/if(f.dueFuture() == true)/*156.51*/{_display_(Seq[Any](format.raw/*156.52*/("""
+                        """),_display_(/*108.26*/if(f.dueFuture() == true)/*108.51*/{_display_(Seq[Any](format.raw/*108.52*/("""
 
                            
-                            """),_display_(/*159.30*/defining(false)/*159.45*/ { compare =>_display_(Seq[Any](format.raw/*159.58*/("""  
-                                 """),_display_(/*160.35*/if(f.getCompleted()== compare)/*160.65*/ {_display_(Seq[Any](format.raw/*160.67*/("""
-                                    """),format.raw/*161.37*/("""<div class="card border-dark mb-3" style="max-width: 27rem;">
+                            """),_display_(/*111.30*/defining(false)/*111.45*/ { compare =>_display_(Seq[Any](format.raw/*111.58*/("""  
+                                 """),_display_(/*112.35*/if(f.getCompleted()== compare)/*112.65*/ {_display_(Seq[Any](format.raw/*112.67*/("""
+                                    """),format.raw/*113.37*/("""<div class="card border-dark mb-3" style="max-width: 27rem;">
                                             
                                             
                                             <div class="card-body">
                                                 <div style="clear: both">
-                                                    <h5 style="float: center">"""),_display_(/*166.80*/f/*166.81*/.getMessage()),format.raw/*166.94*/("""</h5>
-                                                    """),_display_(/*167.54*/if(f.getCat() != null)/*167.76*/{_display_(Seq[Any](format.raw/*167.77*/("""
-                                                        """),format.raw/*168.57*/("""<p style="float: center">"""),_display_(/*168.83*/f/*168.84*/.getCat().getName()),format.raw/*168.103*/("""</p>
-                                                        """)))}/*169.59*/else/*169.63*/{_display_(Seq[Any](format.raw/*169.64*/("""
-                                                            """),format.raw/*170.61*/("""<p>No category selected</p>
-                                                            """)))}),format.raw/*171.62*/("""
-                                                            """),_display_(/*172.62*/f/*172.63*/.dateToString()),format.raw/*172.78*/("""
+                                                    <h5 style="float: center">"""),_display_(/*118.80*/f/*118.81*/.getMessage()),format.raw/*118.94*/("""</h5>
+                                                    """),_display_(/*119.54*/if(f.getCat() != null)/*119.76*/{_display_(Seq[Any](format.raw/*119.77*/("""
+                                                        """),format.raw/*120.57*/("""<p style="float: center">"""),_display_(/*120.83*/f/*120.84*/.getCat().getName()),format.raw/*120.103*/("""</p>
+                                                        """)))}/*121.59*/else/*121.63*/{_display_(Seq[Any](format.raw/*121.64*/("""
+                                                            """),format.raw/*122.61*/("""<p>No category selected</p>
+                                                            """)))}),format.raw/*123.62*/("""
+                                                            """),_display_(/*124.62*/f/*124.63*/.dateToString()),format.raw/*124.78*/("""
                                                     
-                                                """),format.raw/*174.49*/("""</div>
+                                                """),format.raw/*126.49*/("""</div>
                                                 <hr />
-                                            <a href=""""),_display_(/*176.55*/routes/*176.61*/.HomeController.delete(f.getId())),format.raw/*176.94*/("""" class="btn btn-outline-secondary btn-sm">
+                                            <a href=""""),_display_(/*128.55*/routes/*128.61*/.HomeController.delete(f.getId())),format.raw/*128.94*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="far  fa-trash-alt"></i></a>
                                                 </a>
 
-                                                 <a href=""""),_display_(/*180.60*/routes/*180.66*/.HomeController.changeStatus(f.getId())),format.raw/*180.105*/("""" class="btn btn-outline-secondary btn-sm">
+                                                 <a href=""""),_display_(/*132.60*/routes/*132.66*/.HomeController.changeStatus(f.getId())),format.raw/*132.105*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="fas fa-check"></i></a>
 
-                                                <a href=""""),_display_(/*183.59*/routes/*183.65*/.HomeController.edit(f.getId())),format.raw/*183.96*/("""" class="btn btn-outline-secondary btn-sm">
+                                                <a href=""""),_display_(/*135.59*/routes/*135.65*/.HomeController.edit(f.getId())),format.raw/*135.96*/("""" class="btn btn-outline-secondary btn-sm">
                                                     <i class="fas fa-edit"></i></a>
                                         </div>
                                     </div>
 
-                                 """)))}),format.raw/*188.35*/("""
+                                 """)))}),format.raw/*140.35*/("""
                           
-                            """)))}),format.raw/*190.30*/("""
-                        """)))}),format.raw/*191.26*/("""
+                            """)))}),format.raw/*142.30*/("""
+                        """)))}),format.raw/*143.26*/("""
 
-                      """)))}),format.raw/*193.24*/("""
+                      """)))}),format.raw/*145.24*/("""
 
                      
 
-                            """),format.raw/*197.29*/("""</center>
+                            """),format.raw/*149.29*/("""</center>
                             </div>
 
        
                
            
 
-    </body>
-</html>
+""")))}),format.raw/*156.2*/("""
+
 """))
       }
     }
@@ -249,11 +201,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Aug 29 15:51:48 IST 2018
+                  DATE: Sun Sep 02 19:40:49 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/index.scala.html
-                  HASH: 3bec85d4740b5a88a699e769abb4df9de111934b
-                  MATRIX: 983->2|1130->79|1174->77|1201->95|1228->96|1409->250|1424->256|1485->295|1993->776|2008->782|2070->823|2193->918|2222->919|2267->936|2306->947|2335->948|2381->966|2410->967|2452->981|2481->982|2519->993|3189->1636|3214->1652|3253->1653|3294->1666|3403->1748|3418->1754|3461->1776|3537->1821|3579->1835|3759->1988|3805->2025|3845->2027|3906->2060|4000->2127|4014->2132|4055->2152|4156->2222|4213->2251|4274->2285|4373->2374|4414->2376|4475->2410|4488->2414|4519->2424|4580->2457|4838->2688|4962->2790|5045->2845|5387->3156|5458->3199|5526->3240|5541->3246|5586->3270|5647->3304|5676->3317|5715->3318|5764->3339|5801->3349|5816->3355|5867->3385|5897->3388|5907->3389|5938->3399|5967->3400|6026->3428|6079->3453|6298->3644|6330->3659|6370->3660|6473->3735|6506->3758|6546->3759|6604->3789|6629->3804|6681->3817|6746->3854|6786->3884|6827->3886|6893->3923|7338->4340|7349->4341|7384->4354|7525->4467|7557->4489|7597->4490|7679->4543|7733->4569|7744->4570|7785->4589|7863->4648|7877->4652|7917->4653|8003->4710|8120->4795|8203->4850|8214->4851|8251->4866|8329->4915|8523->5081|8539->5087|8594->5120|8865->5363|8881->5369|8943->5408|9155->5592|9171->5598|9224->5629|9599->5972|9660->6001|9766->6075|9822->6099|9910->6158|10083->6303|10115->6318|10155->6319|10234->6370|10269->6395|10309->6396|10396->6455|10421->6470|10473->6483|10538->6520|10578->6550|10619->6552|10685->6589|11086->6962|11097->6963|11132->6976|11219->7035|11251->7057|11291->7058|11377->7115|11431->7141|11442->7142|11484->7161|11566->7224|11580->7228|11620->7229|11710->7290|11831->7379|11921->7441|11932->7442|11969->7457|12100->7559|12244->7675|12260->7681|12315->7714|12586->7957|12602->7963|12664->8002|12876->8186|12892->8192|12945->8223|13230->8476|13319->8533|13377->8559|13434->8584|13516->8637
-                  LINES: 28->2|31->4|34->3|35->5|36->6|43->13|43->13|43->13|47->17|47->17|47->17|50->20|50->20|51->21|51->21|51->21|53->23|53->23|55->25|55->25|58->28|77->47|77->47|77->47|78->48|80->50|80->50|80->50|82->52|83->53|90->60|90->60|90->60|91->61|92->62|92->62|92->62|94->64|95->65|96->66|96->66|96->66|97->67|97->67|97->67|98->68|103->73|103->73|106->76|113->83|115->85|116->86|116->86|116->86|117->87|117->87|117->87|118->88|118->88|118->88|118->88|118->88|118->88|118->88|118->88|120->90|121->91|130->100|130->100|130->100|133->103|133->103|133->103|135->105|135->105|135->105|136->106|136->106|136->106|137->107|143->113|143->113|143->113|145->115|145->115|145->115|146->116|146->116|146->116|146->116|147->117|147->117|147->117|148->118|149->119|150->120|150->120|150->120|151->121|155->125|155->125|155->125|159->129|159->129|159->129|162->132|162->132|162->132|168->138|169->139|173->143|175->145|177->147|183->153|183->153|183->153|186->156|186->156|186->156|189->159|189->159|189->159|190->160|190->160|190->160|191->161|196->166|196->166|196->166|197->167|197->167|197->167|198->168|198->168|198->168|198->168|199->169|199->169|199->169|200->170|201->171|202->172|202->172|202->172|204->174|206->176|206->176|206->176|210->180|210->180|210->180|213->183|213->183|213->183|218->188|220->190|221->191|223->193|227->197
+                  HASH: fb3721aff0c03426eddff3ebab85e799a9b8efb8
+                  MATRIX: 983->2|1130->79|1174->77|1201->95|1228->97|1255->116|1294->118|1340->138|1480->251|1526->288|1566->290|1627->323|1721->390|1735->395|1776->415|1877->485|1934->514|1995->548|2094->637|2135->639|2196->673|2209->677|2240->687|2301->720|2559->951|2683->1053|2766->1108|3108->1419|3179->1462|3247->1503|3262->1509|3307->1533|3368->1567|3397->1580|3436->1581|3485->1602|3522->1612|3537->1618|3588->1648|3618->1651|3628->1652|3659->1662|3688->1663|3747->1691|3800->1716|4018->1907|4049->1922|4088->1923|4190->1998|4222->2021|4261->2022|4318->2052|4342->2067|4393->2080|4457->2117|4496->2147|4536->2149|4601->2186|5045->2603|5055->2604|5089->2617|5229->2730|5260->2752|5299->2753|5380->2806|5433->2832|5443->2833|5483->2852|5560->2911|5573->2915|5612->2916|5697->2973|5812->3057|5894->3112|5904->3113|5940->3128|6017->3177|6210->3343|6225->3349|6279->3382|6549->3625|6564->3631|6625->3670|6836->3854|6851->3860|6903->3891|7277->4234|7337->4263|7442->4337|7497->4361|7584->4420|7757->4565|7789->4580|7829->4581|7908->4632|7943->4657|7983->4658|8070->4717|8095->4732|8147->4745|8212->4782|8252->4812|8293->4814|8359->4851|8760->5224|8771->5225|8806->5238|8893->5297|8925->5319|8965->5320|9051->5377|9105->5403|9116->5404|9158->5423|9240->5486|9254->5490|9294->5491|9384->5552|9505->5641|9595->5703|9606->5704|9643->5719|9774->5821|9918->5937|9934->5943|9989->5976|10260->6219|10276->6225|10338->6264|10550->6448|10566->6454|10619->6485|10904->6738|10993->6795|11051->6821|11108->6846|11190->6899|11305->6983
+                  LINES: 28->2|31->4|34->3|35->5|36->6|36->6|36->6|39->9|42->12|42->12|42->12|43->13|44->14|44->14|44->14|46->16|47->17|48->18|48->18|48->18|49->19|49->19|49->19|50->20|55->25|55->25|58->28|65->35|67->37|68->38|68->38|68->38|69->39|69->39|69->39|70->40|70->40|70->40|70->40|70->40|70->40|70->40|70->40|72->42|73->43|82->52|82->52|82->52|85->55|85->55|85->55|87->57|87->57|87->57|88->58|88->58|88->58|89->59|95->65|95->65|95->65|97->67|97->67|97->67|98->68|98->68|98->68|98->68|99->69|99->69|99->69|100->70|101->71|102->72|102->72|102->72|103->73|107->77|107->77|107->77|111->81|111->81|111->81|114->84|114->84|114->84|120->90|121->91|125->95|127->97|129->99|135->105|135->105|135->105|138->108|138->108|138->108|141->111|141->111|141->111|142->112|142->112|142->112|143->113|148->118|148->118|148->118|149->119|149->119|149->119|150->120|150->120|150->120|150->120|151->121|151->121|151->121|152->122|153->123|154->124|154->124|154->124|156->126|158->128|158->128|158->128|162->132|162->132|162->132|165->135|165->135|165->135|170->140|172->142|173->143|175->145|179->149|186->156
                   -- GENERATED --
               */
           
