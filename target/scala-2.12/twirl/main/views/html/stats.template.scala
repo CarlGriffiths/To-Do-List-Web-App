@@ -33,51 +33,22 @@ object stats extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 
 Seq[Any](format.raw/*3.1*/("""
 """),format.raw/*5.1*/("""
-"""),format.raw/*6.1*/("""<!DOCTYPE html>
-<html lang="en">
-    <head>
-
-            
-        <title>title</title>
-        
-        <link rel="shortcut icon" type="image/png" href=""""),_display_(/*13.59*/routes/*13.65*/.Assets.versioned("images/favicon.png")),format.raw/*13.104*/("""">
-         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-        <script src=""""),_display_(/*17.23*/routes/*17.29*/.Assets.versioned("javascripts/hello.js")),format.raw/*17.70*/("""" type="text/javascript"></script>
-    </head>
-    <body>
-
-     <!-- Grey with black text -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href=".">Home</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/completed">Completed</a>
-          </li>
-          
-        </ul>
-      </nav>
-         
-        <div class="row">
+"""),_display_(/*6.2*/main("stats", user)/*6.21*/ {_display_(Seq[Any](format.raw/*6.23*/("""
+        """),format.raw/*7.9*/("""<div class="row">
                 <div class="col-12 center-block">
                     <center>
                            
                     <h2>Stats</h2>  
-                    <h4>Current points """),_display_(/*39.41*/user/*39.45*/.getPoints),format.raw/*39.55*/("""</h4>  
-                    <h4>Completed tasks: """),_display_(/*40.43*/user/*40.47*/.getCompletedCount()),format.raw/*40.67*/("""</h4>        
-                    <h4>Uncompleted tasks: """),_display_(/*41.45*/user/*41.49*/.getNumUncompleted()),format.raw/*41.69*/("""</h4> 
+                    <h4>Current points """),_display_(/*12.41*/user/*12.45*/.getPoints),format.raw/*12.55*/("""</h4>  
+                    <h4>Completed tasks: """),_display_(/*13.43*/user/*13.47*/.getCompletedCount()),format.raw/*13.67*/("""</h4>        
+                    <h4>Uncompleted tasks: """),_display_(/*14.45*/user/*14.49*/.getNumUncompleted()),format.raw/*14.69*/("""</h4> 
 
           
         
                
            
 
-    </body>
-</html>
-"""))
+""")))}))
       }
     }
   }
@@ -93,11 +64,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Aug 17 21:30:22 IST 2018
+                  DATE: Mon Sep 03 19:35:42 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/stats.scala.html
-                  HASH: 97d5db9d223d21bfeb8fd1b5523914631ff33c93
-                  MATRIX: 946->2|1030->16|1074->14|1101->32|1128->33|1309->187|1324->193|1385->232|1893->713|1908->719|1970->760|2656->1419|2669->1423|2700->1433|2777->1483|2790->1487|2831->1507|2916->1565|2929->1569|2970->1589
-                  LINES: 28->2|31->4|34->3|35->5|36->6|43->13|43->13|43->13|47->17|47->17|47->17|69->39|69->39|69->39|70->40|70->40|70->40|71->41|71->41|71->41
+                  HASH: 29275441c995cec1064480fa0f815848380daae8
+                  MATRIX: 946->2|1030->16|1074->14|1101->32|1128->34|1155->53|1194->55|1229->64|1458->266|1471->270|1502->280|1579->330|1592->334|1633->354|1718->412|1731->416|1772->436
+                  LINES: 28->2|31->4|34->3|35->5|36->6|36->6|36->6|37->7|42->12|42->12|42->12|43->13|43->13|43->13|44->14|44->14|44->14
                   -- GENERATED --
               */
           

@@ -1,10 +1,6 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/views/main.scala.html:1:1: type Person is not a member of package models[0m
-[0m[[0m[31merror[0m] [0m[0m@*[0m
-[0m[[0m[31merror[0m] [0m[0m^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/views/main.scala.html:7:31: type Person is not a member of package models[0m
-[0m[[0m[31merror[0m] [0m[0m@(title: String, user: models.Person)(content: Html)[0m
-[0m[[0m[31merror[0m] [0m[0m                              ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/views/main.scala.html:70:10: type Person is not a member of package models[0m
-[0m[[0m[31merror[0m] [0m[0m  </html>[0m
-[0m[[0m[31merror[0m] [0m[0m         ^[0m
-[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:304:1: ')' expected[0m
+[0m[[0m[31merror[0m] [0m[0m            return badRequest(login.render(loginForm, User.getUserById(session().get("email"));));[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:304:1: ';' expected[0m
+[0m[[0m[31merror[0m] [0m[0m            return badRequest(login.render(loginForm, User.getUserById(session().get("email"));));[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:304:1: illegal start of expression[0m
+[0m[[0m[31merror[0m] [0m[0m            return badRequest(login.render(loginForm, User.getUserById(session().get("email"));));[0m

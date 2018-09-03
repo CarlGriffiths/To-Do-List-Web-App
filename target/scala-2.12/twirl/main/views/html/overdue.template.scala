@@ -33,84 +33,55 @@ object overdue extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Ht
 
 Seq[Any](format.raw/*3.1*/("""
 """),format.raw/*5.1*/("""
-"""),format.raw/*6.1*/("""<!DOCTYPE html>
-<html lang="en">
-    <head>
-
-            
-        <title>title</title>
-        
-        <link rel="shortcut icon" type="image/png" href=""""),_display_(/*13.59*/routes/*13.65*/.Assets.versioned("images/favicon.png")),format.raw/*13.104*/("""">
-         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-        <script src=""""),_display_(/*17.23*/routes/*17.29*/.Assets.versioned("javascripts/hello.js")),format.raw/*17.70*/("""" type="text/javascript"></script>
-    </head>
-    <body>
-
-     <!-- Grey with black text -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href=".">Home</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/completed">Completed</a>
-          </li>
-          
-        </ul>
-      </nav>
+"""),_display_(/*6.2*/main("overdue tasks", user)/*6.29*/ {_display_(Seq[Any](format.raw/*6.31*/("""
          
-        <div class="row">
+        """),format.raw/*8.9*/("""<div class="row">
                 <div class="col-12 center-block">
                     <center>
                            
                     <h2>Overdue</h2>     
                      <hr>
                      
-                      """),_display_(/*41.24*/for(f <- user.getItems()) yield /*41.49*/{_display_(Seq[Any](format.raw/*41.50*/("""
-                        """),_display_(/*42.26*/if(f.getCompleted()== false)/*42.54*/ {_display_(Seq[Any](format.raw/*42.56*/("""
-                             """),_display_(/*43.31*/defining(true)/*43.45*/ { compare =>_display_(Seq[Any](format.raw/*43.58*/("""  
-                                 """),_display_(/*44.35*/if(f.hasDatePassed()== compare)/*44.66*/ {_display_(Seq[Any](format.raw/*44.68*/("""
+                      """),_display_(/*15.24*/for(f <- user.getItems()) yield /*15.49*/{_display_(Seq[Any](format.raw/*15.50*/("""
+                        """),_display_(/*16.26*/if(f.getCompleted()== false)/*16.54*/ {_display_(Seq[Any](format.raw/*16.56*/("""
+                             """),_display_(/*17.31*/defining(true)/*17.45*/ { compare =>_display_(Seq[Any](format.raw/*17.58*/("""  
+                                 """),_display_(/*18.35*/if(f.hasDatePassed()== compare)/*18.66*/ {_display_(Seq[Any](format.raw/*18.68*/("""
                            
-                                    """),format.raw/*46.37*/("""<div class="card border-dark mb-3" style="max-width: 25rem;">
+                                    """),format.raw/*20.37*/("""<div class="card border-dark mb-3" style="max-width: 25rem;">
    
                                             <div class="card-body">
                                                     <div style="clear: both">
-                                                            <h5 style="float: center">"""),_display_(/*50.88*/f/*50.89*/.getMessage()),format.raw/*50.102*/("""</h5>
+                                                            <h5 style="float: center">"""),_display_(/*24.88*/f/*24.89*/.getMessage()),format.raw/*24.102*/("""</h5>
                                                            
                                                            
                                                         </div>
                                                         <hr />
                                           
-                                            <a href=""""),_display_(/*56.55*/routes/*56.61*/.HomeController.delete(f.getId())),format.raw/*56.94*/("""" class="btn btn-outline-secondary btn-sm">
+                                            <a href=""""),_display_(/*30.55*/routes/*30.61*/.HomeController.delete(f.getId())),format.raw/*30.94*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="far  fa-trash-alt"></i></a>
                                                 </a>
 
-                                                 <a href=""""),_display_(/*60.60*/routes/*60.66*/.HomeController.changeStatus(f.getId())),format.raw/*60.105*/("""" class="btn btn-outline-secondary btn-sm">
+                                                 <a href=""""),_display_(/*34.60*/routes/*34.66*/.HomeController.changeStatus(f.getId())),format.raw/*34.105*/("""" class="btn btn-outline-secondary btn-sm">
                                                 <i class="fas fa-check"></i></a>
                                         </div>
                                     </div>
                                  
-                                """)))}),format.raw/*65.34*/("""
-                            """)))}),format.raw/*66.30*/("""
+                                """)))}),format.raw/*39.34*/("""
+                            """)))}),format.raw/*40.30*/("""
                               
-                        """)))}),format.raw/*68.26*/("""
+                        """)))}),format.raw/*42.26*/("""
                     
-                    """)))}),format.raw/*70.22*/("""
+                    """)))}),format.raw/*44.22*/("""
                      
 
-                            """),format.raw/*73.29*/("""</center>
+                            """),format.raw/*47.29*/("""</center>
                             </div>
 
           
         
                
            
-
-    </body>
-</html>
-"""))
+""")))}))
       }
     }
   }
@@ -126,11 +97,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Aug 17 20:28:42 IST 2018
+                  DATE: Mon Sep 03 19:42:57 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/overdue.scala.html
-                  HASH: 330535387b9a9477d52959459213306187c42e97
-                  MATRIX: 959->2|1063->36|1107->34|1134->52|1161->53|1342->207|1357->213|1418->252|1926->733|1941->739|2003->780|2725->1475|2766->1500|2805->1501|2858->1527|2895->1555|2935->1557|2993->1588|3016->1602|3067->1615|3131->1652|3171->1683|3211->1685|3304->1750|3630->2049|3640->2050|3675->2063|4051->2412|4066->2418|4120->2451|4390->2694|4405->2700|4466->2739|4779->3021|4840->3051|4928->3108|5002->3151|5082->3203
-                  LINES: 28->2|31->4|34->3|35->5|36->6|43->13|43->13|43->13|47->17|47->17|47->17|71->41|71->41|71->41|72->42|72->42|72->42|73->43|73->43|73->43|74->44|74->44|74->44|76->46|80->50|80->50|80->50|86->56|86->56|86->56|90->60|90->60|90->60|95->65|96->66|98->68|100->70|103->73
+                  HASH: bb30deacfe20a1bcdd2a527db57988493f018fd7
+                  MATRIX: 959->2|1063->36|1107->34|1134->52|1161->54|1196->81|1235->83|1280->102|1545->340|1586->365|1625->366|1678->392|1715->420|1755->422|1813->453|1836->467|1887->480|1951->517|1991->548|2031->550|2124->615|2450->914|2460->915|2495->928|2871->1277|2886->1283|2940->1316|3210->1559|3225->1565|3286->1604|3599->1886|3660->1916|3748->1973|3822->2016|3902->2068
+                  LINES: 28->2|31->4|34->3|35->5|36->6|36->6|36->6|38->8|45->15|45->15|45->15|46->16|46->16|46->16|47->17|47->17|47->17|48->18|48->18|48->18|50->20|54->24|54->24|54->24|60->30|60->30|60->30|64->34|64->34|64->34|69->39|70->40|72->42|74->44|77->47
                   -- GENERATED --
               */
           
