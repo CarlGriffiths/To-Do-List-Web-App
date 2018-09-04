@@ -11,11 +11,9 @@ Current features:
 * To-do list tasks can be created, updated and deleted 
 * To-do list tasks can be as either marked as completed or uncompleted, if an item is marked as completed then it will be striked out
 * Homepage displays the events 'due today' on the left and displays items 'due in the future' on the right
-* Add To-do list tasks catergoies, e.g. a housework category would have items such as 'do laundry'
+* To-do list tasks catergoies, e.g. a housework category would have items such as 'do laundry'
 
-To be done:
-* Add main.scala.html to handle dynamic content such as navbar etc
-* Add link to uncompleted page to navbar
+
 
 
 
