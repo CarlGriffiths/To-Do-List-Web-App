@@ -177,13 +177,24 @@ public class HomeController extends Controller {
         
         Item itemToChange = Item.find.byId(id);
         
+        //return object of logged in user, emailmis pk
         User u = User.getUserById(session().get("email"));
+        //get logged in users email
+        String e = u.getEmail();
         
        
         if (itemToChange.getCompleted() == true && itemToChange.getUser().equals(u)){
 
+            if(itemToChange.getCompleted() == true){
+                User findUser = User.find.byId(e);
+                findUser.subtractPoints();
+                //System.out.println(e);
+                findUser.update();
 
+            }
             itemToChange.delete();
+
+            
             return redirect(routes.HomeController.completed());
         }
         else if (itemToChange.getCompleted() == false && itemToChange.getUser().equals(u)) {

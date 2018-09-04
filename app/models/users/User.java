@@ -105,6 +105,7 @@ public class User extends Model {
 
     public int getNumUncompleted(){
        
+        //found a problem when a item gets deleted, the getCompletedCount stays is not decreased
         return getItems().size() - getCompletedCount();
     }
 

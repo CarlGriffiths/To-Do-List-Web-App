@@ -1,6 +1,3 @@
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:304:1: ')' expected[0m
-[0m[[0m[31merror[0m] [0m[0m            return badRequest(login.render(loginForm, User.getUserById(session().get("email"));));[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:304:1: ';' expected[0m
-[0m[[0m[31merror[0m] [0m[0m            return badRequest(login.render(loginForm, User.getUserById(session().get("email"));));[0m
-[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:304:1: illegal start of expression[0m
-[0m[[0m[31merror[0m] [0m[0m            return badRequest(login.render(loginForm, User.getUserById(session().get("email"));));[0m
+[0m[[0m[31merror[0m] [0m[0m/home/wdd/Desktop/TodoList/app/controllers/HomeController.java:186:1: incompatible types: models.User cannot be converted to java.lang.String[0m
+[0m[[0m[31merror[0m] [0m[0m                User findUser = User.find.byId(u);[0m
+[0m[[0m[0minfo[0m] [0m[0mSome messages have been simplified; recompile with -Xdiags:verbose to get full output[0m
