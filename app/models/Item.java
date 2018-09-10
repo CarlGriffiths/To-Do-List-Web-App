@@ -142,7 +142,7 @@ public class Item extends Model {
         //even if its the same day
         if(isToday() == false){
             if(date.before(new Date())){
-            user.subtractPoints();
+            
             return true;
 
             }

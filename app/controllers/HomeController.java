@@ -185,11 +185,12 @@ public class HomeController extends Controller {
        
         if (itemToChange.getCompleted() == true && itemToChange.getUser().equals(u)){
 
+            //this removes the points awarded to a user for completing an item 
             if(itemToChange.getCompleted() == true){
-                User findUser = User.find.byId(e);
-                findUser.subtractPoints();
+                
+                //u.subtractPoints();
                 //System.out.println(e);
-                findUser.update();
+                u.update();
 
             }
             itemToChange.delete();
@@ -226,8 +227,7 @@ public class HomeController extends Controller {
 
             //add 10 points if completed
             u.addPoints();
-            
-            System.out.println("is it in...!!");
+            System.out.println("testing if it enter here...!2");
             u.update();
             itemToChange.update();
             return redirect(routes.HomeController.index(0));
@@ -242,8 +242,7 @@ public class HomeController extends Controller {
             
              //remove 10 points if added by mistake
             u.subtractPoints();
-           
-            
+            System.out.println("test sub");
             u.update();
             itemToChange.update();
             return redirect(routes.HomeController.completed());

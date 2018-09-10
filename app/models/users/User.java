@@ -79,7 +79,14 @@ public class User extends Model {
         
     }
      public void subtractPoints(){
-        points -= 10;
+        if(points == 0){
+            //keep points from going negative
+            points = 0;
+        }
+        else{
+            points -= 10;
+        }
+        
     }
 
 
@@ -105,7 +112,6 @@ public class User extends Model {
 
     public int getNumUncompleted(){
        
-        //found a problem when a item gets deleted, the getCompletedCount stays is not decreased
         return getItems().size() - getCompletedCount();
     }
 
