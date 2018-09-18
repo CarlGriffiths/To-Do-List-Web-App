@@ -186,16 +186,9 @@ public class HomeController extends Controller {
         if (itemToChange.getCompleted() == true && itemToChange.getUser().equals(u)){
 
             //this removes the points awarded to a user for completing an item 
-            if(itemToChange.getCompleted() == true){
-                
-                //u.subtractPoints();
-                //System.out.println(e);
-                u.update();
-
-            }
+            u.subtractPoints();
+            u.update();
             itemToChange.delete();
-
-            
             return redirect(routes.HomeController.completed());
         }
         else if (itemToChange.getCompleted() == false && itemToChange.getUser().equals(u)) {
