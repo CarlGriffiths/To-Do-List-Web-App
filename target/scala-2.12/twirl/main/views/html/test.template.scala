@@ -73,7 +73,7 @@ Seq[Any](format.raw/*1.1*/("""<html lang="en">
 
               /*
                   -- GENERATED --
-                  DATE: Fri Aug 10 17:56:54 IST 2018
+                  DATE: Wed Sep 19 17:33:41 IST 2018
                   SOURCE: /home/wdd/Desktop/TodoList/app/views/test.scala.html
                   HASH: ff5e99fc148e333be437515513377c7fcb09cae3
                   MATRIX: 1029->0|1217->162|1231->168|1291->207|1815->704|1830->710|1892->751

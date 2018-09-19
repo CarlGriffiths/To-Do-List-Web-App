@@ -9,6 +9,9 @@ libraryDependencies += "com.h2database" % "h2" % "1.4.192"
 // Load dependencies 
 libraryDependencies ++= Seq(evolutions, jdbc)
 
+libraryDependencies += "org.mindrot" % "jbcrypt" % "0.3m"
+
+
 
 scalaVersion := "2.12.6"
 
@@ -25,3 +28,5 @@ libraryDependencies += "org.awaitility" % "awaitility" % "2.0.0" % Test
 
 // Make verbose tests
 testOptions in Test := Seq(Tests.Argument(TestFrameworks.JUnit, "-a", "-v"))
+
+

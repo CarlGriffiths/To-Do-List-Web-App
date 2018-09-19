@@ -4,7 +4,7 @@
 		module="play-java-starter-example_2.12"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20180902193203"
+		publication="20180919173151"
 	>
 		<description>
 		play-java-starter-example
@@ -54,6 +54,7 @@
 		<dependency org="com.h2database" name="h2" rev="1.4.192" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-jdbc-evolutions_2.12" rev="2.6.15" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-jdbc_2.12" rev="2.6.15" conf="compile->default(compile)"/>
+		<dependency org="org.mindrot" name="jbcrypt" rev="0.3m" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-guice_2.12" rev="2.6.15" conf="compile->default(compile)"/>
 		<dependency org="com.h2database" name="h2" rev="1.4.197" conf="compile->default(compile)"/>
 		<dependency org="org.assertj" name="assertj-core" rev="3.6.2" conf="test->default(compile)"/>

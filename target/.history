@@ -149,3 +149,14 @@ exit
 run
 exit
 run
+exit
+clean
+run
+exit
+sbt
+exit
+clean
+run
+h2-browser
+sbt
+run

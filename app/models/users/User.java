@@ -1,10 +1,16 @@
 package models;
 
+import com.sun.org.apache.xml.internal.dtm.ref.EmptyIterator;
+
+
 import java.util.*;
 import javax.persistence.*;
 import io.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
+
+import org.mindrot.jbcrypt.BCrypt;
+
 
 
 @Entity
@@ -37,10 +43,31 @@ public class User extends Model {
         return User.find.all();
     }
 
-    public static User auth(String email, String pass){
-        return find.query().where().eq("email", email).eq("pass", pass).findUnique();
+    //public static User auth(String email, String pass){
+     //   return find.query().where().eq("email", email).eq("pass", pass).findUnique();
 
+    //}
+
+    public static User auth(String email, String pass) {
+        User user = User.findPersonByEmail(email);
+        
+        if (user != null && BCrypt.checkpw(pass, user.pass)) {
+            return user;
+        } else {
+            return null;
+        }
     }
+
+    public static User findPersonByEmail(String email){
+
+        List<User> allUsers = User.findAll();
+        for (int i = 0; i < allUsers.size(); i++) {
+            if (allUsers.get(i).getEmail().equals(email)) {
+                  return allUsers.get(i);
+              }
+          }
+          return null;
+        }
 
 
     public String getEmail(){
@@ -71,8 +98,9 @@ public class User extends Model {
     public void setEmail(String e){
         this.email = e;
     }
-    public void setPass(String p){
-        this.pass = p;
+    public void setPass(String pass){
+        //this.pass = p;
+        this.pass = BCrypt.hashpw(pass, BCrypt.gensalt());
     }
     public void addPoints(){
         points += 10;
