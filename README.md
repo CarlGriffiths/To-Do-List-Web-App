@@ -13,6 +13,7 @@ Current features:
 * Homepage displays the events 'due today' on the left and displays items 'due in the future' on the right
 * To-do list tasks catergoies, e.g. a housework category would have items such as 'do laundry'
 * Passwords are hashed using BCrypt
+* Use weather API to get current temperature for users city
 
 
 
