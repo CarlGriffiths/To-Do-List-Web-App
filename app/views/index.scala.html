@@ -5,6 +5,19 @@
 
 @main("home", user) {
 
+    <script>
+        var weather = new XMLHttpRequest();
+        var city = "";
+	city = "@user.getCity()";
+        weather.open("GET", "https://api.openweathermap.org/data/2.5/find?q=" + city + "&units=metric&appid=8bbdccfff8927111b6c3cb756294790b", false);
+        weather.send(null);
+    
+        var r = JSON.parse(weather.response);
+        var h = r.list["0"].main.temp;
+    
+    
+     </script>
+
          
         <div class="row">
                 <div class="col-12">
@@ -14,6 +27,12 @@
                                 @flash.get("emptyMessage");
                                 </div>
                             }
+                            <h2>
+                                The current temperature is:
+                                    <script>document.write(h)</script>
+                                
+
+                            </h2>
                             <br>
                             @form(action=routes.HomeController.submit(), 'class -> "form-hotizontal", 'role -> "form") {
                                 @CSRF.formField
@@ -69,7 +88,7 @@
                                                     } else{
                                                         <p>No category selected</p>
                                                        }
-                                                     @a.dateToString()
+                                                     
                                                 </div>
                                                 <hr />
 
@@ -121,7 +140,7 @@
                                                         } else{
                                                             <p>No category selected</p>
                                                             }
-                                                            @f.dateToString()
+                                                            
                                                     
                                                 </div>
                                                 <hr />

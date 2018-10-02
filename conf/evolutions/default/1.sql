@@ -23,6 +23,7 @@ create table item (
 create table user (
   email                         varchar(255) not null,
   pass                          varchar(255),
+  city                          varchar(255),
   points                        integer not null,
   completed                     integer not null,
   constraint pk_user primary key (email)

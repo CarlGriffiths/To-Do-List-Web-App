@@ -9,6 +9,7 @@ import io.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
 
+//first add the plugin to build.sbt
 import org.mindrot.jbcrypt.BCrypt;
 
 
@@ -19,6 +20,7 @@ public class User extends Model {
     @Id
     public String email;
     public String pass;
+    public String city;
     public int points = 0;
     public int completed = 0;
     
@@ -80,6 +82,10 @@ public class User extends Model {
         return points;
     }
 
+    public String getCity(){
+        return city;
+    }
+
     public int getCompletedCount(){
         //simply divide the current point by 10 to get the num of completed items 
         //seen as uers get 10 points for each item complated
@@ -101,6 +107,10 @@ public class User extends Model {
     public void setPass(String pass){
         //this.pass = p;
         this.pass = BCrypt.hashpw(pass, BCrypt.gensalt());
+    }
+    public void setCity(String city){
+        
+        this.city = city;
     }
     public void addPoints(){
         points += 10;
